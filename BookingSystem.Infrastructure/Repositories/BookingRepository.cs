@@ -39,6 +39,11 @@ public class BookingRepository : IBookingRepository
         return await _db.Bookings.Include(b => b.Room).FirstOrDefaultAsync(b => b.Id == id);
     }
 
+    public async Task<IEnumerable<Booking>> GetByUserIdAsync(string userId)
+    {
+        return await _db.Bookings.Include(b => b.Room).Where(b => b.UserId == userId).ToListAsync();
+    }
+
     public async Task RemoveAsync(Booking booking)
     {
         _db.Bookings.Remove(booking);

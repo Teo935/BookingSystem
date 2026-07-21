@@ -84,3 +84,59 @@ Stile: naming `Metodo_Scenario_RisultatoAtteso`, struttura Arrange/Act/Assert co
 
 ### Vincoli rispettati
 Nessuna modifica al codice di produzione (Service/Repository/Controller), nessuna modifica alla pipeline CI, solo framework di test standard (xUnit + Moq) senza librerie esotiche.
+
+## 2026-07-21 — Migrazione da SQLite a SQL Server
+
+Punto di partenza: il database di sviluppo era SQLite (`bookingsystem.db`), con provider EF Core (Entity Framework Core, l'ORM del progetto) `Microsoft.EntityFrameworkCore.Sqlite`.
+
+### Modifiche
+
+- `BookingSystem.Infrastructure.csproj`: sostituito il pacchetto NuGet `Microsoft.EntityFrameworkCore.Sqlite` con `Microsoft.EntityFrameworkCore.SqlServer`.
+- `Program.cs`: `options.UseSqlite(...)` → `options.UseSqlServer(...)`.
+- `appsettings.json`: connection string aggiornata per puntare a un'istanza locale SQL Server Express (`Server=.\SQLEXPRESS;Database=BookingSystemDb;...`), già presente e in esecuzione sulla macchina.
+- Rimosse le vecchie Migrations (erano scritte con tipi/annotazioni specifiche di SQLite, es. `Sqlite:Autoincrement`) e rigenerata una `InitialCreate` pulita per SQL Server.
+- Rimosso il file `bookingsystem.db` ormai orfano (non tracciato in git).
+- `AppDbContext`: aggiunta `HasPrecision(18, 2)` sulla proprietà `PricePerNight` di `Room`, per evitare il warning EF Core "no store type specified for decimal" che SQLite non generava (perché salvava i decimal come TEXT) ma SQL Server sì (default `decimal(18,2)`, rischio di troncamento silenzioso senza precisione esplicita).
+- Aggiunto anche a `BookingSystem.API.csproj` il pacchetto `Microsoft.EntityFrameworkCore.Design`: era referenziato solo in Infrastructure con `PrivateAssets="all"`, che ne impediva la propagazione al progetto di avvio (API) — necessario perché gli strumenti EF Core (`dotnet ef`) funzionino con `--startup-project BookingSystem.API`.
+- Installato il tool globale `dotnet-ef` (non era presente sulla macchina), versione allineata a EF Core 8.0.11 usata dal progetto.
+
+### Verifica
+`dotnet build`: 0 errori/warning. Migration applicata su SQL Server con successo. App avviata e testata con richieste HTTP reali (creazione, lettura, cancellazione di una Room) per confermare che il flusso end-to-end funzioni contro SQL Server.
+
+### Vincoli rispettati
+Nessuna modifica a Controller/Service/Repository/Domain, nessun cambiamento di comportamento delle API pubbliche.
+
+## 2026-07-21 — Integrazione ASP.NET Core Identity, JWT Authentication e Role-Based Authorization
+
+Punto di partenza: nessun meccanismo di autenticazione. Tutti gli endpoint erano pubblici, `Program.cs` non registrava né `AddAuthentication` né `UseAuthentication`.
+
+### Decisioni architetturali (concordate con l'utente prima di implementare)
+
+- **"Le mie prenotazioni"**: creato un nuovo endpoint dedicato `GET /api/bookings/mine` invece di filtrare l'endpoint esistente `GetBooking(id)` per proprietario. Questo ha richiesto di aggiungere un campo `UserId` (stringa nullable, senza foreign key reale né navigation property verso `ApplicationUser`, per non far dipendere `BookingSystem.Domain` da tipi di Identity) all'entità `Booking`.
+- **Endpoint ambigui**: `GET /api/bookings/{id}` e `DELETE /api/bookings/{id}` sono diventati `[Authorize]`; `GET /api/rooms/{roomId}/availability` è rimasto pubblico.
+- **Conferma email**: non richiesta (`RequireConfirmedEmail` di default, cioè `false`) — scelta adatta a un progetto didattico senza servizio di invio email configurato.
+
+### Struttura per livello (Clean Architecture)
+
+- **Domain**: solo l'aggiunta di `Booking.UserId`, nessuna dipendenza da Identity.
+- **Application**: nuovi DTO (`RegisterRequest`, `LoginRequest`, `AuthResponse`) e interfaccia `IAuthService`; firme aggiornate di `IBookingService`/`IBookingRepository` per portare `UserId` (`CreateBookingAsync` accetta ora anche `userId`, nuovo `GetBookingsByUserAsync`).
+- **Infrastructure** (cartella `Identity/`): `ApplicationUser : IdentityUser` (nessuna proprietà aggiuntiva), `AppDbContext` ora eredita da `IdentityDbContext<ApplicationUser>`, `JwtSettings` (POCO per la configurazione), `JwtTokenGenerator` (genera il token con claim UserId/Email/Role, firmato HMAC-SHA256), `AuthService` (usa `UserManager`/`RoleManager` di Identity per Register/Login), `IdentitySeeder` (crea i ruoli `Admin`/`User` e l'utente admin iniziale se non esistono).
+- **API**: nuovo `AuthController` (`POST /api/auth/register`, `POST /api/auth/login`), `Program.cs` configura `AddIdentity`, `AddAuthentication().AddJwtBearer(...)`, `AddAuthorization`, `UseAuthentication()` (mancante prima, aggiunto prima di `UseAuthorization()`), seeding dei ruoli/admin all'avvio, Swagger con supporto al pulsante "Authorize" per il Bearer token.
+
+### Autorizzazione applicata
+
+- `RoomsController`: `[Authorize(Roles = "Admin")]` su Create/Update/Delete; le GET restano pubbliche.
+- `BookingsController`: `[Authorize]` a livello di controller (protegge Create/Get/Cancel/mine), `[AllowAnonymous]` esplicito solo su `CheckAvailability`.
+
+### Configurazione
+
+`appsettings.json`, sezione `Jwt`: `SecretKey` (generata casualmente per lo sviluppo locale), `Issuer`, `Audience`, `ExpirationMinutes`. Credenziali admin seed: `admin@bookingsystem.com` / `Admin123!`.
+
+### Migration
+`dotnet ef migrations add AddIdentityAndBookingUserId` (tabelle `AspNetUsers`/`AspNetRoles`/ecc. + colonna `Bookings.UserId`), applicata con `dotnet ef database update`.
+
+### Verifica end-to-end
+`dotnet build`: 0 errori/warning. `dotnet test`: 25/25 (aggiornati i test esistenti di `BookingServiceTests` per la nuova firma di `CreateBookingAsync`, aggiunta un'asserzione sul valore di `UserId`). App avviata e testata via `curl`: login admin → JWT con ruolo Admin; registrazione nuovo utente → JWT con ruolo User; `POST /api/rooms` senza token → 401, con token User → 403, con token Admin → 201; `POST /api/bookings` con token User → 200 con `UserId` valorizzato; `GET /api/bookings/mine` → solo le prenotazioni dell'utente; `GET /api/rooms/{id}/availability` senza token → 200 (pubblico come da requisito).
+
+### Vincoli rispettati
+Nessuna modifica alla logica di business esistente di Room/Booking (solo l'aggiunta additiva di `UserId`), nessun CQRS/MediatR/microservizi introdotti, nessuna proprietà superflua su `ApplicationUser`.

@@ -33,7 +33,7 @@ public class BookingServiceTests
         };
 
         // Act
-        var (success, error, booking) = await _sut.CreateBookingAsync(request);
+        var (success, error, booking) = await _sut.CreateBookingAsync(request, "user-1");
 
         // Assert
         Assert.False(success);
@@ -55,7 +55,7 @@ public class BookingServiceTests
         };
 
         // Act
-        var (success, error, booking) = await _sut.CreateBookingAsync(request);
+        var (success, error, booking) = await _sut.CreateBookingAsync(request, "user-1");
 
         // Assert
         Assert.False(success);
@@ -78,7 +78,7 @@ public class BookingServiceTests
         _roomRepositoryMock.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((Room?)null);
 
         // Act
-        var (success, error, booking) = await _sut.CreateBookingAsync(request);
+        var (success, error, booking) = await _sut.CreateBookingAsync(request, "user-1");
 
         // Assert
         Assert.False(success);
@@ -106,7 +106,7 @@ public class BookingServiceTests
             .ReturnsAsync(true);
 
         // Act
-        var (success, error, booking) = await _sut.CreateBookingAsync(request);
+        var (success, error, booking) = await _sut.CreateBookingAsync(request, "user-1");
 
         // Assert
         Assert.False(success);
@@ -138,7 +138,7 @@ public class BookingServiceTests
         var before = DateTime.UtcNow;
 
         // Act
-        var (success, error, booking) = await _sut.CreateBookingAsync(request);
+        var (success, error, booking) = await _sut.CreateBookingAsync(request, "user-1");
 
         var after = DateTime.UtcNow;
 
@@ -148,6 +148,7 @@ public class BookingServiceTests
         Assert.NotNull(booking);
         Assert.Equal("Mario Rossi", booking!.GuestName);
         Assert.Equal(1, booking.RoomId);
+        Assert.Equal("user-1", booking.UserId);
         Assert.InRange(booking.CreatedAt, before, after);
         _bookingRepositoryMock.Verify(b => b.AddAsync(It.IsAny<Booking>()), Times.Once);
     }

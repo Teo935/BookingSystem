@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
@@ -16,6 +17,7 @@ public class RoomsController : ControllerBase
     }
 
     [HttpPost("api/rooms")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateRoom([FromBody] CreateRoomRequest request)
     {
         var (success, error, room) = await _roomService.CreateRoomAsync(request);
@@ -45,6 +47,7 @@ public class RoomsController : ControllerBase
     }
 
     [HttpPut("api/rooms/{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateRoom(int id, [FromBody] UpdateRoomRequest request)
     {
         var room = await _roomService.UpdateRoomAsync(id, request);
@@ -54,6 +57,7 @@ public class RoomsController : ControllerBase
     }
 
     [HttpDelete("api/rooms/{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteRoom(int id)
     {
         var result = await _roomService.DeleteRoomAsync(id);

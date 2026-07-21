@@ -15,7 +15,7 @@ public class BookingService : IBookingService
         _roomRepository = roomRepository;
     }
 
-    public async Task<(bool Success, string? Error, Booking? Booking)> CreateBookingAsync(CreateBookingRequest request)
+    public async Task<(bool Success, string? Error, Booking? Booking)> CreateBookingAsync(CreateBookingRequest request, string userId)
     {
         if (request.CheckIn >= request.CheckOut)
         {
@@ -37,6 +37,7 @@ public class BookingService : IBookingService
         var booking = new Booking
         {
             RoomId = request.RoomId,
+            UserId = userId,
             GuestName = request.GuestName,
             CheckIn = request.CheckIn,
             CheckOut = request.CheckOut,
@@ -57,6 +58,11 @@ public class BookingService : IBookingService
     public Task<Booking?> GetBookingAsync(int id)
     {
         return _bookingRepository.GetByIdWithRoomAsync(id);
+    }
+
+    public Task<IEnumerable<Booking>> GetBookingsByUserAsync(string userId)
+    {
+        return _bookingRepository.GetByUserIdAsync(userId);
     }
 
     public async Task<bool> CancelBookingAsync(int id)
