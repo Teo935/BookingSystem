@@ -12,6 +12,10 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Room>()
+            .Property(r => r.PricePerNight)
+            .HasPrecision(18, 2);
+
         modelBuilder.Entity<Booking>()
             .HasOne(b => b.Room)
             .WithMany()
