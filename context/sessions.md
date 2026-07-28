@@ -140,3 +140,46 @@ Punto di partenza: nessun meccanismo di autenticazione. Tutti gli endpoint erano
 
 ### Vincoli rispettati
 Nessuna modifica alla logica di business esistente di Room/Booking (solo l'aggiunta additiva di `UserId`), nessun CQRS/MediatR/microservizi introdotti, nessuna proprietà superflua su `ApplicationUser`.
+
+## 2026-07-28 — Containerizzazione con Docker (Dockerfile + docker-compose)
+
+Punto di partenza: l'utente aveva già creato in autonomia `BookingSystem.API/Dockerfile` (build multi-stage: SDK .NET 8 per compilare/pubblicare, runtime ASP.NET 8 per l'esecuzione) e `docker-compose.yml` (due servizi: `sqlserver` con l'immagine ufficiale `mcr.microsoft.com/mssql/server:2022-latest`, e `api` che builda dal Dockerfile), ma l'avvio falliva con l'errore `An error occurred using the connection to database 'BookingSystemDb' on server '.\SQLEXPRESS'`.
+
+### 1. Diagnosi del primo errore (connection string sbagliata)
+Causa: l'utente lanciava il container con `docker run` diretto invece che con `docker compose up`. Così facendo la variabile d'ambiente `ConnectionStrings__DefaultConnection` definita nel compose (che punta al servizio `sqlserver` con autenticazione SQL `sa`) non veniva applicata, e l'app ripiegava sulla connection string di fallback in `appsettings.json`, che puntava a `.\SQLEXPRESS` (istanza SQL Server Express installata su Windows, host) — irraggiungibile e concettualmente incompatibile da dentro un container Linux (niente autenticazione integrata di Windows, nessuna istanza SQLEXPRESS presente).
+
+### 2. Secondo errore dopo il passaggio a `docker compose up --build` (Swagger irraggiungibile)
+Log del container (`docker compose logs api`) hanno mostrato l'errore reale: `Error Number 4060 — Cannot open database "BookingSystemDb" requested by the login. Login failed for user 'sa'`. Causa: il database nel container `sqlserver` partiva completamente vuoto (le Migration erano state applicate in passato solo contro l'istanza SQLEXPRESS locale, mai contro questo nuovo container). `IdentitySeeder.SeedAsync` in `Program.cs`, eseguito all'avvio prima che Kestrel iniziasse ad ascoltare, provava a leggere la tabella `AspNetRoles` inesistente → eccezione non gestita → processo terminato prima di aprire la porta 8080.
+
+### 3. Fix applicati in `Program.cs`
+- Aggiunto `sqlOptions.EnableRetryOnFailure()` alla configurazione di `UseSqlServer`: rende l'app resiliente nel caso in cui il container SQL Server non sia ancora pronto ad accettare connessioni al primo avvio (`depends_on` in docker-compose garantisce solo l'ordine di *avvio* dei container, non la effettiva disponibilità del servizio).
+- Aggiunta la chiamata `await dbContext.Database.MigrateAsync();` nello scope di avvio, prima del seeding di ruoli/utenti: il container ora crea/aggiorna automaticamente lo schema del database ad ogni avvio, senza bisogno di eseguire manualmente `dotnet ef database update` contro il container.
+
+### 4. Verifica
+Rebuild (`docker compose up --build -d`): log confermano migration applicate, ruoli e utente admin seedati con successo, `Now listening on: http://[::]:8080`. `curl http://localhost:5068/swagger/index.html` → 200.
+
+### Nota per l'utente: differenze rispetto a un ambiente aziendale reale
+Il flusso (Dockerfile multi-stage + docker-compose per orchestrare app e database in locale) è realistico, ma un ambiente aziendale di produzione aggiungerebbe: gestione dei segreti (qui password SA e JWT secret sono in chiaro nel `docker-compose.yml`, invece che in un vault o variabili non committate), un registry di immagini con pipeline CI/CD che builda/pusha l'immagine, orchestrazione a più repliche (Kubernetes/ECS invece di un singolo container docker-compose), e le migration applicate in uno step di release separato invece che ad ogni avvio dell'app (per evitare race condition tra più istanze che migrano in parallelo quando si scala orizzontalmente).
+
+### Vincoli rispettati
+Nessuna modifica a Controller/Service/Repository/Domain; le uniche modifiche di codice sono in `Program.cs` (bootstrap dell'infrastruttura, coerente con dove già viveva il seeding), nessun cambiamento di comportamento delle API pubbliche.
+
+## 2026-07-28 — Modernizzazione di `azure-pipelines.yml`
+
+Punto di partenza: la pipeline era ancora il template generico creato all'inizio del progetto, pensato per **.NET Framework classico** (`VSBuild@1` con pacchetto per IIS, `VSTest@2`, pool `windows-latest`) — mai allineato al progetto attuale (.NET 8, 4 progetti + `BookingSystem.Tests` con xUnit).
+
+### Modifiche
+- Sostituito `NuGetToolInstaller@1` + `NuGetCommand@2` + `VSBuild@1` con i task `dotnet` CLI equivalenti: `UseDotNet@2` (installa SDK .NET 8), poi `DotNetCoreCLI@2` per i tre step `restore` → `build` (`--configuration Release --no-restore`) → `test` (mirato a `**/BookingSystem.Tests.csproj`, `--no-build`).
+- Rimosso `VSTest@2`: prima scopriva l'assembly di test solo per convenzione di nome, ora il test è uno step esplicito della pipeline.
+- Cambiato il pool da `windows-latest` a `ubuntu-latest`: coerente con un progetto .NET 8 cross-platform destinato a girare in container Linux (vedi sessione Docker sopra), elimina la dipendenza implicita da IIS/Windows del vecchio template.
+
+### Verifica
+Riprodotta in locale la stessa sequenza della pipeline: `dotnet restore BookingSystem.sln` → `dotnet build --configuration Release --no-restore` → `dotnet test BookingSystem.Tests/BookingSystem.Tests.csproj --configuration Release --no-build`. Risultato: 0 errori/warning, **25/25 test superati**.
+
+### Vincoli rispettati
+Nessuna modifica al codice applicativo, solo alla definizione della pipeline CI.
+
+## TODO — prossimi passi
+
+- [ ] **Pipeline: build + push dell'immagine Docker** (punto ancora aperto dalla sessione di containerizzazione sopra). Richiede una decisione dell'utente su quale registry usare (Azure Container Registry, Docker Hub, GitHub Container Registry) e la creazione delle credenziali/service connection corrispondenti — non automatizzabile senza queste informazioni. Una volta scelto il registry, aggiungere alla pipeline gli step `docker build` (da `BookingSystem.API/Dockerfile`) e `docker push` con tag versione.
+- [ ] **Secrets in chiaro**: password `sa` e JWT `SecretKey` sono attualmente hardcoded in `docker-compose.yml`/`appsettings.json`. Da spostare in variabili d'ambiente non committate o in un vault, prima di qualsiasi uso oltre lo sviluppo locale.

@@ -1,0 +1,36 @@
+services:
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: bookingsystem-sqlserver
+
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "YourStrongPassword123!"
+
+    ports:
+      - "1433:1433"
+
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+  api:
+    build:
+      context: .
+      dockerfile: BookingSystem.API/Dockerfile
+
+    container_name: bookingsystem-api
+
+    ports:
+      - "5068:8080"
+
+    depends_on:
+      - sqlserver
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=BookingSystemDb;User Id=sa;Password=YourStrongPassword123!;TrustServerCertificate=True;"
+
+volumes:
+  sqlserver-data:
