@@ -2,10 +2,12 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using BookingSystem.Application.Interfaces;
 using BookingSystem.Application.Services;
+using BookingSystem.Infrastructure.Caching;
 using BookingSystem.Infrastructure.Data;
 using BookingSystem.Infrastructure.Identity;
 using BookingSystem.Infrastructure.Repositories;
@@ -73,11 +75,23 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+builder.Services.Configure<CacheSettings>(builder.Configuration.GetSection("Caching"));
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+});
+builder.Services.AddSingleton<ICacheService, RedisCacheService>();
+
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
-builder.Services.AddScoped<IRoomService, RoomService>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+
+builder.Services.AddScoped<RoomService>();
+builder.Services.AddScoped<IRoomService>(sp => new CachedRoomService(
+    sp.GetRequiredService<RoomService>(),
+    sp.GetRequiredService<ICacheService>(),
+    sp.GetRequiredService<IOptions<CacheSettings>>()));
 
 var app = builder.Build();
 

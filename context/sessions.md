@@ -210,6 +210,34 @@ L'utente ha scelto esplicitamente di **non rigenerare** JWT SecretKey e password
 ### Vincoli rispettati
 Nessuna modifica alle regole di business esistenti, nessuna rotazione dei segreti (valori identici a prima, solo spostati), nessun cambiamento di comportamento delle API pubbliche.
 
+## 2026-08-06 — Integrazione Redis come cache (GET /api/rooms)
+
+Punto di partenza: domanda dell'utente se avesse senso aggiungere Redis (un database in-memoria, cioè che tiene i dati in RAM invece che su disco, usato tipicamente per cache) dato che Docker viene usato solo in locale. Chiarito che le due cose sono indipendenti: Redis in Docker Compose in locale è esattamente il modo standard con cui si sviluppa/testa contro Redis anche in aziende reali (in produzione cambia solo la connection string verso un servizio gestito, il codice C# resta identico). L'utente ha poi fornito una specifica dettagliata: cache solo per `GET /api/rooms`, invalidazione su Create/Update/Delete, Redis trattato come dettaglio infrastrutturale (niente dipendenze da Redis nel Domain, niente logica nei Controller), configurazione tramite `IConfiguration`/environment variables.
+
+### Architettura scelta
+- **Application** (`BookingSystem.Application/Interfaces/ICacheService.cs`): nuova interfaccia astratta di cache (`GetAsync<T>`/`SetAsync<T>`/`RemoveAsync`), zero riferimenti a Redis o StackExchange.
+- **Infrastructure** (`BookingSystem.Infrastructure/Caching/`):
+  - `RedisCacheService` — implementa `ICacheService` sopra `IDistributedCache` (l'astrazione standard di ASP.NET Core per cache distribuite), con serializzazione JSON.
+  - `CacheSettings` — opzioni configurabili (`RoomsCacheDurationSeconds`, default 60), stesso pattern già usato da `JwtSettings`/`AdminSeedOptions`.
+  - `CachedRoomService` — **decorator** che implementa `IRoomService` avvolgendo il vero `RoomService` esistente: intercetta solo `GetAllRoomsAsync` (cache-aside: controlla Redis, se assente legge da SQL Server e popola la cache) e invalida la chiave `rooms:all` quando Create/Update/Delete hanno successo. `RoomService` non è stato toccato — rispetta l'Open/Closed Principle, nessun rischio di rompere la logica di business già testata.
+- **API**: `Program.cs` registra `AddStackExchangeRedisCache`, `ICacheService` e sostituisce la registrazione di `IRoomService` con `CachedRoomService` (che avvolge `RoomService` concreto). `RoomsController` non modificato — riceve `IRoomService` come sempre, ignaro della cache.
+
+### Configurazione
+`appsettings.json`: aggiunte `ConnectionStrings:Redis` (`localhost:6379`, non è un segreto) e sezione `Caching:RoomsCacheDurationSeconds`. `docker-compose.yml`: nuovo servizio `redis` (immagine `redis:latest`, porta `6379`), variabile `ConnectionStrings__Redis: "redis:6379"` passata al servizio `api`.
+
+### Test
+Nuovo `BookingSystem.Tests/Services/CachedRoomServiceTests.cs` (10 test) con mock di `IRoomService` (interno) e `ICacheService`: cache hit non chiama il service interno, cache miss lo chiama e popola la cache, invalidazione su Create/Update/Delete solo se l'operazione ha successo, `GetRoomAsync` passa dritto senza toccare la cache. Aggiunto riferimento (`ProjectReference`) da `BookingSystem.Tests` a `BookingSystem.Infrastructure`, necessario perché `CachedRoomService` vive lì.
+
+### Verifica
+`dotnet build`: 0 errori/warning. `dotnet test`: **35/35 test superati** (25 preesistenti + 10 nuovi). Verifica end-to-end con `docker compose up --build`: login admin funzionante, `GET /api/rooms` con cache miss iniziale, ispezione diretta della chiave `rooms:all` su Redis (`redis-cli HGETALL`) che conferma il valore JSON salvato con scadenza, `POST /api/rooms` che invalida correttamente la chiave, richiesta successiva che la ripopola con la nuova stanza, e conferma (via log dell'API) che una richiesta in cache HIT **non** esegue alcuna query SQL sulla tabella `Rooms`.
+
+### Nota aperta
+L'immagine Docker usa il tag `redis:latest` (richiesto esplicitamente dall'utente); per riproducibilità in un contesto reale converrebbe fissare una versione esplicita (es. `redis:7-alpine`), da valutare se si vorrà rendere il progetto più vicino a un setup di produzione.
+
+### Vincoli rispettati
+Nessuna modifica alla logica di business esistente di `RoomService`, nessuna dipendenza da Redis nel Domain o nei Controller, nessun valore di connessione hardcoded (tutto via `IConfiguration`/environment variables), nessun cambiamento di comportamento delle API pubbliche (stessi endpoint, stesse risposte).
+
 ## TODO — prossimi passi
 
-- [ ] **Rotazione dei segreti**: JWT `SecretKey` e password admin di seed restano gli stessi valori già presenti nella cronologia Git da prima di questa sessione (scelta esplicita dell'utente di non ruotarli ora). Da rivalutare se il progetto dovesse mai uscire dall'uso puramente locale/didattico.
+- [ ] **Rotazione dei segreti**: JWT `SecretKey` e password admin di seed restano gli stessi valori già presenti nella cronologia Git da prima della sessione del 2026-08-06 (scelta esplicita dell'utente di non ruotarli). Da rivalutare se il progetto dovesse mai uscire dall'uso puramente locale/didattico.
+- [ ] **Estendere il caching Redis ad altri endpoint di lettura** (es. disponibilità camere) se si vuole approfondire il pattern oltre il caso minimale di `GET /api/rooms`.
