@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using BookingSystem.API.Filters;
 using BookingSystem.Application.DTOs;
 using BookingSystem.Application.Interfaces;
 
@@ -18,6 +19,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
+    [RateLimit("Register", RateLimitKeyType.IpAddress)]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
         var (success, error, response) = await _authService.RegisterAsync(request);
@@ -31,6 +33,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
+    [RateLimit("Login", RateLimitKeyType.IpAddress)]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
         var (success, error, response) = await _authService.LoginAsync(request);

@@ -237,7 +237,56 @@ L'immagine Docker usa il tag `redis:latest` (richiesto esplicitamente dall'utent
 ### Vincoli rispettati
 Nessuna modifica alla logica di business esistente di `RoomService`, nessuna dipendenza da Redis nel Domain o nei Controller, nessun valore di connessione hardcoded (tutto via `IConfiguration`/environment variables), nessun cambiamento di comportamento delle API pubbliche (stessi endpoint, stesse risposte).
 
+## 2026-08-06 — Analisi estensione caching Redis ad altri endpoint (nessuna modifica al codice)
+
+Punto di partenza: richiesta di valutare se estendere il caching Redis (introdotto nella sessione precedente per `GET /api/rooms`) a `GET /api/rooms/{id}`, `GET /api/bookings` e all'endpoint di verifica disponibilità camere, mantenendo la stessa qualità architetturale e senza overengineering.
+
+### Discrepanze trovate rispetto alla richiesta
+- `GET /api/bookings` (lista completa) **non esiste** nel codice: `BookingsController` espone solo `GET /api/bookings/mine` (per l'utente loggato) e `GET /api/bookings/{id}`.
+- Non esiste alcuna operazione di "modifica prenotazione" (`IBookingService`/`IBookingRepository` hanno solo Create/Get/GetByUser/Cancel) — la richiesta di gestire l'invalidazione su "modifica di una prenotazione" non ha nulla a cui agganciarsi ad oggi.
+
+### Conclusione: nessuno degli endpoint analizzati giustifica Redis
+- **`GET /api/rooms/{id}`** e **`GET /api/bookings/{id}`**: lookup per chiave primaria, già indicizzati, costo trascurabile — cachearli aggiungerebbe una famiglia di chiavi (e relativa invalidazione) senza un collo di bottiglia reale da risolvere.
+- **`GET /api/bookings/mine`**: dati per-utente (chiave frammentata per `userId`, beneficio basso), e rischio UX concreto — un utente che cancella una prenotazione e ricarica subito la pagina vedrebbe dati stantii se l'invalidazione fallisse anche una sola volta.
+- **Verifica disponibilità (`GET /api/rooms/{roomId}/availability`)**: il caso più netto da escludere — spazio delle chiavi combinatorio (`roomId` × `checkIn` × `checkOut`), invalidazione "esatta" impraticabile senza un indice separato delle chiavi generate per stanza, e rischio di mostrare "disponibile" quando non lo è più (mitigato solo dal fatto che `CreateBookingAsync` rifà comunque il controllo live, quindi nessun rischio di doppia prenotazione — solo un rischio di UX evitabile del tutto non cachando).
+
+L'utente ha confermato che l'analisi è sufficiente così — nessuna riga di codice toccata in questa sessione.
+
+### Nota a margine (non un problema di cache, segnalato ma non corretto)
+`GET /api/bookings/{id}` non verifica che la prenotazione richiesta appartenga a chi fa la richiesta — qualunque utente autenticato può leggere il dettaglio di una prenotazione altrui conoscendone l'id. Da valutare in una sessione dedicata all'autorizzazione, se rilevante.
+
+### Vincoli rispettati
+Nessuna modifica al codice di produzione, nessun endpoint nuovo creato, nessuna cache aggiunta dove il beneficio non era dimostrabile.
+
+## 2026-08-06 — Rate limiting con Redis su Login, Register e creazione prenotazioni
+
+Punto di partenza: richiesta di proteggere `POST /api/auth/login`, `POST /api/auth/register` e `POST /api/bookings` da abuso (forza bruta sulle credenziali, registrazioni massive automatizzate, spam di richieste di prenotazione), usando Redis (già presente in Infrastructure per il caching) invece di un contatore in-memory, così il limite resterebbe corretto anche con più istanze dell'API in futuro.
+
+### Analisi e soglie scelte
+- `POST /api/auth/login` — limite per **IP** (endpoint anonimo): 5 tentativi / 60s.
+- `POST /api/auth/register` — limite per **IP**: 5 tentativi / 3600s (finestra più larga perché la registrazione è rara per un utente reale, tollera IP condivisi come uffici/NAT).
+- `POST /api/bookings` — limite per **userId** (endpoint autenticato, l'IP non è affidabile qui per via di NAT/proxy condivisi): 10 tentativi / 60s.
+- Esclusi `GetBooking`/`GetMyBookings`/`CheckAvailability`: letture già economiche, nessun vettore di abuso paragonabile (coerente con l'analisi caching della sessione precedente).
+
+### Architettura scelta
+- **Algoritmo: fixed-window counter** su Redis (`INCR` + `EXPIRE` solo al primo hit della finestra) — `INCR` è atomico lato server, quindi immune a race condition tra richieste concorrenti sulla stessa chiave, a differenza di un get-poi-set fatto a mano. Scartato il sliding-window (richiederebbe Sorted Set + script Lua, sproporzionato qui) e il middleware nativo `Microsoft.AspNetCore.RateLimiting` (i suoi limiter incorporati sono tutti in-memory; un limiter Redis-backed richiederebbe reimplementare a mano la classe astratta `RateLimiter`).
+- **Application** (`IRateLimiter.cs`): contratto astratto `IsAllowedAsync(key, limit, window)`, zero riferimenti a Redis.
+- **Infrastructure** (`RateLimiting/`): `RedisRateLimiter` implementa il contratto con `IDatabase.StringIncrementAsync`/`KeyExpireAsync` di StackExchange.Redis — non riusa `ICacheService` (quello scritto per il caching) perché espone solo Get/Set/Remove su blob JSON, senza incremento atomico. `RateLimitPolicy` (Limit/WindowSeconds) è il tipo di opzione per policy nominata.
+- **API** (`Filters/RateLimitAttribute.cs`): `IAsyncActionFilter` applicato come attributo dichiarativo (`[RateLimit("Login", RateLimitKeyType.IpAddress)]`), stesso principio già seguito per la cache — nessuna logica Redis dentro i Controller. Costruisce la chiave da IP (`HttpContext.Connection.RemoteIpAddress`) o da `userId` (claim `NameIdentifier`), e risponde `429 Too Many Requests` se il limite è superato, senza eseguire l'azione.
+- `Program.cs`: registra `IConnectionMultiplexer` come singleton dedicato (separato dalla connessione interna di `AddStackExchangeRedisCache`, che non la espone), `IRateLimiter → RedisRateLimiter`, e la sezione `RateLimiting` di `appsettings.json` come `Dictionary<string, RateLimitPolicy>`.
+- `BookingSystem.Infrastructure.csproj`: aggiunto `PackageReference` esplicito a `StackExchange.Redis` (prima solo transitivo).
+
+### Test
+Nuovo `BookingSystem.Tests/RateLimiting/RedisRateLimiterTests.cs` (4 test) con mock di `IConnectionMultiplexer`/`IDatabase`: primo hit imposta la scadenza, hit successivi non la resettano, conteggio entro il limite → consentito, oltre il limite → bloccato.
+
+### Verifica
+`dotnet build`: 0 errori/warning. `dotnet test`: **39/39** (35 preesistenti + 4 nuovi). End-to-end con `docker compose up --build`: 6 login falliti di fila → i primi 5 rispondono `401` (comportamento business invariato), il 6° `429`; chiave `ratelimit:login:{ip}` su Redis con conteggio e TTL corretti. 11 richieste `POST /api/bookings` con lo stesso utente → la 1ª riesce (`200`), le successive falliscono per sovrapposizione date (`400`, business logic invariata), l'11ª `429`; chiave `ratelimit:createbooking:{userId}` confermata su Redis.
+
+### Vincoli rispettati
+Nessuna dipendenza da Redis nel Domain, nessuna logica di rate limiting nei Controller (solo l'attributo dichiarativo), stessa infrastruttura Redis già presente (nessun nuovo servizio in `docker-compose.yml`), nessun cambiamento di comportamento per le richieste entro soglia.
+
 ## TODO — prossimi passi
 
 - [ ] **Rotazione dei segreti**: JWT `SecretKey` e password admin di seed restano gli stessi valori già presenti nella cronologia Git da prima della sessione del 2026-08-06 (scelta esplicita dell'utente di non ruotarli). Da rivalutare se il progetto dovesse mai uscire dall'uso puramente locale/didattico.
-- [ ] **Estendere il caching Redis ad altri endpoint di lettura** (es. disponibilità camere) se si vuole approfondire il pattern oltre il caso minimale di `GET /api/rooms`.
+- [ ] **Ownership su `GET /api/bookings/{id}`**: qualunque utente autenticato può leggere il dettaglio di una prenotazione altrui conoscendone l'id (nessun controllo che `UserId` corrisponda a chi fa la richiesta). Segnalato ma non corretto, da valutare se si vuole affrontare la sicurezza degli endpoint di booking.
+- [ ] **`GET /api/bookings` (lista completa, verosimilmente Admin-only)**: non esiste ad oggi. Da creare solo se serve davvero un caso d'uso amministrativo — nessuna decisione presa in merito.

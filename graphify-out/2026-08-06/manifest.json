@@ -1,8 +1,8 @@
 {
   "BookingSystem.API/BookingSystem.API.csproj": {
-    "mtime": 1786035461.808711,
-    "ast_hash": "3565f49cebe2dde3c83fff68c751ca14",
-    "semantic_hash": ""
+    "mtime": 1784640187.1542623,
+    "ast_hash": "4aece008840fc853b2333ae04df1451f",
+    "semantic_hash": "4aece008840fc853b2333ae04df1451f"
   },
   "BookingSystem.API/Controllers/AuthController.cs": {
     "mtime": 1784640348.150846,
@@ -15,14 +15,14 @@
     "semantic_hash": "8f7b5927ccf44d9337dd8bcab1651c5f"
   },
   "BookingSystem.API/Controllers/RoomsController.cs": {
-    "mtime": 1786035541.6621459,
-    "ast_hash": "69fed3cf23f453c696705b923d88af7c",
-    "semantic_hash": ""
+    "mtime": 1784640373.4793882,
+    "ast_hash": "c2889f03d3a418f9e2c42b6185ce095a",
+    "semantic_hash": "c2889f03d3a418f9e2c42b6185ce095a"
   },
   "BookingSystem.API/Program.cs": {
-    "mtime": 1786038218.155685,
-    "ast_hash": "9f07974a0eb8fd03aab49918776fb66d",
-    "semantic_hash": ""
+    "mtime": 1784640332.385859,
+    "ast_hash": "d294065fd443a7ece7e776795a181c80",
+    "semantic_hash": "d294065fd443a7ece7e776795a181c80"
   },
   "BookingSystem.API/Properties/launchSettings.json": {
     "mtime": 1784547252.1190517,
@@ -35,9 +35,9 @@
     "semantic_hash": "788a4d8d6535640b4938a7a8ddc142f5"
   },
   "BookingSystem.API/appsettings.json": {
-    "mtime": 1786038166.3725743,
-    "ast_hash": "a381f439b71064b298efd50fc160a1ea",
-    "semantic_hash": ""
+    "mtime": 1784640310.4065325,
+    "ast_hash": "1352545a1f1ecd581c6ebc597e587892",
+    "semantic_hash": "1352545a1f1ecd581c6ebc597e587892"
   },
   "BookingSystem.Application/BookingSystem.Application.csproj": {
     "mtime": 1784546885.0328085,
@@ -130,9 +130,9 @@
     "semantic_hash": "bbf9e0f35f413dd50703a7b492d11d7d"
   },
   "BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj": {
-    "mtime": 1786037982.618497,
-    "ast_hash": "335bd5905ea8a1dd40ff36781a01f8aa",
-    "semantic_hash": ""
+    "mtime": 1784640183.8154225,
+    "ast_hash": "b7f1cc655fbbaff06100fce2a63ee959",
+    "semantic_hash": "b7f1cc655fbbaff06100fce2a63ee959"
   },
   "BookingSystem.Infrastructure/Data/AppDbContext.cs": {
     "mtime": 1784640224.254024,
@@ -145,14 +145,14 @@
     "semantic_hash": "ca49a71831cd9e1de318d109874b0cf7"
   },
   "BookingSystem.Infrastructure/Identity/AuthService.cs": {
-    "mtime": 1786035534.000499,
-    "ast_hash": "3352ef502fd6e4c29edafb8c8fbee73e",
-    "semantic_hash": ""
+    "mtime": 1784640261.7018192,
+    "ast_hash": "96c44a7e69eb7076ed5933282eae3a83",
+    "semantic_hash": "96c44a7e69eb7076ed5933282eae3a83"
   },
   "BookingSystem.Infrastructure/Identity/IdentitySeeder.cs": {
-    "mtime": 1786035527.9902089,
-    "ast_hash": "208dc05e1a096d0972e37c78676b9f1e",
-    "semantic_hash": ""
+    "mtime": 1784640273.8590539,
+    "ast_hash": "89e2c0a6a11624594ab57bd32378648d",
+    "semantic_hash": "89e2c0a6a11624594ab57bd32378648d"
   },
   "BookingSystem.Infrastructure/Identity/JwtSettings.cs": {
     "mtime": 1784640245.9339168,
@@ -200,9 +200,9 @@
     "semantic_hash": "adc78296209973af0a0a8cb6ec17f9eb"
   },
   "BookingSystem.Tests/BookingSystem.Tests.csproj": {
-    "mtime": 1786038292.436257,
-    "ast_hash": "6590855c196468031a7a02ad8ac5a25a",
-    "semantic_hash": ""
+    "mtime": 1784633334.7269423,
+    "ast_hash": "a3a0529a6d804d8030714cc4f48c79c7",
+    "semantic_hash": "a3a0529a6d804d8030714cc4f48c79c7"
   },
   "BookingSystem.Tests/Services/BookingServiceTests.cs": {
     "mtime": 1784640409.0637493,
@@ -220,73 +220,23 @@
     "semantic_hash": "0b525b1a1b75f3ef2db5cc824a0a5597"
   },
   "CLAUDE.md": {
-    "mtime": 1784984703.7356112,
-    "ast_hash": "6c74144cc63b37956b46cb5fa85190c9",
-    "semantic_hash": ""
+    "mtime": 1784630696.96058,
+    "ast_hash": "36bb1f75d3a9f2d8a4abfe61daa250f4",
+    "semantic_hash": "36bb1f75d3a9f2d8a4abfe61daa250f4"
   },
   "README.md": {
-    "mtime": 1786038993.108044,
-    "ast_hash": "93d1dfd94fe111ace5639aa6eb258c51",
-    "semantic_hash": ""
+    "mtime": 1784549198.6245067,
+    "ast_hash": "4214743066084aadcb508444f2f18ce5",
+    "semantic_hash": "4214743066084aadcb508444f2f18ce5"
   },
   "azure-pipelines.yml": {
-    "mtime": 1785246666.327628,
-    "ast_hash": "f1ba6bc066a9367ba41b70e322116483",
-    "semantic_hash": ""
+    "mtime": 1784549198.6255083,
+    "ast_hash": "a3c9505a360b0bae99c7b3de589d7e2c",
+    "semantic_hash": "a3c9505a360b0bae99c7b3de589d7e2c"
   },
   "context/sessions.md": {
-    "mtime": 1786038677.0904012,
-    "ast_hash": "572507303fcaaceee6695a517f2d6de9",
-    "semantic_hash": ""
-  },
-  ".claude/settings.json": {
-    "mtime": 1784984542.2181156,
-    "ast_hash": "a1395817f5a725458ed811c3da2b0413",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Application/Common/Roles.cs": {
-    "mtime": 1786035518.2302144,
-    "ast_hash": "e7263dda971e6ec3a80c75ac3a9eadd1",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Application/Interfaces/ICacheService.cs": {
-    "mtime": 1786037990.0292034,
-    "ast_hash": "12ae3a2f25ff2a4657f175b7c02f54a8",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Caching/CacheSettings.cs": {
-    "mtime": 1786038025.2037854,
-    "ast_hash": "0aef381cc8c1ccb262e25dbb0a4456e9",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Caching/CachedRoomService.cs": {
-    "mtime": 1786038120.9837503,
-    "ast_hash": "c51f2f6837f2f6fa3dd43c66dfcf566e",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Caching/RedisCacheService.cs": {
-    "mtime": 1786038046.064254,
-    "ast_hash": "3ab33b28c9ff1c71086d159d8a5c81e3",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Identity/AdminSeedOptions.cs": {
-    "mtime": 1786035501.7551978,
-    "ast_hash": "b004f7d0d7bd33513881449645c2711f",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Tests/Services/CachedRoomServiceTests.cs": {
-    "mtime": 1786038325.7592626,
-    "ast_hash": "4b67dfc3cccbf82d2ccd27794472956a",
-    "semantic_hash": ""
-  },
-  "context/jwt-identity-spiegazione.md": {
-    "mtime": 1785228803.6279528,
-    "ast_hash": "a585ab5376c3f8b488637ae859c22225",
-    "semantic_hash": ""
-  },
-  "docker-compose.yml": {
-    "mtime": 1786038271.9693496,
-    "ast_hash": "10033c30a5f7a90a357162023ef0fc94",
-    "semantic_hash": ""
+    "mtime": 1784640657.735375,
+    "ast_hash": "1307d6fb1e8955af98b43cc501d06f79",
+    "semantic_hash": "1307d6fb1e8955af98b43cc501d06f79"
   }
 }

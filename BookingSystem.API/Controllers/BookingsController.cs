@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using BookingSystem.API.Filters;
 using BookingSystem.Application.DTOs;
 using BookingSystem.Application.Interfaces;
 
@@ -27,6 +28,7 @@ public class BookingsController : ControllerBase
     }
 
     [HttpPost("api/bookings")]
+    [RateLimit("CreateBooking", RateLimitKeyType.UserId)]
     public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;

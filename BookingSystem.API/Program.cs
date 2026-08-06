@@ -10,7 +10,9 @@ using BookingSystem.Application.Services;
 using BookingSystem.Infrastructure.Caching;
 using BookingSystem.Infrastructure.Data;
 using BookingSystem.Infrastructure.Identity;
+using BookingSystem.Infrastructure.RateLimiting;
 using BookingSystem.Infrastructure.Repositories;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -81,6 +83,11 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.Configuration = builder.Configuration.GetConnectionString("Redis");
 });
 builder.Services.AddSingleton<ICacheService, RedisCacheService>();
+
+builder.Services.Configure<Dictionary<string, RateLimitPolicy>>(builder.Configuration.GetSection("RateLimiting"));
+builder.Services.AddSingleton<IConnectionMultiplexer>(
+    ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")!));
+builder.Services.AddSingleton<IRateLimiter, RedisRateLimiter>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
