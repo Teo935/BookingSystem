@@ -1,77 +1,93 @@
 # Booking System
 
-API REST per la gestione di camere e prenotazioni sviluppata con **ASP.NET Core 8**, **Entity Framework Core**, **SQL Server** e **Clean Architecture**.
+API REST per la gestione di camere e prenotazioni sviluppata con **ASP.NET Core 8**, **Entity Framework Core**, **SQL Server** e progettata seguendo i principi della **Clean Architecture** e **SOLID**.
 
-## Funzionalità
+L'obiettivo del progetto è simulare un'applicazione backend moderna adottando tecnologie comunemente utilizzate in contesti enterprise.
 
-### Gestione Camere
+---
+
+# Funzionalità
+
+## Gestione Camere
 
 * Creazione di nuove camere
 * Modifica delle camere esistenti
 * Eliminazione delle camere
 * Visualizzazione dell'elenco camere
-* Visualizzazione dettagli di una camera
-
-### Gestione Prenotazioni
-
-* Creazione prenotazioni
-* Verifica disponibilità camere per intervalli di date
-* Prevenzione delle prenotazioni sovrapposte
-* Visualizzazione delle prenotazioni dell'utente autenticato
+* Visualizzazione del dettaglio di una camera
 * Blocco dell'eliminazione di camere con prenotazioni associate
 
-### Autenticazione e Autorizzazione
+## Gestione Prenotazioni
+
+* Creazione di prenotazioni
+* Verifica della disponibilità delle camere
+* Prevenzione automatica delle prenotazioni sovrapposte
+* Visualizzazione delle prenotazioni dell'utente autenticato
+* Cancellazione delle prenotazioni
+
+## Autenticazione e Autorizzazione
 
 * Registrazione utenti
 * Login tramite JWT
 * ASP.NET Core Identity
 * Role-Based Authorization
-* Ruoli predefiniti:
+* Gestione dei ruoli:
 
   * Admin
   * User
 
-### Sicurezza
+## Sicurezza
 
-* Password memorizzate tramite ASP.NET Core Identity
+* Password gestite da ASP.NET Core Identity
 * JWT Bearer Authentication
-* Protezione degli endpoint tramite autorizzazione basata sui ruoli
-* Gestione dei segreti tramite configurazione esterna e variabili d'ambiente
+* Endpoint protetti tramite Authorization
+* Gestione dei segreti tramite variabili d'ambiente
+* Configurazione esterna tramite IConfiguration
+* Rate Limiting sugli endpoint sensibili
+
+## Performance
+
+* Distributed Cache tramite Redis
+* Cache automatica dell'elenco delle camere
+* Cache Hit / Cache Miss
+* Cache Invalidation automatica quando vengono create, aggiornate o eliminate camere
 
 ---
 
-## Architettura
+# Architettura
 
-Il progetto segue i principi della **Clean Architecture** e **SOLID**.
+Il progetto segue la **Clean Architecture**.
 
 ```text
 BookingSystem.API
 │
 ├── BookingSystem.Application
 ├── BookingSystem.Domain
-├── BookingSystem.Infrastructure
+└── BookingSystem.Infrastructure
 ```
 
-### API Layer
+## API Layer
 
 Responsabile di:
 
 * Controller
 * Endpoint HTTP
 * Configurazione Authentication e Authorization
+* Rate Limiting
 * Dependency Injection
 
-### Application Layer
+## Application Layer
 
 Responsabile di:
 
-* Use Cases
 * Services
-* DTO
-* Interfacce
 * Business Workflow
+* DTO
+* Interfaces
+* Validazioni
+* Gestione della cache tramite servizi applicativi
 
-### Domain Layer
+## Domain Layer
 
 Responsabile di:
 
@@ -80,12 +96,13 @@ Responsabile di:
 * Regole di business
 * Modello di dominio
 
-### Infrastructure Layer
+## Infrastructure Layer
 
 Responsabile di:
 
 * Entity Framework Core
 * SQL Server
+* Redis
 * ASP.NET Core Identity
 * Repository
 * Persistenza dati
@@ -93,34 +110,37 @@ Responsabile di:
 
 ---
 
-## Stack Tecnologico
+# Stack Tecnologico
 
-| Componente           | Tecnologia               |
-| -------------------- | ------------------------ |
-| Framework            | ASP.NET Core 8 Web API   |
-| Linguaggio           | C#                       |
-| Architettura         | Clean Architecture       |
-| Principi             | SOLID                    |
-| Database             | SQL Server               |
-| ORM                  | Entity Framework Core 8  |
-| Autenticazione       | ASP.NET Core Identity    |
-| Authorization        | JWT + Roles              |
-| Dependency Injection | Built-in ASP.NET Core DI |
-| Containerizzazione   | Docker                   |
-| Testing              | xUnit + Moq              |
-| Versionamento        | Git + GitHub             |
+| Componente             | Tecnologia                 |
+| ---------------------- | -------------------------- |
+| Framework              | ASP.NET Core 8 Web API     |
+| Linguaggio             | C#                         |
+| Architettura           | Clean Architecture         |
+| Principi               | SOLID                      |
+| Database               | SQL Server                 |
+| ORM                    | Entity Framework Core 8    |
+| Cache                  | Redis                      |
+| Autenticazione         | ASP.NET Core Identity      |
+| Authorization          | JWT + Roles                |
+| Rate Limiting          | ASP.NET Core Rate Limiting |
+| Dependency Injection   | Built-in ASP.NET Core DI   |
+| Containerizzazione     | Docker + Docker Compose    |
+| Testing                | xUnit + Moq                |
+| Continuous Integration | Azure DevOps Pipelines     |
+| Versionamento          | Git + GitHub               |
 
 ---
 
-## Autenticazione
+# Autenticazione
 
-### Registrazione
+## Registrazione
 
 ```http
 POST /api/auth/register
 ```
 
-### Login
+## Login
 
 ```http
 POST /api/auth/login
@@ -130,17 +150,17 @@ Il login restituisce un JWT utilizzabile per accedere agli endpoint protetti.
 
 ---
 
-## Ruoli
+# Ruoli
 
-### User
+## User
 
 Può:
 
-* Visualizzare camere
+* Visualizzare le camere
 * Creare prenotazioni
 * Visualizzare le proprie prenotazioni
 
-### Admin
+## Admin
 
 Può:
 
@@ -151,7 +171,7 @@ Può:
 
 ---
 
-## Sicurezza
+# Sicurezza
 
 Gli endpoint sono protetti tramite:
 
@@ -165,9 +185,33 @@ oppure:
 [Authorize(Roles = "Admin")]
 ```
 
+Gli endpoint più sensibili sono inoltre protetti tramite **Rate Limiting**, limitando il numero di richieste consentite in un intervallo di tempo per prevenire abusi e attacchi di tipo brute-force.
+
 ---
 
-## Database
+# Cache con Redis
+
+Il progetto utilizza **Redis** come sistema di caching distribuito per migliorare le performance delle operazioni di lettura.
+
+Attualmente la cache è applicata a:
+
+* `GET /api/rooms`
+
+La strategia implementata prevede:
+
+* Cache Hit
+* Cache Miss
+* Cache Invalidation automatica in caso di:
+
+  * creazione di una camera;
+  * modifica di una camera;
+  * eliminazione di una camera.
+
+SQL Server rimane l'unica fonte di verità dei dati.
+
+---
+
+# Database
 
 Il progetto utilizza:
 
@@ -179,7 +223,7 @@ Le migrazioni vengono utilizzate per la gestione dello schema del database.
 
 ---
 
-## Docker
+# Docker
 
 L'applicazione può essere eseguita tramite Docker e Docker Compose.
 
@@ -187,29 +231,53 @@ L'applicazione può essere eseguita tramite Docker e Docker Compose.
 docker compose up --build
 ```
 
-Container previsti:
+Container utilizzati:
 
 * BookingSystem API
 * SQL Server
+* Redis
 
 ---
 
-## Obiettivi del Progetto
+# Continuous Integration
 
-Questo progetto è stato realizzato per approfondire:
+Il progetto include una pipeline di **Azure DevOps** che esegue automaticamente:
 
+* Restore delle dipendenze
+* Build dell'applicazione
+* Esecuzione degli Unit Test
+* Verifica della corretta compilazione ad ogni push sul repository
+
+---
+
+# Testing
+
+Il progetto include Unit Test sviluppati con:
+
+* xUnit
+* Moq
+
+I test verificano il comportamento della business logic simulando le dipendenze tramite mock.
+
+---
+
+# Obiettivi del Progetto
+
+Questo progetto è stato realizzato per approfondire tecnologie e pattern utilizzati nello sviluppo backend moderno, tra cui:
+
+* ASP.NET Core Web API
 * Clean Architecture
 * SOLID Principles
-* ASP.NET Core Web API
 * Entity Framework Core
 * SQL Server
 * ASP.NET Core Identity
 * JWT Authentication
 * Role-Based Authorization
+* Redis Distributed Cache
+* ASP.NET Core Rate Limiting
 * Docker
+* Docker Compose
+* Azure DevOps Pipelines
 * Unit Testing
 * Dependency Injection
 * Architetture backend moderne
-
-```
-```
