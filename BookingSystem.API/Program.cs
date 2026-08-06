@@ -88,7 +88,8 @@ using (var scope = app.Services.CreateScope())
 
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-    await IdentitySeeder.SeedAsync(roleManager, userManager);
+    var adminSeed = builder.Configuration.GetSection("AdminSeed").Get<AdminSeedOptions>() ?? new AdminSeedOptions();
+    await IdentitySeeder.SeedAsync(roleManager, userManager, adminSeed);
 }
 
 if (app.Environment.IsDevelopment())

@@ -179,7 +179,37 @@ Riprodotta in locale la stessa sequenza della pipeline: `dotnet restore BookingS
 ### Vincoli rispettati
 Nessuna modifica al codice applicativo, solo alla definizione della pipeline CI.
 
+## 2026-08-06 — Esternalizzazione configurazione e segreti (IConfiguration / User Secrets / Environment Variables)
+
+Punto di partenza: discussione su come automatizzare build+push dell'immagine Docker in pipeline (serviva scegliere un registry: Azure Container Registry, Docker Hub o GitHub Container Registry). L'utente ha deciso di **lasciare Docker così com'è, solo per uso locale** — nessuna pubblicazione su registry esterni per ora, quindi il relativo punto è stato tolto dai TODO (si può riprendere in futuro se servirà un deploy reale).
+
+Da lì il focus si è spostato su un'analisi completa del progetto per individuare tutti i valori hardcoded che rappresentano configurazione/segreti (da esternalizzare) distinguendoli dalle vere regole di business (da lasciare intatte).
+
+### 1. Analisi (due ricerche in parallelo)
+- Segreti/credenziali in chiaro trovati: `Jwt:SecretKey` in `appsettings.json`, `AdminEmail`/`AdminPassword` come `const string` in `IdentitySeeder.cs`, `SA_PASSWORD` (duplicata anche dentro la connection string) in `docker-compose.yml` — tutti già presenti nella cronologia Git.
+- Configurazione non sensibile lasciata invariata: `Jwt:Issuer`/`Audience`/`ExpirationMinutes`, connection string di default, porte.
+- Regole di business confermate come da **non toccare**: validazione prezzo camera > 0, `CheckIn < CheckOut`, logica di sovrapposizione prenotazioni (`HasOverlapAsync`), enum `RoomDeleteResult`, algoritmo `HmacSha256` del token JWT.
+- Trovata anche una duplicazione minore (non un segreto): le stringhe `"Admin"`/`"User"` erano ripetute in `IdentitySeeder.cs`, `AuthService.cs` e negli attributi `[Authorize(Roles = "Admin")]` di `RoomsController.cs`.
+
+### 2. Decisione sulla rotazione dei segreti
+L'utente ha scelto esplicitamente di **non rigenerare** JWT SecretKey e password admin (restano gli stessi valori attuali, solo spostati fuori dal codice/file committati) — restano quindi comunque presenti nella cronologia Git pregressa; punto aperto se in futuro si vorrà ruotarli.
+
+### 3. Modifiche applicate
+- **User Secrets** (meccanismo di ASP.NET Core per tenere segreti fuori dal repository durante lo sviluppo locale, salvati in un file sulla macchina dell'utente): inizializzati su `BookingSystem.API` (`dotnet user-secrets init`), impostati `Jwt:SecretKey`, `AdminSeed:Email`, `AdminSeed:Password`.
+- `appsettings.json`: `Jwt:SecretKey` svuotato, aggiunta sezione `AdminSeed` (Email/Password) vuota.
+- Nuova classe `AdminSeedOptions` (stesso pattern già usato da `JwtSettings`) in `BookingSystem.Infrastructure/Identity/`; `IdentitySeeder.SeedAsync` ora riceve queste opzioni invece di leggere `const` interne, e salta la creazione dell'utente admin se email/password non sono configurate (invece di creare un utente con credenziali vuote).
+- Nuova classe statica `Roles` (`BookingSystem.Application/Common/Roles.cs`) con le costanti `Admin`/`User`, usata ora in `IdentitySeeder.cs`, `AuthService.cs` e `RoomsController.cs` al posto delle stringhe duplicate — è rimasta hardcoded di proposito (è una vera costante applicativa, richiesta anche a compile-time dagli attributi `[Authorize]`), solo consolidata in un unico punto.
+- `Program.cs`: legge la sezione `AdminSeed` da `IConfiguration` e la passa a `IdentitySeeder.SeedAsync`.
+- `docker-compose.yml`: `SA_PASSWORD`, `Jwt__SecretKey`, `AdminSeed__Email`, `AdminSeed__Password` ora letti da variabili d'ambiente (convenzione ASP.NET Core: `__` come separatore di sezione) invece di essere scritti in chiaro; eliminata anche la duplicazione della password SA dentro la connection string.
+- Creato `.env` (valori reali attuali, **non committato**) e `.env.example` (committato, solo nomi delle variabili senza valori) per documentare cosa serve a chi clona il repo.
+- `.gitignore`: aggiunta la riga `.env`.
+
+### 4. Verifica
+`dotnet build` sull'intera solution: 0 errori/warning. `dotnet test`: **25/25 test superati** (nessuna modifica ha toccato la logica testata).
+
+### Vincoli rispettati
+Nessuna modifica alle regole di business esistenti, nessuna rotazione dei segreti (valori identici a prima, solo spostati), nessun cambiamento di comportamento delle API pubbliche.
+
 ## TODO — prossimi passi
 
-- [ ] **Pipeline: build + push dell'immagine Docker** (punto ancora aperto dalla sessione di containerizzazione sopra). Richiede una decisione dell'utente su quale registry usare (Azure Container Registry, Docker Hub, GitHub Container Registry) e la creazione delle credenziali/service connection corrispondenti — non automatizzabile senza queste informazioni. Una volta scelto il registry, aggiungere alla pipeline gli step `docker build` (da `BookingSystem.API/Dockerfile`) e `docker push` con tag versione.
-- [ ] **Secrets in chiaro**: password `sa` e JWT `SecretKey` sono attualmente hardcoded in `docker-compose.yml`/`appsettings.json`. Da spostare in variabili d'ambiente non committate o in un vault, prima di qualsiasi uso oltre lo sviluppo locale.
+- [ ] **Rotazione dei segreti**: JWT `SecretKey` e password admin di seed restano gli stessi valori già presenti nella cronologia Git da prima di questa sessione (scelta esplicita dell'utente di non ruotarli ora). Da rivalutare se il progetto dovesse mai uscire dall'uso puramente locale/didattico.

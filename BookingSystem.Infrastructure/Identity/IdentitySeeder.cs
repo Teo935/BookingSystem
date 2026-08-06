@@ -1,15 +1,13 @@
 using Microsoft.AspNetCore.Identity;
+using BookingSystem.Application.Common;
 
 namespace BookingSystem.Infrastructure.Identity;
 
 public static class IdentitySeeder
 {
-    private const string AdminEmail = "admin@bookingsystem.com";
-    private const string AdminPassword = "Admin123!";
-
-    public static async Task SeedAsync(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
+    public static async Task SeedAsync(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, AdminSeedOptions adminSeed)
     {
-        foreach (var role in new[] { "Admin", "User" })
+        foreach (var role in new[] { Roles.Admin, Roles.User })
         {
             if (!await roleManager.RoleExistsAsync(role))
             {
@@ -17,18 +15,23 @@ public static class IdentitySeeder
             }
         }
 
-        var adminUser = await userManager.FindByEmailAsync(AdminEmail);
+        if (string.IsNullOrWhiteSpace(adminSeed.Email) || string.IsNullOrWhiteSpace(adminSeed.Password))
+        {
+            return;
+        }
+
+        var adminUser = await userManager.FindByEmailAsync(adminSeed.Email);
         if (adminUser == null)
         {
             adminUser = new ApplicationUser
             {
-                UserName = AdminEmail,
-                Email = AdminEmail,
+                UserName = adminSeed.Email,
+                Email = adminSeed.Email,
                 EmailConfirmed = true
             };
 
-            await userManager.CreateAsync(adminUser, AdminPassword);
-            await userManager.AddToRoleAsync(adminUser, "Admin");
+            await userManager.CreateAsync(adminUser, adminSeed.Password);
+            await userManager.AddToRoleAsync(adminUser, Roles.Admin);
         }
     }
 }

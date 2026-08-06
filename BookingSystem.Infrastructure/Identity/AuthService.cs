@@ -1,3 +1,4 @@
+using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
 using BookingSystem.Application.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -6,7 +7,7 @@ namespace BookingSystem.Infrastructure.Identity;
 
 public class AuthService : IAuthService
 {
-    private const string DefaultRole = "User";
+    private const string DefaultRole = Roles.User;
 
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly JwtTokenGenerator _tokenGenerator;
