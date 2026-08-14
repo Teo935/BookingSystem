@@ -1,3 +1,4 @@
+using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
 using BookingSystem.Domain.Entities;
 
@@ -7,7 +8,7 @@ public interface IBookingService
 {
     Task<(bool Success, string? Error, Booking? Booking)> CreateBookingAsync(CreateBookingRequest request, string userId);
     Task<bool> IsRoomAvailableAsync(int roomId, DateTime checkIn, DateTime checkOut);
-    Task<Booking?> GetBookingAsync(int id);
+    Task<(BookingAccessResult Result, Booking? Booking)> GetBookingAsync(int id, string userId, bool isAdmin);
     Task<IEnumerable<Booking>> GetBookingsByUserAsync(string userId);
-    Task<bool> CancelBookingAsync(int id);
+    Task<BookingAccessResult> CancelBookingAsync(int id, string userId, bool isAdmin);
 }

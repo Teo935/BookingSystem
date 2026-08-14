@@ -2,6 +2,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BookingSystem.API.Filters;
+using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
 using BookingSystem.Application.Interfaces;
 
@@ -54,20 +55,30 @@ public class BookingsController : ControllerBase
     [HttpGet("api/bookings/{id}")]
     public async Task<IActionResult> GetBooking(int id)
     {
-        var booking = await _bookingService.GetBookingAsync(id);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+        var isAdmin = User.IsInRole(Roles.Admin);
+        var (result, booking) = await _bookingService.GetBookingAsync(id, userId, isAdmin);
 
-        if (booking == null) return NotFound();
-
-        return Ok(booking);
+        return result switch
+        {
+            BookingAccessResult.NotFound => NotFound(),
+            BookingAccessResult.Forbidden => StatusCode(StatusCodes.Status403Forbidden),
+            _ => Ok(booking)
+        };
     }
 
     [HttpDelete("api/bookings/{id}")]
     public async Task<IActionResult> CancelBooking(int id)
     {
-        var cancelled = await _bookingService.CancelBookingAsync(id);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+        var isAdmin = User.IsInRole(Roles.Admin);
+        var result = await _bookingService.CancelBookingAsync(id, userId, isAdmin);
 
-        if (!cancelled) return NotFound();
-
-        return NoContent();
+        return result switch
+        {
+            BookingAccessResult.NotFound => NotFound(),
+            BookingAccessResult.Forbidden => StatusCode(StatusCodes.Status403Forbidden),
+            _ => NoContent()
+        };
     }
 }

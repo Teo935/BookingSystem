@@ -1,3 +1,4 @@
+using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
 using BookingSystem.Application.Interfaces;
 using BookingSystem.Application.Services;
@@ -203,7 +204,7 @@ public class BookingServiceTests
     }
 
     [Fact]
-    public async Task GetBookingAsync_ExistingId_ReturnsBookingWithRoom()
+    public async Task GetBookingAsync_OwnerRequestsOwnBooking_ReturnsSuccessAndBooking()
     {
         // Arrange
         var booking = new Booking
@@ -211,6 +212,7 @@ public class BookingServiceTests
             Id = 1,
             RoomId = 1,
             Room = new Room { Id = 1, Name = "Suite", PricePerNight = 150 },
+            UserId = "user-1",
             GuestName = "Mario Rossi",
             CheckIn = new DateTime(2026, 8, 1),
             CheckOut = new DateTime(2026, 8, 5)
@@ -218,48 +220,99 @@ public class BookingServiceTests
         _bookingRepositoryMock.Setup(b => b.GetByIdWithRoomAsync(1)).ReturnsAsync(booking);
 
         // Act
-        var result = await _sut.GetBookingAsync(1);
+        var (result, returnedBooking) = await _sut.GetBookingAsync(1, "user-1", isAdmin: false);
 
         // Assert
-        Assert.Equal(booking, result);
+        Assert.Equal(BookingAccessResult.Success, result);
+        Assert.Equal(booking, returnedBooking);
         _bookingRepositoryMock.Verify(b => b.GetByIdAsync(It.IsAny<int>()), Times.Never);
     }
 
     [Fact]
-    public async Task GetBookingAsync_NonExistingId_ReturnsNull()
-    {
-        // Arrange
-        _bookingRepositoryMock.Setup(b => b.GetByIdWithRoomAsync(99)).ReturnsAsync((Booking?)null);
-
-        // Act
-        var result = await _sut.GetBookingAsync(99);
-
-        // Assert
-        Assert.Null(result);
-    }
-
-    [Fact]
-    public async Task CancelBookingAsync_NonExistingBooking_ReturnsFalse()
-    {
-        // Arrange
-        _bookingRepositoryMock.Setup(b => b.GetByIdAsync(99)).ReturnsAsync((Booking?)null);
-
-        // Act
-        var result = await _sut.CancelBookingAsync(99);
-
-        // Assert
-        Assert.False(result);
-        _bookingRepositoryMock.Verify(b => b.RemoveAsync(It.IsAny<Booking>()), Times.Never);
-    }
-
-    [Fact]
-    public async Task CancelBookingAsync_ExistingBooking_ReturnsTrueAndCallsRemoveAsync()
+    public async Task GetBookingAsync_AdminRequestsAnyBooking_ReturnsSuccessAndBooking()
     {
         // Arrange
         var booking = new Booking
         {
             Id = 1,
             RoomId = 1,
+            Room = new Room { Id = 1, Name = "Suite", PricePerNight = 150 },
+            UserId = "user-1",
+            GuestName = "Mario Rossi",
+            CheckIn = new DateTime(2026, 8, 1),
+            CheckOut = new DateTime(2026, 8, 5)
+        };
+        _bookingRepositoryMock.Setup(b => b.GetByIdWithRoomAsync(1)).ReturnsAsync(booking);
+
+        // Act
+        var (result, returnedBooking) = await _sut.GetBookingAsync(1, "admin-1", isAdmin: true);
+
+        // Assert
+        Assert.Equal(BookingAccessResult.Success, result);
+        Assert.Equal(booking, returnedBooking);
+    }
+
+    [Fact]
+    public async Task GetBookingAsync_NonOwnerNonAdminRequestsBooking_ReturnsForbidden()
+    {
+        // Arrange
+        var booking = new Booking
+        {
+            Id = 1,
+            RoomId = 1,
+            Room = new Room { Id = 1, Name = "Suite", PricePerNight = 150 },
+            UserId = "user-1",
+            GuestName = "Mario Rossi",
+            CheckIn = new DateTime(2026, 8, 1),
+            CheckOut = new DateTime(2026, 8, 5)
+        };
+        _bookingRepositoryMock.Setup(b => b.GetByIdWithRoomAsync(1)).ReturnsAsync(booking);
+
+        // Act
+        var (result, returnedBooking) = await _sut.GetBookingAsync(1, "user-2", isAdmin: false);
+
+        // Assert
+        Assert.Equal(BookingAccessResult.Forbidden, result);
+        Assert.Null(returnedBooking);
+    }
+
+    [Fact]
+    public async Task GetBookingAsync_NonExistingId_ReturnsNotFound()
+    {
+        // Arrange
+        _bookingRepositoryMock.Setup(b => b.GetByIdWithRoomAsync(99)).ReturnsAsync((Booking?)null);
+
+        // Act
+        var (result, returnedBooking) = await _sut.GetBookingAsync(99, "user-1", isAdmin: false);
+
+        // Assert
+        Assert.Equal(BookingAccessResult.NotFound, result);
+        Assert.Null(returnedBooking);
+    }
+
+    [Fact]
+    public async Task CancelBookingAsync_NonExistingBooking_ReturnsNotFound()
+    {
+        // Arrange
+        _bookingRepositoryMock.Setup(b => b.GetByIdAsync(99)).ReturnsAsync((Booking?)null);
+
+        // Act
+        var result = await _sut.CancelBookingAsync(99, "user-1", isAdmin: false);
+
+        // Assert
+        Assert.Equal(BookingAccessResult.NotFound, result);
+        _bookingRepositoryMock.Verify(b => b.RemoveAsync(It.IsAny<Booking>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task CancelBookingAsync_OwnerCancelsOwnBooking_ReturnsSuccessAndCallsRemoveAsync()
+    {
+        // Arrange
+        var booking = new Booking
+        {
+            Id = 1,
+            RoomId = 1,
+            UserId = "user-1",
             GuestName = "Mario Rossi",
             CheckIn = new DateTime(2026, 8, 1),
             CheckOut = new DateTime(2026, 8, 5)
@@ -267,10 +320,56 @@ public class BookingServiceTests
         _bookingRepositoryMock.Setup(b => b.GetByIdAsync(1)).ReturnsAsync(booking);
 
         // Act
-        var result = await _sut.CancelBookingAsync(1);
+        var result = await _sut.CancelBookingAsync(1, "user-1", isAdmin: false);
 
         // Assert
-        Assert.True(result);
+        Assert.Equal(BookingAccessResult.Success, result);
         _bookingRepositoryMock.Verify(b => b.RemoveAsync(booking), Times.Once);
+    }
+
+    [Fact]
+    public async Task CancelBookingAsync_AdminCancelsAnyBooking_ReturnsSuccessAndCallsRemoveAsync()
+    {
+        // Arrange
+        var booking = new Booking
+        {
+            Id = 1,
+            RoomId = 1,
+            UserId = "user-1",
+            GuestName = "Mario Rossi",
+            CheckIn = new DateTime(2026, 8, 1),
+            CheckOut = new DateTime(2026, 8, 5)
+        };
+        _bookingRepositoryMock.Setup(b => b.GetByIdAsync(1)).ReturnsAsync(booking);
+
+        // Act
+        var result = await _sut.CancelBookingAsync(1, "admin-1", isAdmin: true);
+
+        // Assert
+        Assert.Equal(BookingAccessResult.Success, result);
+        _bookingRepositoryMock.Verify(b => b.RemoveAsync(booking), Times.Once);
+    }
+
+    [Fact]
+    public async Task CancelBookingAsync_NonOwnerNonAdminCancelsBooking_ReturnsForbiddenAndDoesNotCallRemoveAsync()
+    {
+        // Arrange
+        var booking = new Booking
+        {
+            Id = 1,
+            RoomId = 1,
+            UserId = "user-1",
+            GuestName = "Mario Rossi",
+            CheckIn = new DateTime(2026, 8, 1),
+            CheckOut = new DateTime(2026, 8, 5)
+        };
+        _bookingRepositoryMock.Setup(b => b.GetByIdAsync(1)).ReturnsAsync(booking);
+
+        // Act
+        var result = await _sut.CancelBookingAsync(1, "user-2", isAdmin: false);
+
+        // Assert
+        Assert.Equal(BookingAccessResult.Forbidden, result);
+        _bookingRepositoryMock.Verify(b => b.RemoveAsync(It.IsAny<Booking>()), Times.Never);
     }
 }

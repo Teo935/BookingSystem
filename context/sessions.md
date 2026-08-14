@@ -285,8 +285,31 @@ Nuovo `BookingSystem.Tests/RateLimiting/RedisRateLimiterTests.cs` (4 test) con m
 ### Vincoli rispettati
 Nessuna dipendenza da Redis nel Domain, nessuna logica di rate limiting nei Controller (solo l'attributo dichiarativo), stessa infrastruttura Redis già presente (nessun nuovo servizio in `docker-compose.yml`), nessun cambiamento di comportamento per le richieste entro soglia.
 
+## 2026-08-14 — Ownership su `GET`/`DELETE /api/bookings/{id}`
+
+Punto di partenza: chiusura del TODO aperto dal 2026-08-06 su `GET /api/bookings/{id}`, dove qualunque utente autenticato poteva leggere il dettaglio di una prenotazione altrui conoscendone l'id. Durante l'analisi è emerso che `DELETE /api/bookings/{id}` (`CancelBooking`) aveva lo stesso identico problema, non segnalato nel TODO originale — l'utente ha confermato di volerli sistemare insieme.
+
+### Decisioni
+- Chi possiede la prenotazione (`Booking.UserId`) o un utente con ruolo Admin può leggere/cancellare; chiunque altro riceve `403 Forbidden`.
+- Id inesistente ritorna sempre `404 NotFound`, anche per un non-owner (controllo di esistenza prima di quello di ownership) — scelta dell'utente per coerenza con il precedente già presente nel progetto (`RoomDeleteResult`, che fa `NotFound` prima di `Conflict`), a favore della semplicità rispetto a un approccio "existence-hiding" più difensivo ma senza precedente nel codice.
+- La decisione di autorizzazione resta nel layer Application (Service), non nel Controller: il Controller si limita a estrarre `userId`/ruolo dal token JWT e a tradurre il risultato in HTTP, stesso principio già seguito ovunque nel progetto (Controller senza business logic).
+
+### Modifiche
+- Nuovo enum `BookingAccessResult { Success, NotFound, Forbidden }` in `BookingSystem.Application/Common/`, stesso stile di `RoomDeleteResult`.
+- `IBookingService`/`BookingService`: `GetBookingAsync`/`CancelBookingAsync` accettano ora anche `userId` (stringa) e `isAdmin` (bool) — primitivi, non tipi ASP.NET/Identity, per mantenere l'Application layer puro — e ritornano `BookingAccessResult` (con il `Booking` in tupla per la Get) invece di `bool`/nullable semplice.
+- `BookingsController`: entrambe le action estraggono `userId` (`User.FindFirstValue(ClaimTypes.NameIdentifier)`, idioma già in uso nel controller) e `isAdmin` (`User.IsInRole(Roles.Admin)`), poi fanno `switch` sul risultato — stesso identico pattern già usato in `RoomsController.DeleteRoom` su `RoomDeleteResult`. Risposta `403` tramite `StatusCode(StatusCodes.Status403Forbidden)` esplicito invece di `Forbid()`, perché più corretto per un'API stateless solo-Bearer-JWT (nel progetto sono registrati sia lo scheme Identity/cookie sia JWT Bearer, `Forbid()` dipenderebbe implicitamente da quale scheme risulta di default).
+- Nessuna modifica a `Booking.cs` (Domain, ha già `UserId`) né a `IBookingRepository`/`BookingRepository` (le query esistenti restituiscono già l'entità completa, un confronto in memoria dopo il fetch è sufficiente).
+
+### Test
+`BookingServiceTests.cs`: 4 test esistenti aggiornati (firma cambiata) e 4 nuovi aggiunti (owner ok, admin ok su prenotazione altrui, non-owner/non-admin → Forbidden, per entrambi Get e Cancel), stessa struttura Arrange/Act/Assert e naming `Metodo_Scenario_RisultatoAtteso` già in uso.
+
+### Verifica
+`dotnet build`: 0 errori/warning. `dotnet test`: **43/43 test superati** (39 preesistenti + 4 nuovi). End-to-end con `docker compose up --build`: registrati due utenti A/B, login admin da seed, creata una stanza e una prenotazione di A — `GET`/`DELETE /api/bookings/{id}` verificati su tutta la matrice (owner → 200/204, non-owner → 403, admin → 200/204 anche su prenotazione altrui, id inesistente → 404), confermato che il tentativo di cancellazione fallito di B non rimuove la prenotazione (verificata ancora presente con una GET successiva da A).
+
+### Vincoli rispettati
+Nessuna modifica a `Booking.cs`/Repository/`Program.cs`, nessun cambiamento di comportamento per i casi già autorizzati (owner sulla propria prenotazione), nessun CQRS/MediatR introdotto.
+
 ## TODO — prossimi passi
 
 - [ ] **Rotazione dei segreti**: JWT `SecretKey` e password admin di seed restano gli stessi valori già presenti nella cronologia Git da prima della sessione del 2026-08-06 (scelta esplicita dell'utente di non ruotarli). Da rivalutare se il progetto dovesse mai uscire dall'uso puramente locale/didattico.
-- [ ] **Ownership su `GET /api/bookings/{id}`**: qualunque utente autenticato può leggere il dettaglio di una prenotazione altrui conoscendone l'id (nessun controllo che `UserId` corrisponda a chi fa la richiesta). Segnalato ma non corretto, da valutare se si vuole affrontare la sicurezza degli endpoint di booking.
 - [ ] **`GET /api/bookings` (lista completa, verosimilmente Admin-only)**: non esiste ad oggi. Da creare solo se serve davvero un caso d'uso amministrativo — nessuna decisione presa in merito.

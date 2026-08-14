@@ -1,16 +1,16 @@
-# Graph Report - BookingSystem  (2026-08-14)
+# Graph Report - BookingSystem  (2026-08-06)
 
 ## Corpus Check
-- 66 files · ~16,335 words
+- 56 files · ~12,299 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 492 nodes · 921 edges · 17 communities
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 94 edges (avg confidence: 0.82)
+- 431 nodes · 824 edges · 13 communities
+- Extraction: 89% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 86 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `698c334c`
+- Built from commit: `a1443197`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,21 +28,18 @@
 - EF Core Migrations
 - Project Overview & DB Migration Rationale
 - JWT e ASP.NET Core Identity nel progetto — spiegazione
-- .IsAllowedAsync
-- Redis come cache per le stanze — spiegazione
-- RateLimitAttribute
 
 ## God Nodes (most connected - your core abstractions)
 1. `Room` - 25 edges
-2. `BookingSystem.Application.Interfaces` - 23 edges
+2. `BookingSystem.Application.Interfaces` - 20 edges
 3. `Booking` - 20 edges
 4. `BookingSystem.Application.DTOs` - 19 edges
-5. `BookingServiceTests` - 19 edges
-6. `RoomServiceTests` - 16 edges
-7. `BookingSystem.Application.Common` - 15 edges
-8. `BookingSystem.Domain.Entities` - 15 edges
-9. `BookingSystem.Infrastructure` - 14 edges
-10. `CachedRoomServiceTests` - 13 edges
+5. `RoomServiceTests` - 16 edges
+6. `BookingSystem.Domain.Entities` - 15 edges
+7. `BookingServiceTests` - 15 edges
+8. `BookingSystem.Infrastructure` - 13 edges
+9. `CachedRoomServiceTests` - 13 edges
+10. `CachedRoomService` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Booking System (README project description)` --semantically_similar_to--> `BookingSystem — ASP.NET Core 8 REST API for Room/Booking management`  [INFERRED] [semantically similar]
@@ -64,11 +61,11 @@
 - **4-Project Clean Architecture Split** — claude_domain_project, claude_application_project, claude_infrastructure_project, claude_api_project [EXTRACTED 1.00]
 - **ASP.NET Core Identity + JWT Authentication Flow** — context_sessions_authcontroller, context_sessions_authservice, context_sessions_jwttokengenerator, context_sessions_applicationuser, context_sessions_identityseeder [EXTRACTED 0.95]
 
-## Communities (17 total, 0 thin omitted)
+## Communities (13 total, 0 thin omitted)
 
 ### Community 0 - "Booking Domain & Service"
-Cohesion: 0.15
-Nodes (12): BookingAccessResult, BookingService, DateTime, Error, IEnumerable, Result, Success, Task (+4 more)
+Cohesion: 0.10
+Nodes (20): IBookingRepository, DateTime, IEnumerable, Task, BookingService, DateTime, Error, IEnumerable (+12 more)
 
 ### Community 1 - "Room Domain & Service"
 Cohesion: 0.11
@@ -79,8 +76,8 @@ Cohesion: 0.06
 Nodes (51): ASP.NET Core CI pipeline (Azure Pipelines, trigger: main, windows-latest), NuGetCommand@2 — restore solution packages, VSBuild@1 — build/publish solution, VSTest@2 — run tests, BookingSystem.API (depends on Application+Infrastructure; controllers, Program.cs), AppDbContext (EF Core) — generic request-flow role, BookingSystem.Application (depends on Domain; interfaces, DTOs, services), Booking (domain entity) (+43 more)
 
 ### Community 3 - "Auth Login/Register Flow"
-Cohesion: 0.06
-Nodes (36): HttpPost, IActionResult, RateLimit, Task, AuthResponse, DateTime, IEnumerable, LoginRequest (+28 more)
+Cohesion: 0.10
+Nodes (22): AuthController, HttpPost, IActionResult, Task, AuthResponse, DateTime, IEnumerable, LoginRequest (+14 more)
 
 ### Community 4 - "Room API Endpoints"
 Cohesion: 0.06
@@ -88,54 +85,42 @@ Nodes (33): Authorize, RoomsController, HttpDelete, HttpGet, HttpPost, IActionRe
 
 ### Community 5 - "Project Files & NuGet Deps"
 Cohesion: 0.08
-Nodes (30): BookingSystem.API, net8.0, Microsoft.EntityFrameworkCore.Design (8.0.11), BookingSystem.Application, net8.0, Microsoft.NET.Sdk, BookingSystem.Domain, net8.0 (+22 more)
+Nodes (29): BookingSystem.API, net8.0, Microsoft.EntityFrameworkCore.Design (8.0.11), BookingSystem.Application, net8.0, Microsoft.NET.Sdk, BookingSystem.Domain, net8.0 (+21 more)
 
 ### Community 6 - "Launch Settings Config"
 Cohesion: 0.07
 Nodes (28): ASPNETCORE_ENVIRONMENT, applicationUrl, commandName, dotnetRunMessages, environmentVariables, launchBrowser, launchUrl, applicationUrl (+20 more)
 
 ### Community 7 - "Booking API Endpoints"
-Cohesion: 0.11
-Nodes (20): AllowAnonymous, AuthController, BookingsController, DateTime, HttpDelete, HttpGet, HttpPost, IActionResult (+12 more)
+Cohesion: 0.12
+Nodes (17): AllowAnonymous, BookingsController, DateTime, HttpDelete, HttpGet, HttpPost, IActionResult, Task (+9 more)
 
 ### Community 8 - "DI Wiring & Namespaces"
-Cohesion: 0.11
-Nodes (17): Roles, string, CacheSettings, RateLimitPolicy, BookingSystem.Infrastructure.Caching, BookingSystem.Domain.Entities, BookingSystem.Infrastructure.Data, BookingSystem.Infrastructure.Repositories (+9 more)
+Cohesion: 0.14
+Nodes (13): Roles, string, CacheSettings, BookingSystem.Infrastructure.Caching, BookingSystem.Domain.Entities, BookingSystem.Infrastructure.Data, BookingSystem.Infrastructure.Repositories, BookingSystem.Application.Common (+5 more)
 
 ### Community 9 - "Identity & JWT Infrastructure"
-Cohesion: 0.12
-Nodes (14): IBookingRepository, DateTime, IEnumerable, Task, Booking, DateTime, AppDbContext, ModelBuilder (+6 more)
+Cohesion: 0.08
+Nodes (19): AppDbContext, ModelBuilder, AdminSeedOptions, ApplicationUser, IdentitySeeder, Task, UserManager, JwtSettings (+11 more)
 
 ### Community 10 - "EF Core Migrations"
 Cohesion: 0.09
 Nodes (13): InitialCreate, MigrationBuilder, InitialCreate, ModelBuilder, AddIdentityAndBookingUserId, MigrationBuilder, AddIdentityAndBookingUserId, ModelBuilder (+5 more)
 
 ### Community 11 - "Project Overview & DB Migration Rationale"
-Cohesion: 0.38
+Cohesion: 0.32
 Nodes (4): RedisCacheService, Task, TimeSpan, IDistributedCache
 
 ### Community 12 - "JWT e ASP.NET Core Identity nel progetto — spiegazione"
 Cohesion: 0.33
 Nodes (5): 1. ASP.NET Core Identity — cos'è e come lo abbiamo usato, 2. I Ruoli (Admin e User), 3. Il Token JWT — come viene generato e validato, 4. Perché questi file sono in `Infrastructure/Identity` e non in `Application`, JWT e ASP.NET Core Identity nel progetto — spiegazione
 
-### Community 13 - ".IsAllowedAsync"
-Cohesion: 0.15
-Nodes (12): IRateLimiter, Task, TimeSpan, RedisRateLimiter, Task, TimeSpan, RedisRateLimiterTests, Fact (+4 more)
-
-### Community 14 - "Redis come cache per le stanze — spiegazione"
-Cohesion: 0.15
-Nodes (12): 1. Dove vive Redis — `docker-compose.yml`, 2. Come l'API sa dove si trova Redis — configurazione, 3. Il "contratto" — `ICacheService` (Application), 4. L'implementazione reale — `RedisCacheService` (Infrastructure), 5. La configurazione della durata — `CacheSettings` (Infrastructure), 6. Il cuore della logica — `CachedRoomService` (Infrastructure), 7. Il collante — `Program.cs`, 8. `RoomsController` — invariato (+4 more)
-
-### Community 15 - "RateLimitAttribute"
-Cohesion: 0.20
-Nodes (8): ActionExecutingContext, ActionExecutionDelegate, Attribute, RateLimitAttribute, string, Task, RateLimitKeyType, IAsyncActionFilter
-
 ## Ambiguous Edges - Review These
 - `CI note in CLAUDE.md: azure-pipelines.yml runs build/restore/test on push to main; doc states 'no tests to run yet' (possibly stale, see BookingSystem.Tests)` → `BookingSystem.Tests (xUnit, net8.0, ProjectReference only to Application, created 2026-07-21)`  [AMBIGUOUS]
   CLAUDE.md · relation: conceptually_related_to
 
 ## Knowledge Gaps
-- **67 isolated node(s):** `net8.0`, `Swashbuckle.AspNetCore (6.6.2)`, `Microsoft.AspNetCore.Authentication.JwtBearer (8.0.11)`, `Microsoft.EntityFrameworkCore.Design (8.0.11)`, `Microsoft.NET.Sdk.Web` (+62 more)
+- **53 isolated node(s):** `net8.0`, `Swashbuckle.AspNetCore (6.6.2)`, `Microsoft.AspNetCore.Authentication.JwtBearer (8.0.11)`, `Microsoft.EntityFrameworkCore.Design (8.0.11)`, `Microsoft.NET.Sdk.Web` (+48 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 
 ## Suggested Questions
@@ -143,15 +128,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `CI note in CLAUDE.md: azure-pipelines.yml runs build/restore/test on push to main; doc states 'no tests to run yet' (possibly stale, see BookingSystem.Tests)` and `BookingSystem.Tests (xUnit, net8.0, ProjectReference only to Application, created 2026-07-21)`?**
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
-- **Why does `BookingSystem.Application.Interfaces` connect `DI Wiring & Namespaces` to `Room API Endpoints`, `.IsAllowedAsync`?**
-  _High betweenness centrality (0.155) - this node is a cross-community bridge._
-- **Why does `Room` connect `Room Domain & Service` to `Identity & JWT Infrastructure`, `Room API Endpoints`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
-- **Why does `Booking` connect `Identity & JWT Infrastructure` to `Booking Domain & Service`, `Room Domain & Service`, `Booking API Endpoints`?**
-  _High betweenness centrality (0.076) - this node is a cross-community bridge._
+- **Why does `Room` connect `Room Domain & Service` to `Booking Domain & Service`, `DI Wiring & Namespaces`, `Room API Endpoints`, `Identity & JWT Infrastructure`?**
+  _High betweenness centrality (0.125) - this node is a cross-community bridge._
+- **Why does `BookingSystem.Application.Interfaces` connect `DI Wiring & Namespaces` to `Project Overview & DB Migration Rationale`, `Auth Login/Register Flow`, `Room API Endpoints`, `Booking API Endpoints`?**
+  _High betweenness centrality (0.094) - this node is a cross-community bridge._
+- **Why does `AppDbContext` connect `Identity & JWT Infrastructure` to `Booking Domain & Service`, `Room Domain & Service`?**
+  _High betweenness centrality (0.090) - this node is a cross-community bridge._
 - **What connects `net8.0`, `Swashbuckle.AspNetCore (6.6.2)`, `Microsoft.AspNetCore.Authentication.JwtBearer (8.0.11)` to the rest of the system?**
-  _67 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _53 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Booking Domain & Service` be split into smaller, more focused modules?**
-  _Cohesion score 0.1497326203208556 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0977891156462585 - nodes in this community are weakly interconnected._
 - **Should `Room Domain & Service` be split into smaller, more focused modules?**
-  _Cohesion score 0.10823311748381129 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11207729468599034 - nodes in this community are weakly interconnected._

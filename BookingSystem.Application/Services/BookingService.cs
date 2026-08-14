@@ -1,3 +1,4 @@
+using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
 using BookingSystem.Application.Interfaces;
 using BookingSystem.Domain.Entities;
@@ -55,9 +56,14 @@ public class BookingService : IBookingService
         return !hasOverlap;
     }
 
-    public Task<Booking?> GetBookingAsync(int id)
+    public async Task<(BookingAccessResult Result, Booking? Booking)> GetBookingAsync(int id, string userId, bool isAdmin)
     {
-        return _bookingRepository.GetByIdWithRoomAsync(id);
+        var booking = await _bookingRepository.GetByIdWithRoomAsync(id);
+        if (booking == null) return (BookingAccessResult.NotFound, null);
+
+        if (booking.UserId != userId && !isAdmin) return (BookingAccessResult.Forbidden, null);
+
+        return (BookingAccessResult.Success, booking);
     }
 
     public Task<IEnumerable<Booking>> GetBookingsByUserAsync(string userId)
@@ -65,12 +71,14 @@ public class BookingService : IBookingService
         return _bookingRepository.GetByUserIdAsync(userId);
     }
 
-    public async Task<bool> CancelBookingAsync(int id)
+    public async Task<BookingAccessResult> CancelBookingAsync(int id, string userId, bool isAdmin)
     {
         var booking = await _bookingRepository.GetByIdAsync(id);
-        if (booking == null) return false;
+        if (booking == null) return BookingAccessResult.NotFound;
+
+        if (booking.UserId != userId && !isAdmin) return BookingAccessResult.Forbidden;
 
         await _bookingRepository.RemoveAsync(booking);
-        return true;
+        return BookingAccessResult.Success;
     }
 }
