@@ -11,11 +11,13 @@ public class AuthService : IAuthService
 
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly JwtTokenGenerator _tokenGenerator;
+    private readonly IRefreshTokenStore _refreshTokenStore;
 
-    public AuthService(UserManager<ApplicationUser> userManager, JwtTokenGenerator tokenGenerator)
+    public AuthService(UserManager<ApplicationUser> userManager, JwtTokenGenerator tokenGenerator, IRefreshTokenStore refreshTokenStore)
     {
         _userManager = userManager;
         _tokenGenerator = tokenGenerator;
+        _refreshTokenStore = refreshTokenStore;
     }
 
     public async Task<(bool Success, string? Error, AuthResponse? Response)> RegisterAsync(RegisterRequest request)
@@ -54,8 +56,36 @@ public class AuthService : IAuthService
         }
 
         var roles = await _userManager.GetRolesAsync(user);
-        var response = BuildAuthResponse(user, roles);
+        var response = await BuildAuthResponseWithRefreshTokenAsync(user, roles);
         return (true, null, response);
+    }
+
+    public async Task<(bool Success, string? Error, AuthResponse? Response)> RefreshAsync(string refreshToken)
+    {
+        var userId = await _refreshTokenStore.GetUserIdAsync(refreshToken);
+        if (userId == null)
+        {
+            return (false, "Invalid or expired refresh token.", null);
+        }
+
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+        {
+            await _refreshTokenStore.RemoveAsync(refreshToken);
+            return (false, "Invalid or expired refresh token.", null);
+        }
+
+        // Token rotation: il vecchio refresh token viene invalidato prima che il nuovo venga emesso.
+        await _refreshTokenStore.RemoveAsync(refreshToken);
+
+        var roles = await _userManager.GetRolesAsync(user);
+        var response = await BuildAuthResponseWithRefreshTokenAsync(user, roles);
+        return (true, null, response);
+    }
+
+    public Task LogoutAsync(string refreshToken)
+    {
+        return _refreshTokenStore.RemoveAsync(refreshToken);
     }
 
     private AuthResponse BuildAuthResponse(ApplicationUser user, IEnumerable<string> roles)
@@ -70,5 +100,16 @@ public class AuthService : IAuthService
             Email = user.Email ?? string.Empty,
             Roles = rolesList
         };
+    }
+
+    private async Task<AuthResponse> BuildAuthResponseWithRefreshTokenAsync(ApplicationUser user, IEnumerable<string> roles)
+    {
+        var response = BuildAuthResponse(user, roles);
+
+        var refreshToken = _tokenGenerator.GenerateRefreshToken();
+        await _refreshTokenStore.StoreAsync(refreshToken, user.Id, _tokenGenerator.RefreshTokenExpiration);
+        response.RefreshToken = refreshToken;
+
+        return response;
     }
 }

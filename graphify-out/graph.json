@@ -177,8 +177,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller",
-      "community": 7,
-      "community_name": "Booking API Endpoints",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "authcontroller"
     },
     {
@@ -188,8 +188,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "controllerbase",
-      "community": 7,
-      "community_name": "Booking API Endpoints",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "controllerbase"
     },
     {
@@ -205,8 +205,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_register",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": ".register()"
     },
     {
@@ -216,8 +216,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_api_controllers_authcontroller_cs_task",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "task"
     },
     {
@@ -227,8 +227,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_api_controllers_authcontroller_cs_iactionresult",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "iactionresult"
     },
     {
@@ -238,8 +238,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_api_controllers_authcontroller_cs_httppost",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "httppost"
     },
     {
@@ -249,8 +249,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_api_controllers_authcontroller_cs_ratelimit",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "ratelimit"
     },
     {
@@ -266,9 +266,43 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_login",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": ".login()"
+    },
+    {
+      "label": ".Refresh()",
+      "file_type": "code",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L49",
+      "metadata": {
+        "namespace": "BookingSystem.API.Controllers",
+        "scope_chain": [
+          "s190"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_refresh",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
+      "norm_label": ".refresh()"
+    },
+    {
+      "label": ".Logout()",
+      "file_type": "code",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L62",
+      "metadata": {
+        "namespace": "BookingSystem.API.Controllers",
+        "scope_chain": [
+          "s190"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_logout",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
+      "norm_label": ".logout()"
     },
     {
       "label": "BookingsController.cs",
@@ -1186,8 +1220,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_common_bookingaccessresult",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
+      "community": 7,
+      "community_name": "Booking API Endpoints",
       "norm_label": "bookingaccessresult.cs"
     },
     {
@@ -1219,8 +1253,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_common_bookingaccessresult_bookingsystem_application_common_bookingaccessresult",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
+      "community": 7,
+      "community_name": "Booking API Endpoints",
       "norm_label": "bookingaccessresult"
     },
     {
@@ -1430,8 +1464,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_dtos_loginrequest",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "loginrequest.cs"
     },
     {
@@ -1447,9 +1481,37 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_dtos_loginrequest_bookingsystem_application_dtos_loginrequest",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "loginrequest"
+    },
+    {
+      "label": "RefreshTokenRequest.cs",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/DTOs/RefreshTokenRequest.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "bookingsystem_application_dtos_refreshtokenrequest",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
+      "norm_label": "refreshtokenrequest.cs"
+    },
+    {
+      "label": "RefreshTokenRequest",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/DTOs/RefreshTokenRequest.cs",
+      "source_location": "L3",
+      "metadata": {
+        "namespace": "BookingSystem.Application.DTOs",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_application_dtos_refreshtokenrequest_bookingsystem_application_dtos_refreshtokenrequest",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
+      "norm_label": "refreshtokenrequest"
     },
     {
       "label": "RegisterRequest.cs",
@@ -1458,8 +1520,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_dtos_registerrequest",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "registerrequest.cs"
     },
     {
@@ -1475,8 +1537,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_dtos_registerrequest_bookingsystem_application_dtos_registerrequest",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "registerrequest"
     },
     {
@@ -1547,8 +1609,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "iauthservice"
     },
     {
@@ -1564,8 +1626,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_registerasync",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": ".registerasync()"
     },
     {
@@ -1575,8 +1637,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice_cs_task",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "task"
     },
     {
@@ -1586,8 +1648,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice_cs_success",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "success"
     },
     {
@@ -1597,8 +1659,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice_cs_error",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "error"
     },
     {
@@ -1608,8 +1670,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice_cs_response",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "response"
     },
     {
@@ -1625,9 +1687,43 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_loginasync",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": ".loginasync()"
+    },
+    {
+      "label": ".RefreshAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L9",
+      "metadata": {
+        "namespace": "BookingSystem.Application.Interfaces",
+        "scope_chain": [
+          "s39"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
+      "norm_label": ".refreshasync()"
+    },
+    {
+      "label": ".LogoutAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L10",
+      "metadata": {
+        "namespace": "BookingSystem.Application.Interfaces",
+        "scope_chain": [
+          "s39"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_logoutasync",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
+      "norm_label": ".logoutasync()"
     },
     {
       "label": "IBookingRepository.cs",
@@ -1653,8 +1749,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_bookingsystem_application_interfaces_ibookingrepository",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "ibookingrepository"
     },
     {
@@ -1670,8 +1766,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_bookingsystem_application_interfaces_ibookingrepository_hasoverlapasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".hasoverlapasync()"
     },
     {
@@ -1681,8 +1777,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_cs_datetime",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "datetime"
     },
     {
@@ -1692,8 +1788,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_cs_task",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "task"
     },
     {
@@ -1709,8 +1805,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_bookingsystem_application_interfaces_ibookingrepository_addasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".addasync()"
     },
     {
@@ -1726,8 +1822,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_bookingsystem_application_interfaces_ibookingrepository_getbyidasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".getbyidasync()"
     },
     {
@@ -1743,8 +1839,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_bookingsystem_application_interfaces_ibookingrepository_getbyidwithroomasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".getbyidwithroomasync()"
     },
     {
@@ -1760,8 +1856,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_bookingsystem_application_interfaces_ibookingrepository_getbyuseridasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".getbyuseridasync()"
     },
     {
@@ -1771,8 +1867,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_cs_ienumerable",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "ienumerable"
     },
     {
@@ -1788,8 +1884,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingrepository_bookingsystem_application_interfaces_ibookingrepository_removeasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".removeasync()"
     },
     {
@@ -2138,6 +2234,107 @@
       "community": 13,
       "community_name": ".IsAllowedAsync",
       "norm_label": "task"
+    },
+    {
+      "label": "IRefreshTokenStore.cs",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_irefreshtokenstore",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "irefreshtokenstore.cs"
+    },
+    {
+      "label": "IRefreshTokenStore",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L3",
+      "metadata": {
+        "namespace": "BookingSystem.Application.Interfaces",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "irefreshtokenstore"
+    },
+    {
+      "label": ".StoreAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L5",
+      "metadata": {
+        "namespace": "BookingSystem.Application.Interfaces",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_storeasync",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".storeasync()"
+    },
+    {
+      "label": "TimeSpan",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_irefreshtokenstore_cs_timespan",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "timespan"
+    },
+    {
+      "label": "Task",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_irefreshtokenstore_cs_task",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "task"
+    },
+    {
+      "label": ".GetUserIdAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L6",
+      "metadata": {
+        "namespace": "BookingSystem.Application.Interfaces",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_getuseridasync",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".getuseridasync()"
+    },
+    {
+      "label": ".RemoveAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L7",
+      "metadata": {
+        "namespace": "BookingSystem.Application.Interfaces",
+        "scope_chain": [
+          "s0"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_removeasync",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".removeasync()"
     },
     {
       "label": "IRoomRepository.cs",
@@ -2829,8 +3026,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_domain_entities_booking",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "booking.cs"
     },
     {
@@ -2862,8 +3059,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_domain_entities_booking_bookingsystem_domain_entities_booking",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "booking"
     },
     {
@@ -2873,8 +3070,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_domain_entities_booking_cs_datetime",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "datetime"
     },
     {
@@ -3251,8 +3448,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice",
-      "community": 11,
-      "community_name": "Project Overview & DB Migration Rationale",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "rediscacheservice"
     },
     {
@@ -3262,8 +3459,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "idistributedcache",
-      "community": 11,
-      "community_name": "Project Overview & DB Migration Rationale",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "idistributedcache"
     },
     {
@@ -3279,8 +3476,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice_getasync",
-      "community": 11,
-      "community_name": "Project Overview & DB Migration Rationale",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": ".getasync()"
     },
     {
@@ -3290,8 +3487,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_cs_task",
-      "community": 11,
-      "community_name": "Project Overview & DB Migration Rationale",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "task"
     },
     {
@@ -3307,8 +3504,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice_setasync",
-      "community": 11,
-      "community_name": "Project Overview & DB Migration Rationale",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": ".setasync()"
     },
     {
@@ -3318,8 +3515,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_cs_timespan",
-      "community": 11,
-      "community_name": "Project Overview & DB Migration Rationale",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "timespan"
     },
     {
@@ -3335,8 +3532,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice_removeasync",
-      "community": 11,
-      "community_name": "Project Overview & DB Migration Rationale",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": ".removeasync()"
     },
     {
@@ -3379,8 +3576,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_data_appdbcontext_bookingsystem_infrastructure_data_appdbcontext",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "appdbcontext"
     },
     {
@@ -3390,8 +3587,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "identitydbcontext",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "identitydbcontext"
     },
     {
@@ -3401,8 +3598,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "dbset",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "dbset"
     },
     {
@@ -3418,8 +3615,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_data_appdbcontext_bookingsystem_infrastructure_data_appdbcontext_onmodelcreating",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": ".onmodelcreating()"
     },
     {
@@ -3429,8 +3626,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_data_appdbcontext_cs_modelbuilder",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "modelbuilder"
     },
     {
@@ -3440,8 +3637,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_adminseedoptions",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "adminseedoptions.cs"
     },
     {
@@ -3473,8 +3670,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_adminseedoptions_bookingsystem_infrastructure_identity_adminseedoptions",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "adminseedoptions"
     },
     {
@@ -3570,7 +3767,7 @@
       "label": ".RegisterAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L23",
       "metadata": {
         "namespace": "BookingSystem.Infrastructure.Identity",
         "scope_chain": [
@@ -3631,7 +3828,7 @@
       "label": ".LoginAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L44",
       "metadata": {
         "namespace": "BookingSystem.Infrastructure.Identity",
         "scope_chain": [
@@ -3645,10 +3842,44 @@
       "norm_label": ".loginasync()"
     },
     {
+      "label": ".RefreshAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L63",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s160"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".refreshasync()"
+    },
+    {
+      "label": ".LogoutAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L86",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s160"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_logoutasync",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".logoutasync()"
+    },
+    {
       "label": ".BuildAuthResponse()",
       "file_type": "code",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L61",
+      "source_location": "L91",
       "metadata": {
         "namespace": "BookingSystem.Infrastructure.Identity",
         "scope_chain": [
@@ -3671,6 +3902,23 @@
       "community": 3,
       "community_name": "Auth Login/Register Flow",
       "norm_label": "ienumerable"
+    },
+    {
+      "label": ".BuildAuthResponseWithRefreshTokenAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L105",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s160"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".buildauthresponsewithrefreshtokenasync()"
     },
     {
       "label": "IdentitySeeder.cs",
@@ -3696,8 +3944,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_identityseeder_bookingsystem_infrastructure_identity_identityseeder",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "identityseeder"
     },
     {
@@ -3713,8 +3961,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_identityseeder_bookingsystem_infrastructure_identity_identityseeder_seedasync",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": ".seedasync()"
     },
     {
@@ -3724,8 +3972,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "rolemanager",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "rolemanager"
     },
     {
@@ -3735,8 +3983,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "identityrole",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "identityrole"
     },
     {
@@ -3746,8 +3994,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_identityseeder_cs_usermanager",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "usermanager"
     },
     {
@@ -3757,8 +4005,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_identityseeder_cs_task",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "task"
     },
     {
@@ -3768,8 +4016,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_jwtsettings",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "jwtsettings.cs"
     },
     {
@@ -3785,8 +4033,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_jwtsettings_bookingsystem_infrastructure_identity_jwtsettings",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "jwtsettings"
     },
     {
@@ -3804,11 +4052,11 @@
       "label": "JwtTokenGenerator",
       "file_type": "code",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L8",
+      "source_location": "L9",
       "metadata": {
         "namespace": "BookingSystem.Infrastructure.Identity",
         "scope_chain": [
-          "s127"
+          "s163"
         ]
       },
       "_origin": "ast",
@@ -3821,11 +4069,11 @@
       "label": ".GenerateToken()",
       "file_type": "code",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L17",
+      "source_location": "L18",
       "metadata": {
         "namespace": "BookingSystem.Infrastructure.Identity",
         "scope_chain": [
-          "s127"
+          "s163"
         ]
       },
       "_origin": "ast",
@@ -3877,6 +4125,157 @@
       "community": 3,
       "community_name": "Auth Login/Register Flow",
       "norm_label": "expiresat"
+    },
+    {
+      "label": ".GenerateRefreshToken()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
+      "source_location": "L41",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s163"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator_generaterefreshtoken",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".generaterefreshtoken()"
+    },
+    {
+      "label": "TimeSpan",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_jwttokengenerator_cs_timespan",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "timespan"
+    },
+    {
+      "label": "RedisRefreshTokenStore.cs",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "redisrefreshtokenstore.cs"
+    },
+    {
+      "label": "RedisRefreshTokenStore",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L6",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s72"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "redisrefreshtokenstore"
+    },
+    {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_string",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "string"
+    },
+    {
+      "label": "IConnectionMultiplexer",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_iconnectionmultiplexer",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "iconnectionmultiplexer"
+    },
+    {
+      "label": ".StoreAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L17",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s72"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_storeasync",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": ".storeasync()"
+    },
+    {
+      "label": "TimeSpan",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_timespan",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "timespan"
+    },
+    {
+      "label": "Task",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_task",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "task"
+    },
+    {
+      "label": ".GetUserIdAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L23",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s72"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_getuseridasync",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": ".getuseridasync()"
+    },
+    {
+      "label": ".RemoveAsync()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L30",
+      "metadata": {
+        "namespace": "BookingSystem.Infrastructure.Identity",
+        "scope_chain": [
+          "s72"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_removeasync",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": ".removeasync()"
     },
     {
       "label": "20260721122717_InitialCreate.Designer.cs",
@@ -4237,8 +4636,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_ratelimiting_ratelimitoptions",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 13,
+      "community_name": ".IsAllowedAsync",
       "norm_label": "ratelimitoptions.cs"
     },
     {
@@ -4253,8 +4652,8 @@
       },
       "_origin": "ast",
       "id": "csharp_namespace:740f42cd11f468d2",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 13,
+      "community_name": ".IsAllowedAsync",
       "norm_label": "bookingsystem.infrastructure.ratelimiting"
     },
     {
@@ -4270,8 +4669,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_ratelimiting_ratelimitoptions_bookingsystem_infrastructure_ratelimiting_ratelimitpolicy",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 13,
+      "community_name": ".IsAllowedAsync",
       "norm_label": "ratelimitpolicy"
     },
     {
@@ -4281,8 +4680,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_ratelimiting_redisratelimiter",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 13,
+      "community_name": ".IsAllowedAsync",
       "norm_label": "redisratelimiter.cs"
     },
     {
@@ -4308,7 +4707,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "iconnectionmultiplexer",
+      "id": "bookingsystem_infrastructure_ratelimiting_redisratelimiter_cs_iconnectionmultiplexer",
       "community": 13,
       "community_name": ".IsAllowedAsync",
       "norm_label": "iconnectionmultiplexer"
@@ -4392,8 +4791,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_bookingsystem_infrastructure_repositories_bookingrepository",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "bookingrepository"
     },
     {
@@ -4409,8 +4808,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_bookingsystem_infrastructure_repositories_bookingrepository_hasoverlapasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".hasoverlapasync()"
     },
     {
@@ -4420,8 +4819,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_cs_datetime",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "datetime"
     },
     {
@@ -4431,8 +4830,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_cs_task",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "task"
     },
     {
@@ -4448,8 +4847,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_bookingsystem_infrastructure_repositories_bookingrepository_addasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".addasync()"
     },
     {
@@ -4465,8 +4864,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_bookingsystem_infrastructure_repositories_bookingrepository_getbyidasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".getbyidasync()"
     },
     {
@@ -4482,8 +4881,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_bookingsystem_infrastructure_repositories_bookingrepository_getbyidwithroomasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".getbyidwithroomasync()"
     },
     {
@@ -4499,8 +4898,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_bookingsystem_infrastructure_repositories_bookingrepository_getbyuseridasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".getbyuseridasync()"
     },
     {
@@ -4510,8 +4909,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_cs_ienumerable",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "ienumerable"
     },
     {
@@ -4527,8 +4926,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_repositories_bookingrepository_bookingsystem_infrastructure_repositories_bookingrepository_removeasync",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": ".removeasync()"
     },
     {
@@ -4770,6 +5169,387 @@
       "community": 5,
       "community_name": "Project Files & NuGet Deps",
       "norm_label": "microsoft.net.sdk"
+    },
+    {
+      "label": "AuthServiceTests.cs",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
+      "norm_label": "authservicetests.cs"
+    },
+    {
+      "label": "BookingSystem.Tests.Identity",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L7",
+      "type": "namespace",
+      "metadata": {
+        "kind": "csharp_namespace",
+        "namespace": "BookingSystem.Tests.Identity"
+      },
+      "_origin": "ast",
+      "id": "csharp_namespace:4eaa21d872953743",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
+      "norm_label": "bookingsystem.tests.identity"
+    },
+    {
+      "label": "AuthServiceTests",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L9",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "authservicetests"
+    },
+    {
+      "label": "Mock",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_cs_mock",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "mock"
+    },
+    {
+      "label": "TimeSpan",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_cs_timespan",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "timespan"
+    },
+    {
+      "label": ".CreateUserManagerMock()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L35",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_createusermanagermock",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".createusermanagermock()"
+    },
+    {
+      "label": "UserManager",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_cs_usermanager",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "usermanager"
+    },
+    {
+      "label": ".LoginAsync_ValidCredentials_ReturnsTokensAndStoresRefreshToken()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L41",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_validcredentials_returnstokensandstoresrefreshtoken",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".loginasync_validcredentials_returnstokensandstoresrefreshtoken()"
+    },
+    {
+      "label": "Task",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "task"
+    },
+    {
+      "label": "Fact",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": "fact"
+    },
+    {
+      "label": ".LoginAsync_UnknownEmail_ReturnsErrorAndDoesNotStoreRefreshToken()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L64",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_unknownemail_returnserroranddoesnotstorerefreshtoken",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".loginasync_unknownemail_returnserroranddoesnotstorerefreshtoken()"
+    },
+    {
+      "label": ".LoginAsync_WrongPassword_ReturnsErrorAndDoesNotStoreRefreshToken()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L80",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_wrongpassword_returnserroranddoesnotstorerefreshtoken",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".loginasync_wrongpassword_returnserroranddoesnotstorerefreshtoken()"
+    },
+    {
+      "label": ".RegisterAsync_ValidRequest_ReturnsResponseWithoutRefreshToken()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L98",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_registerasync_validrequest_returnsresponsewithoutrefreshtoken",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".registerasync_validrequest_returnsresponsewithoutrefreshtoken()"
+    },
+    {
+      "label": ".RefreshAsync_ValidToken_RotatesTokenAndReturnsNewTokens()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L119",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_validtoken_rotatestokenandreturnsnewtokens",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".refreshasync_validtoken_rotatestokenandreturnsnewtokens()"
+    },
+    {
+      "label": ".RefreshAsync_UnknownToken_ReturnsErrorWithoutTouchingStore()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L141",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_unknowntoken_returnserrorwithouttouchingstore",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".refreshasync_unknowntoken_returnserrorwithouttouchingstore()"
+    },
+    {
+      "label": ".RefreshAsync_UserNoLongerExists_RemovesTokenAndReturnsError()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L158",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_usernolongerexists_removestokenandreturnserror",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".refreshasync_usernolongerexists_removestokenandreturnserror()"
+    },
+    {
+      "label": ".LogoutAsync_RemovesGivenRefreshTokenFromStore()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L176",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s176"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_logoutasync_removesgivenrefreshtokenfromstore",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
+      "norm_label": ".logoutasync_removesgivenrefreshtokenfromstore()"
+    },
+    {
+      "label": "RedisRefreshTokenStoreTests.cs",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
+      "norm_label": "redisrefreshtokenstoretests.cs"
+    },
+    {
+      "label": "RedisRefreshTokenStoreTests",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L7",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s84"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "redisrefreshtokenstoretests"
+    },
+    {
+      "label": "Mock",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_mock",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "mock"
+    },
+    {
+      "label": ".StoreAsync_CallsStringSetWithKeyPrefixValueAndTtl()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L23",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s84"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_storeasync_callsstringsetwithkeyprefixvalueandttl",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": ".storeasync_callsstringsetwithkeyprefixvalueandttl()"
+    },
+    {
+      "label": "Task",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_task",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "task"
+    },
+    {
+      "label": "Fact",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_fact",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": "fact"
+    },
+    {
+      "label": ".GetUserIdAsync_TokenExists_ReturnsUserId()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L46",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s84"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokenexists_returnsuserid",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": ".getuseridasync_tokenexists_returnsuserid()"
+    },
+    {
+      "label": ".GetUserIdAsync_TokenDoesNotExist_ReturnsNull()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L61",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s84"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokendoesnotexist_returnsnull",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": ".getuseridasync_tokendoesnotexist_returnsnull()"
+    },
+    {
+      "label": ".RemoveAsync_CallsKeyDeleteWithKeyPrefix()",
+      "file_type": "code",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L76",
+      "metadata": {
+        "namespace": "BookingSystem.Tests.Identity",
+        "scope_chain": [
+          "s84"
+        ]
+      },
+      "_origin": "ast",
+      "id": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_removeasync_callskeydeletewithkeyprefix",
+      "community": 11,
+      "community_name": "Project Overview & DB Migration Rationale",
+      "norm_label": ".removeasync_callskeydeletewithkeyprefix()"
     },
     {
       "label": "RedisRateLimiterTests.cs",
@@ -7111,6 +7891,28 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller",
+      "target": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_logout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller",
+      "target": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
@@ -7281,6 +8083,36 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_logout",
+      "target": "bookingsystem_api_controllers_authcontroller_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_refresh",
+      "target": "bookingsystem_api_controllers_authcontroller_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
       "source_location": "L35",
       "weight": 1.0,
       "context": "generic_arg",
@@ -7296,6 +8128,36 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "IActionResult"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_logout",
+      "target": "bookingsystem_api_controllers_authcontroller_cs_iactionresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "IActionResult"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_refresh",
+      "target": "bookingsystem_api_controllers_authcontroller_cs_iactionresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
       "source_location": "L35",
       "weight": 1.0,
       "context": "attribute",
@@ -7304,6 +8166,36 @@
       },
       "_origin": "ast",
       "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_login",
+      "target": "bookingsystem_api_controllers_authcontroller_cs_httppost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "HttpPost"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_logout",
+      "target": "bookingsystem_api_controllers_authcontroller_cs_httppost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "HttpPost"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_refresh",
       "target": "bookingsystem_api_controllers_authcontroller_cs_httppost",
       "confidence_score": 1.0
     },
@@ -7348,6 +8240,60 @@
       "_origin": "ast",
       "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_login",
       "target": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_loginasync"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "RefreshTokenRequest"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_refresh",
+      "target": "bookingsystem_application_dtos_refreshtokenrequest_bookingsystem_application_dtos_refreshtokenrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_refresh",
+      "target": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "RefreshTokenRequest"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_logout",
+      "target": "bookingsystem_application_dtos_refreshtokenrequest_bookingsystem_application_dtos_refreshtokenrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.API/Controllers/AuthController.cs",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_api_controllers_authcontroller_bookingsystem_api_controllers_authcontroller_logout",
+      "target": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_logoutasync"
     },
     {
       "relation": "contains",
@@ -9435,6 +10381,17 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/DTOs/RefreshTokenRequest.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_dtos_refreshtokenrequest",
+      "target": "csharp_namespace:b1f1699dbd24f344",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/DTOs/RegisterRequest.cs",
       "source_location": "L1",
       "weight": 1.0,
@@ -9577,6 +10534,23 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "BookingSystem.Application.DTOs",
+        "scope_kind": "file"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests",
+      "target": "csharp_namespace:b1f1699dbd24f344",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
       "source_location": "L2",
       "weight": 1.0,
@@ -9643,7 +10617,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/DTOs/AuthResponse.cs",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -9673,6 +10647,21 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "AuthResponse"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync",
+      "target": "bookingsystem_application_dtos_authresponse_bookingsystem_application_dtos_authresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
       "source_location": "L7",
       "weight": 1.0,
       "context": "generic_arg",
@@ -9688,7 +10677,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L61",
+      "source_location": "L91",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -9703,7 +10692,22 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "AuthResponse"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "target": "bookingsystem_application_dtos_authresponse_bookingsystem_application_dtos_authresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -9718,7 +10722,22 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "AuthResponse"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_application_dtos_authresponse_bookingsystem_application_dtos_authresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -9871,7 +10890,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9880,6 +10899,17 @@
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_loginasync",
       "target": "bookingsystem_application_dtos_loginrequest_bookingsystem_application_dtos_loginrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/DTOs/RefreshTokenRequest.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_dtos_refreshtokenrequest",
+      "target": "bookingsystem_application_dtos_refreshtokenrequest_bookingsystem_application_dtos_refreshtokenrequest",
       "confidence_score": 1.0
     },
     {
@@ -9912,7 +10942,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -10048,6 +11078,17 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore",
+      "target": "csharp_namespace:eadba0a450a3757d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Interfaces/IRoomRepository.cs",
       "source_location": "L3",
       "weight": 1.0,
@@ -10156,6 +11197,23 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "BookingSystem.Application.Interfaces",
+        "scope_kind": "file"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "csharp_namespace:eadba0a450a3757d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/RateLimiting/RedisRateLimiter.cs",
       "source_location": "L1",
       "weight": 1.0,
@@ -10200,6 +11258,23 @@
       },
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_repositories_roomrepository",
+      "target": "csharp_namespace:eadba0a450a3757d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "BookingSystem.Application.Interfaces",
+        "scope_kind": "file"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests",
       "target": "csharp_namespace:eadba0a450a3757d",
       "confidence_score": 1.0
     },
@@ -10263,6 +11338,28 @@
       "_origin": "ast",
       "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice",
       "target": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_loginasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice",
+      "target": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_logoutasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice",
+      "target": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync",
       "confidence_score": 1.0
     },
     {
@@ -10369,6 +11466,36 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_logoutasync",
+      "target": "bookingsystem_application_interfaces_iauthservice_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync",
+      "target": "bookingsystem_application_interfaces_iauthservice_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
       "source_location": "L8",
       "weight": 1.0,
       "context": "generic_arg",
@@ -10377,6 +11504,21 @@
       },
       "_origin": "ast",
       "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_loginasync",
+      "target": "bookingsystem_application_interfaces_iauthservice_cs_success",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "Success"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync",
       "target": "bookingsystem_application_interfaces_iauthservice_cs_success",
       "confidence_score": 1.0
     },
@@ -10399,6 +11541,21 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "Error"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync",
+      "target": "bookingsystem_application_interfaces_iauthservice_cs_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
       "source_location": "L8",
       "weight": 1.0,
       "context": "generic_arg",
@@ -10407,6 +11564,21 @@
       },
       "_origin": "ast",
       "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_loginasync",
+      "target": "bookingsystem_application_interfaces_iauthservice_cs_response",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "Response"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_iauthservice_bookingsystem_application_interfaces_iauthservice_refreshasync",
       "target": "bookingsystem_application_interfaces_iauthservice_cs_response",
       "confidence_score": 1.0
     },
@@ -11350,6 +12522,187 @@
       "source": "bookingsystem_application_interfaces_iratelimiter_bookingsystem_application_interfaces_iratelimiter_isallowedasync",
       "target": "bookingsystem_application_interfaces_iratelimiter_cs_timespan",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_getuseridasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_removeasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_storeasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "IRefreshTokenStore"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "metadata": {
+        "ref_token": "IRefreshTokenStore"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_storeasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "TimeSpan"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_storeasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_cs_timespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_storeasync"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_getuseridasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_removeasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_getuseridasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_logoutasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_removeasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_application_interfaces_irefreshtokenstore_bookingsystem_application_interfaces_irefreshtokenstore_removeasync"
     },
     {
       "relation": "contains",
@@ -14338,10 +15691,55 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_jwttokengenerator",
+      "target": "csharp_namespace:fd9223d2d6896e36",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "csharp_namespace:fd9223d2d6896e36",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "BookingSystem.Infrastructure.Identity",
+        "scope_kind": "file"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests",
+      "target": "csharp_namespace:fd9223d2d6896e36",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "BookingSystem.Infrastructure.Identity",
+        "scope_kind": "file"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests",
       "target": "csharp_namespace:fd9223d2d6896e36",
       "confidence_score": 1.0
     },
@@ -14389,7 +15787,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L61",
+      "source_location": "L91",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -14397,6 +15795,21 @@
       },
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponse",
+      "target": "bookingsystem_infrastructure_identity_applicationuser_bookingsystem_infrastructure_identity_applicationuser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "ApplicationUser"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
       "target": "bookingsystem_infrastructure_identity_applicationuser_bookingsystem_infrastructure_identity_applicationuser",
       "confidence_score": 1.0
     },
@@ -14419,7 +15832,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -14427,6 +15840,21 @@
       },
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator_generatetoken",
+      "target": "bookingsystem_infrastructure_identity_applicationuser_bookingsystem_infrastructure_identity_applicationuser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "ApplicationUser"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_createusermanagermock",
       "target": "bookingsystem_infrastructure_identity_applicationuser_bookingsystem_infrastructure_identity_applicationuser",
       "confidence_score": 1.0
     },
@@ -14445,7 +15873,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L61",
+      "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
@@ -14456,7 +15884,18 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
@@ -14467,7 +15906,29 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_logoutasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
@@ -14520,11 +15981,26 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "AuthService"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_registerasync",
@@ -14535,7 +16011,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14550,7 +16026,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14565,7 +16041,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14580,7 +16056,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14592,10 +16068,37 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_registerasync_validrequest_returnsresponsewithoutrefreshtoken",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_registerasync"
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14610,7 +16113,37 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L86",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_logoutasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14625,7 +16158,22 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "Success"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_cs_success",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14640,7 +16188,22 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L42",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "Error"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_cs_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14652,22 +16215,133 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "Response"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_cs_response",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_loginasync",
-      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponse",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_unknownemail_returnserroranddoesnotstorerefreshtoken",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_loginasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_validcredentials_returnstokensandstoresrefreshtoken",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_loginasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_wrongpassword_returnserroranddoesnotstorerefreshtoken",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_loginasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L148",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_unknowntoken_returnserrorwithouttouchingstore",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_usernolongerexists_removestokenandreturnserror",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_validtoken_rotatestokenandreturnsnewtokens",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_refreshasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_logoutasync_removesgivenrefreshtokenfromstore",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_logoutasync"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L61",
+      "source_location": "L91",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -14684,11 +16358,50 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
-      "source_location": "L64",
+      "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponse",
       "target": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator_generatetoken"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "IEnumerable"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "target": "bookingsystem_infrastructure_identity_authservice_cs_ienumerable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Infrastructure/Identity/AuthService.cs",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_authservice_bookingsystem_infrastructure_identity_authservice_buildauthresponsewithrefreshtokenasync",
+      "target": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator_generaterefreshtoken"
     },
     {
       "relation": "contains",
@@ -14787,7 +16500,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -14802,7 +16515,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_jwttokengenerator",
@@ -14813,7 +16526,18 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L17",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator",
+      "target": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator_generaterefreshtoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator",
@@ -14824,7 +16548,22 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L17",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "TimeSpan"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator",
+      "target": "bookingsystem_infrastructure_identity_jwttokengenerator_cs_timespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14839,7 +16578,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -14854,7 +16593,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14869,7 +16608,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14879,6 +16618,203 @@
       "source": "bookingsystem_infrastructure_identity_jwttokengenerator_bookingsystem_infrastructure_identity_jwttokengenerator_generatetoken",
       "target": "token",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_getuseridasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_removeasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_storeasync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "IConnectionMultiplexer"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_iconnectionmultiplexer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "string"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "RedisRefreshTokenStore"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_storeasync",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "TimeSpan"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_storeasync",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_timespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_storeasync_callsstringsetwithkeyprefixvalueandttl",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_storeasync"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_getuseridasync",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_removeasync",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokendoesnotexist_returnsnull",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_getuseridasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokenexists_returnsuserid",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_getuseridasync"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_removeasync_callskeydeletewithkeyprefix",
+      "target": "bookingsystem_infrastructure_identity_redisrefreshtokenstore_bookingsystem_infrastructure_identity_redisrefreshtokenstore_removeasync"
     },
     {
       "relation": "contains",
@@ -15298,7 +17234,7 @@
       },
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_ratelimiting_redisratelimiter_bookingsystem_infrastructure_ratelimiting_redisratelimiter",
-      "target": "iconnectionmultiplexer",
+      "target": "bookingsystem_infrastructure_ratelimiting_redisratelimiter_cs_iconnectionmultiplexer",
       "confidence_score": 1.0
     },
     {
@@ -15873,6 +17809,628 @@
       "_origin": "ast",
       "source": "bookingsystem_tests_bookingsystem_tests",
       "target": "nuget_xunit_runner_visualstudio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests",
+      "target": "csharp_namespace:4eaa21d872953743",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "csharp_namespace:4eaa21d872953743",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_createusermanagermock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_unknownemail_returnserroranddoesnotstorerefreshtoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_validcredentials_returnstokensandstoresrefreshtoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_wrongpassword_returnserroranddoesnotstorerefreshtoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L176",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_logoutasync_removesgivenrefreshtokenfromstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L141",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_unknowntoken_returnserrorwithouttouchingstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_usernolongerexists_removestokenandreturnserror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_validtoken_rotatestokenandreturnsnewtokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_registerasync_validrequest_returnsresponsewithoutrefreshtoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Mock"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_mock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "TimeSpan"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_timespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Mock"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_createusermanagermock",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_mock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "metadata": {
+        "ref_token": "UserManager"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_createusermanagermock",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_usermanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_validcredentials_returnstokensandstoresrefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_validcredentials_returnstokensandstoresrefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_unknownemail_returnserroranddoesnotstorerefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_wrongpassword_returnserroranddoesnotstorerefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L176",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_logoutasync_removesgivenrefreshtokenfromstore",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L141",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_unknowntoken_returnserrorwithouttouchingstore",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L158",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_usernolongerexists_removestokenandreturnserror",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_validtoken_rotatestokenandreturnsnewtokens",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_registerasync_validrequest_returnsresponsewithoutrefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_unknownemail_returnserroranddoesnotstorerefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_loginasync_wrongpassword_returnserroranddoesnotstorerefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L176",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_logoutasync_removesgivenrefreshtokenfromstore",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L141",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_unknowntoken_returnserrorwithouttouchingstore",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L158",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_usernolongerexists_removestokenandreturnserror",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_refreshasync_validtoken_rotatestokenandreturnsnewtokens",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/AuthServiceTests.cs",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_authservicetests_bookingsystem_tests_identity_authservicetests_registerasync_validrequest_returnsresponsewithoutrefreshtoken",
+      "target": "bookingsystem_tests_identity_authservicetests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokendoesnotexist_returnsnull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokenexists_returnsuserid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_removeasync_callskeydeletewithkeyprefix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_storeasync_callsstringsetwithkeyprefixvalueandttl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Mock"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_mock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_storeasync_callsstringsetwithkeyprefixvalueandttl",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_storeasync_callsstringsetwithkeyprefixvalueandttl",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokendoesnotexist_returnsnull",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokenexists_returnsuserid",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_removeasync_callskeydeletewithkeyprefix",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_task",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokendoesnotexist_returnsnull",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_getuseridasync_tokenexists_returnsuserid",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_fact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "context": "attribute",
+      "metadata": {
+        "ref_token": "Fact"
+      },
+      "_origin": "ast",
+      "source": "bookingsystem_tests_identity_redisrefreshtokenstoretests_bookingsystem_tests_identity_redisrefreshtokenstoretests_removeasync_callskeydeletewithkeyprefix",
+      "target": "bookingsystem_tests_identity_redisrefreshtokenstoretests_cs_fact",
       "confidence_score": 1.0
     },
     {
@@ -18818,5 +21376,5 @@
       "source_file": "context/sessions.md"
     }
   ],
-  "built_at_commit": "698c334cf07edcde4c6af1b107762da864b38f13"
+  "built_at_commit": "6cbab0692f4c7caec5293b145dbeec64a53781ce"
 }

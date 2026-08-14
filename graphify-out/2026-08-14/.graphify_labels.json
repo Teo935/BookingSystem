@@ -11,5 +11,9 @@
   "9": "Identity & JWT Infrastructure",
   "10": "EF Core Migrations",
   "11": "Project Overview & DB Migration Rationale",
-  "12": "JWT e ASP.NET Core Identity nel progetto — spiegazione"
+  "12": "JWT e ASP.NET Core Identity nel progetto — spiegazione",
+  "13": ".IsAllowedAsync",
+  "14": "Redis come cache per le stanze — spiegazione",
+  "15": "RateLimitAttribute",
+  "16": "rate-limiter-spiegazione.md"
 }

@@ -45,4 +45,25 @@ public class AuthController : ControllerBase
 
         return Ok(response);
     }
+
+    [HttpPost("refresh")]
+    public async Task<IActionResult> Refresh([FromBody] RefreshTokenRequest request)
+    {
+        var (success, error, response) = await _authService.RefreshAsync(request.RefreshToken);
+
+        if (!success)
+        {
+            return Unauthorized(new { error });
+        }
+
+        return Ok(response);
+    }
+
+    [HttpPost("logout")]
+    public async Task<IActionResult> Logout([FromBody] RefreshTokenRequest request)
+    {
+        await _authService.LogoutAsync(request.RefreshToken);
+
+        return NoContent();
+    }
 }

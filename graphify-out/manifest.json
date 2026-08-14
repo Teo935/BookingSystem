@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "BookingSystem.API/Controllers/AuthController.cs": {
-    "mtime": 1786051812.5886202,
-    "ast_hash": "46c6ad5b6b4f478287f527c6c3ab8e71",
+    "mtime": 1786743687.364233,
+    "ast_hash": "5da486195040e3e6b6d6e70bc54e88d9",
     "semantic_hash": ""
   },
   "BookingSystem.API/Controllers/BookingsController.cs": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "BookingSystem.API/Program.cs": {
-    "mtime": 1786051779.522352,
-    "ast_hash": "e8d57e7f929854e4859ac969c3983360",
+    "mtime": 1786743694.1450512,
+    "ast_hash": "e3e8557890970333f0dc1be2661a981c",
     "semantic_hash": ""
   },
   "BookingSystem.API/Properties/launchSettings.json": {
@@ -35,8 +35,8 @@
     "semantic_hash": "788a4d8d6535640b4938a7a8ddc142f5"
   },
   "BookingSystem.API/appsettings.json": {
-    "mtime": 1786051790.899213,
-    "ast_hash": "88290013f5cd0e21423472ffe6f25361",
+    "mtime": 1786743701.529867,
+    "ast_hash": "1cff89ff4550e5160fdfcd9461d00343",
     "semantic_hash": ""
   },
   "BookingSystem.Application/BookingSystem.Application.csproj": {
@@ -50,9 +50,9 @@
     "semantic_hash": "4eafd84d7f75e8142bc5cc0c84c55af5"
   },
   "BookingSystem.Application/DTOs/AuthResponse.cs": {
-    "mtime": 1784640115.6094756,
-    "ast_hash": "2fcf0c11e483f1a0b41dee830af356fa",
-    "semantic_hash": "2fcf0c11e483f1a0b41dee830af356fa"
+    "mtime": 1786743389.9392674,
+    "ast_hash": "ef2d53ccb8b75e19bf607d9eaadb45dc",
+    "semantic_hash": ""
   },
   "BookingSystem.Application/DTOs/CreateBookingRequest.cs": {
     "mtime": 1784546955.051293,
@@ -80,9 +80,9 @@
     "semantic_hash": "7ecd92abde747f4d827549fe3eff3d97"
   },
   "BookingSystem.Application/Interfaces/IAuthService.cs": {
-    "mtime": 1784640124.986888,
-    "ast_hash": "bf32e74b3aeb54eb82d6e6b220429136",
-    "semantic_hash": "bf32e74b3aeb54eb82d6e6b220429136"
+    "mtime": 1786743408.6494098,
+    "ast_hash": "57c5ca3669aee5181426d774d38e9a1c",
+    "semantic_hash": ""
   },
   "BookingSystem.Application/Interfaces/IBookingRepository.cs": {
     "mtime": 1784640143.3908849,
@@ -145,8 +145,8 @@
     "semantic_hash": "ca49a71831cd9e1de318d109874b0cf7"
   },
   "BookingSystem.Infrastructure/Identity/AuthService.cs": {
-    "mtime": 1786035534.000499,
-    "ast_hash": "3352ef502fd6e4c29edafb8c8fbee73e",
+    "mtime": 1786743664.5289981,
+    "ast_hash": "789a0c89984014596db9d52cf529f23e",
     "semantic_hash": ""
   },
   "BookingSystem.Infrastructure/Identity/IdentitySeeder.cs": {
@@ -155,14 +155,14 @@
     "semantic_hash": ""
   },
   "BookingSystem.Infrastructure/Identity/JwtSettings.cs": {
-    "mtime": 1784640245.9339168,
-    "ast_hash": "3f075c6c737ce8b951a6cc0cb2521ca8",
-    "semantic_hash": "3f075c6c737ce8b951a6cc0cb2521ca8"
+    "mtime": 1786743371.587481,
+    "ast_hash": "03cce6468437b3c5584970fc33dc44e5",
+    "semantic_hash": ""
   },
   "BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs": {
-    "mtime": 1784640255.9023802,
-    "ast_hash": "83df9a5819f0cd5fc27117aedc35d0f3",
-    "semantic_hash": "83df9a5819f0cd5fc27117aedc35d0f3"
+    "mtime": 1786743383.821165,
+    "ast_hash": "1f46e3cf283c646b438e234def76e26e",
+    "semantic_hash": ""
   },
   "BookingSystem.Infrastructure/Migrations/20260721122717_InitialCreate.Designer.cs": {
     "mtime": 1784636837.8472195,
@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1786038993.108044,
-    "ast_hash": "93d1dfd94fe111ace5639aa6eb258c51",
+    "mtime": 1786742405.7004993,
+    "ast_hash": "83d1499b7cde19e58fd26ec59d8facef",
     "semantic_hash": ""
   },
   "azure-pipelines.yml": {
@@ -290,8 +290,8 @@
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
-    "mtime": 1786044754.5800934,
-    "ast_hash": "0fcc8665e572ab7be3dc76db735a1775",
+    "mtime": 1786743999.9025705,
+    "ast_hash": "46094f2f5a5abd3d14ce8887d3d00c8d",
     "semantic_hash": ""
   },
   "BookingSystem.API/Filters/RateLimitAttribute.cs": {
@@ -337,6 +337,31 @@
   "context/redis-caching-spiegazione.md": {
     "mtime": 1786044656.724132,
     "ast_hash": "b432e506c94db4d739baba877f26e869",
+    "semantic_hash": ""
+  },
+  "BookingSystem.Application/DTOs/RefreshTokenRequest.cs": {
+    "mtime": 1786743394.3447237,
+    "ast_hash": "38ba08a87f5d0706f0ab0e7d85559294",
+    "semantic_hash": ""
+  },
+  "BookingSystem.Application/Interfaces/IRefreshTokenStore.cs": {
+    "mtime": 1786743347.607585,
+    "ast_hash": "9806ea98c2e10e4fdbc8866028df7c14",
+    "semantic_hash": ""
+  },
+  "BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs": {
+    "mtime": 1786743363.235978,
+    "ast_hash": "0e883222cd6f83734d41bc3daa43f8c9",
+    "semantic_hash": ""
+  },
+  "BookingSystem.Tests/Identity/AuthServiceTests.cs": {
+    "mtime": 1786743885.5058875,
+    "ast_hash": "9971a68bfd9277ea9e73bd077870ba41",
+    "semantic_hash": ""
+  },
+  "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs": {
+    "mtime": 1786743917.6698074,
+    "ast_hash": "c7eaccc197b2aece14df818242a755b9",
     "semantic_hash": ""
   }
 }

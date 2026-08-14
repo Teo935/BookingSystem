@@ -89,6 +89,8 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(
     ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")!));
 builder.Services.AddSingleton<IRateLimiter, RedisRateLimiter>();
 
+builder.Services.AddSingleton<IRefreshTokenStore, RedisRefreshTokenStore>();
+
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();

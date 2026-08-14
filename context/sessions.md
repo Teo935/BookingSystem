@@ -309,7 +309,39 @@ Punto di partenza: chiusura del TODO aperto dal 2026-08-06 su `GET /api/bookings
 ### Vincoli rispettati
 Nessuna modifica a `Booking.cs`/Repository/`Program.cs`, nessun cambiamento di comportamento per i casi già autorizzati (owner sulla propria prenotazione), nessun CQRS/MediatR introdotto.
 
+## 2026-08-14 — Refresh Token + Redis, rotazione al refresh, logout
+
+Punto di partenza: il login restituiva solo un Access Token JWT (scadenza 60 minuti), nessun modo per rinnovare la sessione senza rifare login da capo, nessun modo per invalidare lato server una sessione (logout "vero" — un JWT firmato resta valido finché non scade).
+
+### Decisioni
+- **Refresh token opaco casuale** (256 bit, `RandomNumberGenerator` + Base64Url), non un secondo JWT: non va decodificato, solo confrontato con Redis — evita di dover gestire firma/scadenza per un token che deve comunque essere revocabile lato server (un JWT non è revocabile senza una blocklist, il che vanificherebbe il vantaggio di usarne uno per il refresh).
+- **Redis via `IConnectionMultiplexer`/`IDatabase` diretto**, non `ICacheService`/`IDistributedCache`: il progetto ha già due strade parallele verso Redis (cache stanze via `IDistributedCache`, rate limiting via `IConnectionMultiplexer`); il refresh token richiede TTL esplicito per singola chiave e delete espliciti in fase di rotazione, esattamente il pattern già usato da `RedisRateLimiter`, quindi stesso precedente riusato invece di forzare `ICacheService`.
+- **Chiave Redis**: `refreshtoken:{token}` → valore `userId` (stringa semplice, non JSON).
+- **`Register` non modificato**: risposta senza refresh token, come richiesto esplicitamente ("modifica il login esistente"); solo `Login`/`Refresh` lo generano.
+- **Logout per singola sessione**: elimina solo il refresh token passato nel body, non tutti quelli dell'utente — coerente con multi-dispositivo naturale (ogni login/refresh crea una entry Redis indipendente, keyed sul token) e con la richiesta ("elimina il Refresh Token", singolare). Idempotente: chiamarlo con un token già scaduto/inesistente ritorna comunque `204`.
+- **Rotation implementata come `RemoveAsync` (vecchio) + `StoreAsync` (nuovo) in sequenza**, non transazione Redis: nel caso peggiore di crash a metà, l'utente deve rifare login — nessun rischio di sicurezza, una vera transazione sarebbe overengineering qui.
+- Refresh con token valido ma il cui utente è stato nel frattempo eliminato: il token orfano viene comunque rimosso da Redis (pulizia) e la richiesta fallisce come "Invalid or expired refresh token." — stesso messaggio generico usato ovunque nel flusso auth, nessun leak su cosa sia effettivamente andato storto.
+
+### File nuovi
+- `Application/Interfaces/IRefreshTokenStore.cs` — astrazione pura (`StoreAsync`/`GetUserIdAsync`/`RemoveAsync`), nessun riferimento a Redis.
+- `Infrastructure/Identity/RedisRefreshTokenStore.cs` — implementazione sopra `IConnectionMultiplexer` già registrato.
+- `Application/DTOs/RefreshTokenRequest.cs` — `{ RefreshToken }`, riusato sia da `/refresh` che da `/logout`.
+- `Tests/Identity/RedisRefreshTokenStoreTests.cs` (4 test) e `Tests/Identity/AuthServiceTests.cs` (8 test, **colma un buco di copertura preesistente**: `AuthService` non aveva alcun test prima di questa sessione).
+
+### File modificati
+- `AuthResponse.cs` (+ `RefreshToken` nullable), `IAuthService.cs` (+ `RefreshAsync`, `LogoutAsync`), `AuthService.cs` (login genera+salva refresh token; nuova logica refresh/logout), `JwtTokenGenerator.cs` (+ `GenerateRefreshToken()`, + proprietà `RefreshTokenExpiration`), `JwtSettings.cs` (+ `RefreshTokenExpirationDays`), `AuthController.cs` (+ `POST /api/auth/refresh`, `POST /api/auth/logout`), `Program.cs` (registra `IRefreshTokenStore` → `RedisRefreshTokenStore` come singleton), `appsettings.json` (+ `Jwt:RefreshTokenExpirationDays: 7`, non è un segreto quindi resta in chiaro come `ExpirationMinutes`).
+
+### Test
+`AuthServiceTests.cs` mocka `UserManager<ApplicationUser>` (tecnica standard: `Mock<UserManager<T>>` con uno store finto passato al costruttore, i metodi pubblici di `UserManager` sono `virtual`) e `IRefreshTokenStore`, ma usa un `JwtTokenGenerator` **reale** (non mockato, perché i suoi metodi non sono `virtual` e non c'è motivo di renderli tali solo per i test — generare un JWT vero con una chiave di test è più semplice e altrettanto valido). Copertura: login con successo genera+salva il refresh token, login con credenziali errate non lo salva, register non lo include nella risposta, refresh valido ruota il token (vecchio rimosso, nuovo salvato) ed è verificato esplicitamente che il nuovo token sia diverso dal vecchio, refresh con token sconosciuto fallisce senza toccare lo store, refresh con utente eliminato rimuove comunque il token orfano, logout chiama sempre `RemoveAsync` sul token passato.
+
+### Verifica
+`dotnet build`: 0 errori/warning. `dotnet test`: **55/55 test superati** (43 preesistenti + 4 + 8 nuovi). End-to-end con `docker compose up --build`: registrato e loggato un nuovo utente, verificato che `Register` non contiene `refreshToken` e `Login` sì; chiamato `/api/auth/refresh` → nuovo access+refresh token, poi riusato il refresh token vecchio → `401` (rotation confermata); nuovo access token verificato funzionante su un endpoint protetto esistente (`GET /api/bookings/mine`); chiamato `/api/auth/logout` → `204`, poi tentato refresh con lo stesso token → `401`; logout con token inesistente → comunque `204` (idempotenza); ispezionata la entry Redis via `redis-cli`: chiave `refreshtoken:{token}`, valore = userId, **TTL 604800 secondi = 7 giorni esatti**; confermato che login Admin e rate limiting su `/api/auth/login` (già esistente) funzionano invariati.
+
+### Vincoli rispettati
+Nessuna logica Redis nei Controller (solo `AuthController` che chiama `IAuthService`), Redis resta un dettaglio infrastrutturale dietro `IRefreshTokenStore`, nessun valore hardcoded (TTL da `IConfiguration`/`appsettings.json`, stesso pattern di `ExpirationMinutes`), claims/ruoli del JWT esistente invariati, comportamento di `Login` sui casi già esistenti (credenziali valide/invalide) invariato.
+
 ## TODO — prossimi passi
 
 - [ ] **Rotazione dei segreti**: JWT `SecretKey` e password admin di seed restano gli stessi valori già presenti nella cronologia Git da prima della sessione del 2026-08-06 (scelta esplicita dell'utente di non ruotarli). Da rivalutare se il progetto dovesse mai uscire dall'uso puramente locale/didattico.
 - [ ] **`GET /api/bookings` (lista completa, verosimilmente Admin-only)**: non esiste ad oggi. Da creare solo se serve davvero un caso d'uso amministrativo — nessuna decisione presa in merito.
+- [ ] **Logout "tutti i dispositivi"**: non implementato (fuori scope della sessione 2026-08-14) — richiederebbe un indice secondario `user:{userId}:tokens` in Redis per tracciare tutti i refresh token attivi di un utente. Da valutare solo se emerge un bisogno reale.

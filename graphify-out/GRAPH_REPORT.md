@@ -1,16 +1,16 @@
 # Graph Report - BookingSystem  (2026-08-14)
 
 ## Corpus Check
-- 66 files · ~16,335 words
+- 71 files · ~17,683 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 492 nodes · 921 edges · 17 communities
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 94 edges (avg confidence: 0.82)
+- 545 nodes · 1053 edges · 17 communities
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 113 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `698c334c`
+- Built from commit: `6cbab069`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,16 +33,16 @@
 - RateLimitAttribute
 
 ## God Nodes (most connected - your core abstractions)
-1. `Room` - 25 edges
-2. `BookingSystem.Application.Interfaces` - 23 edges
-3. `Booking` - 20 edges
-4. `BookingSystem.Application.DTOs` - 19 edges
+1. `BookingSystem.Application.Interfaces` - 26 edges
+2. `Room` - 25 edges
+3. `BookingSystem.Application.DTOs` - 21 edges
+4. `Booking` - 20 edges
 5. `BookingServiceTests` - 19 edges
 6. `RoomServiceTests` - 16 edges
 7. `BookingSystem.Application.Common` - 15 edges
 8. `BookingSystem.Domain.Entities` - 15 edges
 9. `BookingSystem.Infrastructure` - 14 edges
-10. `CachedRoomServiceTests` - 13 edges
+10. `AuthService` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Booking System (README project description)` --semantically_similar_to--> `BookingSystem — ASP.NET Core 8 REST API for Room/Booking management`  [INFERRED] [semantically similar]
@@ -67,8 +67,8 @@
 ## Communities (17 total, 0 thin omitted)
 
 ### Community 0 - "Booking Domain & Service"
-Cohesion: 0.15
-Nodes (12): BookingAccessResult, BookingService, DateTime, Error, IEnumerable, Result, Success, Task (+4 more)
+Cohesion: 0.09
+Nodes (21): IBookingRepository, DateTime, IEnumerable, Task, BookingService, DateTime, Error, IEnumerable (+13 more)
 
 ### Community 1 - "Room Domain & Service"
 Cohesion: 0.11
@@ -79,12 +79,12 @@ Cohesion: 0.06
 Nodes (51): ASP.NET Core CI pipeline (Azure Pipelines, trigger: main, windows-latest), NuGetCommand@2 — restore solution packages, VSBuild@1 — build/publish solution, VSTest@2 — run tests, BookingSystem.API (depends on Application+Infrastructure; controllers, Program.cs), AppDbContext (EF Core) — generic request-flow role, BookingSystem.Application (depends on Domain; interfaces, DTOs, services), Booking (domain entity) (+43 more)
 
 ### Community 3 - "Auth Login/Register Flow"
-Cohesion: 0.06
-Nodes (36): HttpPost, IActionResult, RateLimit, Task, AuthResponse, DateTime, IEnumerable, LoginRequest (+28 more)
+Cohesion: 0.08
+Nodes (28): AuthResponse, DateTime, IEnumerable, IRefreshTokenStore, Task, TimeSpan, ApplicationUser, AuthService (+20 more)
 
 ### Community 4 - "Room API Endpoints"
 Cohesion: 0.06
-Nodes (33): Authorize, RoomsController, HttpDelete, HttpGet, HttpPost, IActionResult, Task, RoomDeleteResult (+25 more)
+Nodes (37): Authorize, RoomsController, HttpDelete, HttpGet, HttpPost, IActionResult, Task, RoomDeleteResult (+29 more)
 
 ### Community 5 - "Project Files & NuGet Deps"
 Cohesion: 0.08
@@ -96,31 +96,31 @@ Nodes (28): ASPNETCORE_ENVIRONMENT, applicationUrl, commandName, dotnetRunMessag
 
 ### Community 7 - "Booking API Endpoints"
 Cohesion: 0.11
-Nodes (20): AllowAnonymous, AuthController, BookingsController, DateTime, HttpDelete, HttpGet, HttpPost, IActionResult (+12 more)
+Nodes (19): AllowAnonymous, BookingsController, DateTime, HttpDelete, HttpGet, HttpPost, IActionResult, RateLimit (+11 more)
 
 ### Community 8 - "DI Wiring & Namespaces"
-Cohesion: 0.11
-Nodes (17): Roles, string, CacheSettings, RateLimitPolicy, BookingSystem.Infrastructure.Caching, BookingSystem.Domain.Entities, BookingSystem.Infrastructure.Data, BookingSystem.Infrastructure.Repositories (+9 more)
+Cohesion: 0.07
+Nodes (27): Roles, string, CacheSettings, AppDbContext, ModelBuilder, AdminSeedOptions, IdentitySeeder, Task (+19 more)
 
 ### Community 9 - "Identity & JWT Infrastructure"
-Cohesion: 0.12
-Nodes (14): IBookingRepository, DateTime, IEnumerable, Task, Booking, DateTime, AppDbContext, ModelBuilder (+6 more)
+Cohesion: 0.17
+Nodes (14): AuthController, HttpPost, IActionResult, RateLimit, Task, LoginRequest, RefreshTokenRequest, RegisterRequest (+6 more)
 
 ### Community 10 - "EF Core Migrations"
 Cohesion: 0.09
 Nodes (13): InitialCreate, MigrationBuilder, InitialCreate, ModelBuilder, AddIdentityAndBookingUserId, MigrationBuilder, AddIdentityAndBookingUserId, ModelBuilder (+5 more)
 
 ### Community 11 - "Project Overview & DB Migration Rationale"
-Cohesion: 0.38
-Nodes (4): RedisCacheService, Task, TimeSpan, IDistributedCache
+Cohesion: 0.21
+Nodes (9): RedisRefreshTokenStore, IConnectionMultiplexer, string, Task, TimeSpan, RedisRefreshTokenStoreTests, Fact, Mock (+1 more)
 
 ### Community 12 - "JWT e ASP.NET Core Identity nel progetto — spiegazione"
 Cohesion: 0.33
 Nodes (5): 1. ASP.NET Core Identity — cos'è e come lo abbiamo usato, 2. I Ruoli (Admin e User), 3. Il Token JWT — come viene generato e validato, 4. Perché questi file sono in `Infrastructure/Identity` e non in `Application`, JWT e ASP.NET Core Identity nel progetto — spiegazione
 
 ### Community 13 - ".IsAllowedAsync"
-Cohesion: 0.15
-Nodes (12): IRateLimiter, Task, TimeSpan, RedisRateLimiter, Task, TimeSpan, RedisRateLimiterTests, Fact (+4 more)
+Cohesion: 0.12
+Nodes (14): IRateLimiter, Task, TimeSpan, RateLimitPolicy, RedisRateLimiter, IConnectionMultiplexer, Task, TimeSpan (+6 more)
 
 ### Community 14 - "Redis come cache per le stanze — spiegazione"
 Cohesion: 0.15
@@ -143,15 +143,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `CI note in CLAUDE.md: azure-pipelines.yml runs build/restore/test on push to main; doc states 'no tests to run yet' (possibly stale, see BookingSystem.Tests)` and `BookingSystem.Tests (xUnit, net8.0, ProjectReference only to Application, created 2026-07-21)`?**
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
-- **Why does `BookingSystem.Application.Interfaces` connect `DI Wiring & Namespaces` to `Room API Endpoints`, `.IsAllowedAsync`?**
-  _High betweenness centrality (0.155) - this node is a cross-community bridge._
-- **Why does `Room` connect `Room Domain & Service` to `Identity & JWT Infrastructure`, `Room API Endpoints`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
-- **Why does `Booking` connect `Identity & JWT Infrastructure` to `Booking Domain & Service`, `Room Domain & Service`, `Booking API Endpoints`?**
-  _High betweenness centrality (0.076) - this node is a cross-community bridge._
+- **Why does `BookingSystem.Application.Interfaces` connect `DI Wiring & Namespaces` to `Project Overview & DB Migration Rationale`, `Auth Login/Register Flow`, `Room API Endpoints`, `.IsAllowedAsync`?**
+  _High betweenness centrality (0.192) - this node is a cross-community bridge._
+- **Why does `Room` connect `Room Domain & Service` to `Booking Domain & Service`, `DI Wiring & Namespaces`, `Room API Endpoints`?**
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+- **Why does `AppDbContext` connect `DI Wiring & Namespaces` to `Booking Domain & Service`, `Room Domain & Service`, `Auth Login/Register Flow`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **What connects `net8.0`, `Swashbuckle.AspNetCore (6.6.2)`, `Microsoft.AspNetCore.Authentication.JwtBearer (8.0.11)` to the rest of the system?**
   _67 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Booking Domain & Service` be split into smaller, more focused modules?**
-  _Cohesion score 0.1497326203208556 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08956228956228957 - nodes in this community are weakly interconnected._
 - **Should `Room Domain & Service` be split into smaller, more focused modules?**
   _Cohesion score 0.10823311748381129 - nodes in this community are weakly interconnected._
