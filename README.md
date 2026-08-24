@@ -52,6 +52,12 @@ L'obiettivo del progetto è simulare un'applicazione backend moderna adottando t
 * Cache Hit / Cache Miss
 * Cache Invalidation automatica quando vengono create, aggiornate o eliminate camere
 
+## Messaggistica Asincrona (Event-Driven)
+
+* Pubblicazione di eventi di dominio su **RabbitMQ** alla creazione e alla cancellazione di una prenotazione
+* Consumer disaccoppiato che elabora gli eventi in modo asincrono, simulando l'invio di notifiche via email
+* La disponibilità del broker non influisce mai sull'esito della richiesta HTTP (eventuali errori di pubblicazione vengono solo loggati)
+
 ---
 
 # Architettura
@@ -103,6 +109,7 @@ Responsabile di:
 * Entity Framework Core
 * SQL Server
 * Redis
+* RabbitMQ
 * ASP.NET Core Identity
 * Repository
 * Persistenza dati
@@ -121,6 +128,7 @@ Responsabile di:
 | Database               | SQL Server                 |
 | ORM                    | Entity Framework Core 8    |
 | Cache                  | Redis                      |
+| Messaggistica          | RabbitMQ (Event-Driven)    |
 | Autenticazione         | ASP.NET Core Identity      |
 | Authorization          | JWT + Roles                |
 | Rate Limiting          | ASP.NET Core Rate Limiting |
@@ -211,6 +219,26 @@ SQL Server rimane l'unica fonte di verità dei dati.
 
 ---
 
+# Eventi con RabbitMQ
+
+Il progetto utilizza **RabbitMQ** per disaccoppiare, tramite un pattern **Event-Driven**, la creazione e la cancellazione di una prenotazione dall'invio delle relative notifiche.
+
+Topologia:
+
+* Un exchange di tipo `topic` (`booking.events`)
+* Due routing key (`booking.created`, `booking.cancelled`)
+* Una coda (`booking.notifications`) con un consumer dedicato
+
+Flusso:
+
+* `POST /api/bookings` e `DELETE /api/bookings/{id}` pubblicano un evento su RabbitMQ dopo il successo dell'operazione
+* Un consumer, eseguito in background nello stesso processo dell'API, elabora l'evento in modo asincrono simulando l'invio di un'email di conferma/cancellazione
+* Se il broker non è raggiungibile, la pubblicazione fallisce in modo silenzioso (solo un log di warning): la richiesta HTTP e la business logic non ne risentono mai
+
+La Management UI di RabbitMQ è disponibile su `http://localhost:15672` quando l'applicazione è eseguita tramite Docker Compose.
+
+---
+
 # Database
 
 Il progetto utilizza:
@@ -236,6 +264,7 @@ Container utilizzati:
 * BookingSystem API
 * SQL Server
 * Redis
+* RabbitMQ (con Management UI su `:15672`)
 
 ---
 
@@ -274,6 +303,7 @@ Questo progetto è stato realizzato per approfondire tecnologie e pattern utiliz
 * JWT Authentication
 * Role-Based Authorization
 * Redis Distributed Cache
+* RabbitMQ ed Event-Driven Architecture
 * ASP.NET Core Rate Limiting
 * Docker
 * Docker Compose
