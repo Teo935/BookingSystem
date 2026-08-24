@@ -1,5 +1,6 @@
 using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
+using BookingSystem.Application.Events;
 using BookingSystem.Application.Interfaces;
 using BookingSystem.Application.Services;
 using BookingSystem.Domain.Entities;
@@ -11,13 +12,15 @@ public class BookingServiceTests
 {
     private readonly Mock<IBookingRepository> _bookingRepositoryMock;
     private readonly Mock<IRoomRepository> _roomRepositoryMock;
+    private readonly Mock<IEventPublisher> _eventPublisherMock;
     private readonly BookingService _sut;
 
     public BookingServiceTests()
     {
         _bookingRepositoryMock = new Mock<IBookingRepository>();
         _roomRepositoryMock = new Mock<IRoomRepository>();
-        _sut = new BookingService(_bookingRepositoryMock.Object, _roomRepositoryMock.Object);
+        _eventPublisherMock = new Mock<IEventPublisher>();
+        _sut = new BookingService(_bookingRepositoryMock.Object, _roomRepositoryMock.Object, _eventPublisherMock.Object);
     }
 
     [Fact]
@@ -41,6 +44,7 @@ public class BookingServiceTests
         Assert.Equal("CheckIn date must be before CheckOut date.", error);
         Assert.Null(booking);
         _bookingRepositoryMock.Verify(b => b.AddAsync(It.IsAny<Booking>()), Times.Never);
+        _eventPublisherMock.Verify(p => p.PublishAsync(It.IsAny<BookingCreatedEvent>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
     [Fact]
@@ -63,6 +67,7 @@ public class BookingServiceTests
         Assert.Equal("CheckIn date must be before CheckOut date.", error);
         Assert.Null(booking);
         _bookingRepositoryMock.Verify(b => b.AddAsync(It.IsAny<Booking>()), Times.Never);
+        _eventPublisherMock.Verify(p => p.PublishAsync(It.IsAny<BookingCreatedEvent>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
     [Fact]
@@ -87,6 +92,7 @@ public class BookingServiceTests
         Assert.Null(booking);
         _bookingRepositoryMock.Verify(b => b.HasOverlapAsync(It.IsAny<int>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()), Times.Never);
         _bookingRepositoryMock.Verify(b => b.AddAsync(It.IsAny<Booking>()), Times.Never);
+        _eventPublisherMock.Verify(p => p.PublishAsync(It.IsAny<BookingCreatedEvent>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
     [Fact]
@@ -114,6 +120,7 @@ public class BookingServiceTests
         Assert.Equal("Room is already booked for the selected dates.", error);
         Assert.Null(booking);
         _bookingRepositoryMock.Verify(b => b.AddAsync(It.IsAny<Booking>()), Times.Never);
+        _eventPublisherMock.Verify(p => p.PublishAsync(It.IsAny<BookingCreatedEvent>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
     [Fact]
@@ -152,6 +159,9 @@ public class BookingServiceTests
         Assert.Equal("user-1", booking.UserId);
         Assert.InRange(booking.CreatedAt, before, after);
         _bookingRepositoryMock.Verify(b => b.AddAsync(It.IsAny<Booking>()), Times.Once);
+        _eventPublisherMock.Verify(p => p.PublishAsync(
+            It.Is<BookingCreatedEvent>(e => e.RoomId == 1 && e.GuestName == "Mario Rossi" && e.RoomName == "Suite"),
+            It.IsAny<CancellationToken>()), Times.Once);
     }
 
     [Fact]
@@ -302,6 +312,7 @@ public class BookingServiceTests
         // Assert
         Assert.Equal(BookingAccessResult.NotFound, result);
         _bookingRepositoryMock.Verify(b => b.RemoveAsync(It.IsAny<Booking>()), Times.Never);
+        _eventPublisherMock.Verify(p => p.PublishAsync(It.IsAny<BookingCancelledEvent>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
     [Fact]
@@ -325,6 +336,9 @@ public class BookingServiceTests
         // Assert
         Assert.Equal(BookingAccessResult.Success, result);
         _bookingRepositoryMock.Verify(b => b.RemoveAsync(booking), Times.Once);
+        _eventPublisherMock.Verify(p => p.PublishAsync(
+            It.Is<BookingCancelledEvent>(e => e.BookingId == 1 && e.GuestName == "Mario Rossi"),
+            It.IsAny<CancellationToken>()), Times.Once);
     }
 
     [Fact]
@@ -348,6 +362,7 @@ public class BookingServiceTests
         // Assert
         Assert.Equal(BookingAccessResult.Success, result);
         _bookingRepositoryMock.Verify(b => b.RemoveAsync(booking), Times.Once);
+        _eventPublisherMock.Verify(p => p.PublishAsync(It.IsAny<BookingCancelledEvent>(), It.IsAny<CancellationToken>()), Times.Once);
     }
 
     [Fact]
@@ -371,5 +386,6 @@ public class BookingServiceTests
         // Assert
         Assert.Equal(BookingAccessResult.Forbidden, result);
         _bookingRepositoryMock.Verify(b => b.RemoveAsync(It.IsAny<Booking>()), Times.Never);
+        _eventPublisherMock.Verify(p => p.PublishAsync(It.IsAny<BookingCancelledEvent>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 }

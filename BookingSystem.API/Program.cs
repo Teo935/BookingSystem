@@ -10,8 +10,10 @@ using BookingSystem.Application.Services;
 using BookingSystem.Infrastructure.Caching;
 using BookingSystem.Infrastructure.Data;
 using BookingSystem.Infrastructure.Identity;
+using BookingSystem.Infrastructure.Messaging;
 using BookingSystem.Infrastructure.RateLimiting;
 using BookingSystem.Infrastructure.Repositories;
+using RabbitMQ.Client;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -90,6 +92,18 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(
 builder.Services.AddSingleton<IRateLimiter, RedisRateLimiter>();
 
 builder.Services.AddSingleton<IRefreshTokenStore, RedisRefreshTokenStore>();
+
+builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
+var rabbitMqConnectionString = builder.Configuration.GetConnectionString("RabbitMq")
+    ?? throw new InvalidOperationException("Missing 'RabbitMq' connection string.");
+builder.Services.AddSingleton<IConnection>(sp =>
+{
+    var factory = new ConnectionFactory { Uri = new Uri(rabbitMqConnectionString) };
+    return factory.CreateConnectionAsync().GetAwaiter().GetResult();
+});
+builder.Services.AddSingleton<IEventPublisher, RabbitMqEventPublisher>();
+builder.Services.AddSingleton<BookingNotificationHandler>();
+builder.Services.AddHostedService<BookingNotificationConsumer>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IBookingService, BookingService>();

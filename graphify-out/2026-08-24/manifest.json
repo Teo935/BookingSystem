@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "BookingSystem.API/Program.cs": {
-    "mtime": 1787563566.0952044,
-    "ast_hash": "8e043eff6128d2a2e1a64e72f733ef84",
+    "mtime": 1786743694.1450512,
+    "ast_hash": "e3e8557890970333f0dc1be2661a981c",
     "semantic_hash": ""
   },
   "BookingSystem.API/Properties/launchSettings.json": {
@@ -35,8 +35,8 @@
     "semantic_hash": "788a4d8d6535640b4938a7a8ddc142f5"
   },
   "BookingSystem.API/appsettings.json": {
-    "mtime": 1787563920.149046,
-    "ast_hash": "65ff7ca46f889b5b8fd2003a695845d5",
+    "mtime": 1786743701.529867,
+    "ast_hash": "1cff89ff4550e5160fdfcd9461d00343",
     "semantic_hash": ""
   },
   "BookingSystem.Application/BookingSystem.Application.csproj": {
@@ -105,8 +105,8 @@
     "semantic_hash": "7aba6642e9996f6c26c64fba344449de"
   },
   "BookingSystem.Application/Services/BookingService.cs": {
-    "mtime": 1787563134.0523617,
-    "ast_hash": "7dc3338b5920e41a33a6c10e0811d573",
+    "mtime": 1786741539.6387644,
+    "ast_hash": "996f4b9dda6e87561e67f26e97578dd9",
     "semantic_hash": ""
   },
   "BookingSystem.Application/Services/RoomService.cs": {
@@ -130,8 +130,8 @@
     "semantic_hash": "bbf9e0f35f413dd50703a7b492d11d7d"
   },
   "BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj": {
-    "mtime": 1787563601.0622556,
-    "ast_hash": "439e4a65ede235cd558eb36203f18d30",
+    "mtime": 1786051688.779265,
+    "ast_hash": "651862e89830640d4a2079e10761c8fb",
     "semantic_hash": ""
   },
   "BookingSystem.Infrastructure/Data/AppDbContext.cs": {
@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "BookingSystem.Tests/Services/BookingServiceTests.cs": {
-    "mtime": 1787563868.927893,
-    "ast_hash": "38a2bcede66c4efbb2a2e743baa9fd05",
+    "mtime": 1786741589.5127547,
+    "ast_hash": "0f99d0e8b64a24502f550cc865b3581e",
     "semantic_hash": ""
   },
   "BookingSystem.Tests/Services/RoomServiceTests.cs": {
@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "context/sessions.md": {
-    "mtime": 1786744254.6951473,
-    "ast_hash": "5548a8347516db992f5a0f3ba6b17ef6",
+    "mtime": 1786742212.7945845,
+    "ast_hash": "8dccc0f02ee1f039fd4c47d1329155b5",
     "semantic_hash": ""
   },
   ".claude/settings.json": {
@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "docker-compose.yml": {
-    "mtime": 1787563892.7665877,
-    "ast_hash": "0590a0b2bfdb5a3dbd672ad620f5eae1",
+    "mtime": 1786038271.9693496,
+    "ast_hash": "10033c30a5f7a90a357162023ef0fc94",
     "semantic_hash": ""
   },
   ".claude/settings.local.json": {
@@ -362,51 +362,6 @@
   "BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs": {
     "mtime": 1786743917.6698074,
     "ast_hash": "c7eaccc197b2aece14df818242a755b9",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Application/Events/BookingCancelledEvent.cs": {
-    "mtime": 1787562907.2162666,
-    "ast_hash": "e3b918ac247a0def9f8341e9fe1b4a86",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Application/Events/BookingCreatedEvent.cs": {
-    "mtime": 1787562889.8878522,
-    "ast_hash": "4d9574702de859ed43f80d91231506bf",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Application/Interfaces/IEventPublisher.cs": {
-    "mtime": 1787563091.721133,
-    "ast_hash": "15e977af9f79eb32fdc95fad5550142f",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs": {
-    "mtime": 1787563548.6578548,
-    "ast_hash": "f2a4595c1db77a22d330a8bd4bdd1a4f",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs": {
-    "mtime": 1787563542.0386782,
-    "ast_hash": "2848ca4c7d68d3b649e660be4e9e55da",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs": {
-    "mtime": 1787563168.6341827,
-    "ast_hash": "a15b1327cdf2a0b1129923801c9726d5",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Infrastructure/Messaging/RabbitMqSettings.cs": {
-    "mtime": 1787563156.9400377,
-    "ast_hash": "765fe94dc08e709b9a422de37ed0b701",
-    "semantic_hash": ""
-  },
-  "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs": {
-    "mtime": 1787563882.2604346,
-    "ast_hash": "c3920a846731dc95888c2ef8aad3a17e",
-    "semantic_hash": ""
-  },
-  "context/refresh-token-redis-spiegazione.md": {
-    "mtime": 1786744743.4317777,
-    "ast_hash": "1623a101b61b0b33f892d83ead263c6d",
     "semantic_hash": ""
   }
 }

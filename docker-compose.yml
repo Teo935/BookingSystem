@@ -21,6 +21,18 @@ services:
     ports:
       - "6379:6379"
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: bookingsystem-rabbitmq
+
+    environment:
+      RABBITMQ_DEFAULT_USER: "${RABBITMQ_USER}"
+      RABBITMQ_DEFAULT_PASS: "${RABBITMQ_PASSWORD}"
+
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
   api:
     build:
       context: .
@@ -34,12 +46,14 @@ services:
     depends_on:
       - sqlserver
       - redis
+      - rabbitmq
 
     environment:
       ASPNETCORE_ENVIRONMENT: Development
 
       ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=BookingSystemDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;"
       ConnectionStrings__Redis: "redis:6379"
+      ConnectionStrings__RabbitMq: "amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672/"
       Jwt__SecretKey: "${JWT_SECRET_KEY}"
       AdminSeed__Email: "${ADMIN_SEED_EMAIL}"
       AdminSeed__Password: "${ADMIN_SEED_PASSWORD}"

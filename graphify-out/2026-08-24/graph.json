@@ -188,8 +188,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "controllerbase",
-      "community": 7,
-      "community_name": "Booking API Endpoints",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "controllerbase"
     },
     {
@@ -702,8 +702,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_api_filters_ratelimitattribute",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "ratelimitattribute.cs"
     },
     {
@@ -735,8 +735,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_api_filters_ratelimitattribute_bookingsystem_api_filters_ratelimitattribute",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "ratelimitattribute"
     },
     {
@@ -746,8 +746,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "attribute",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "attribute"
     },
     {
@@ -757,8 +757,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "iasyncactionfilter",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "iasyncactionfilter"
     },
     {
@@ -768,8 +768,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_api_filters_ratelimitattribute_cs_string",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "string"
     },
     {
@@ -785,8 +785,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_api_filters_ratelimitattribute_bookingsystem_api_filters_ratelimitattribute_onactionexecutionasync",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": ".onactionexecutionasync()"
     },
     {
@@ -796,8 +796,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "actionexecutingcontext",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "actionexecutingcontext"
     },
     {
@@ -807,8 +807,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "actionexecutiondelegate",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "actionexecutiondelegate"
     },
     {
@@ -818,8 +818,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_api_filters_ratelimitattribute_cs_task",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "task"
     },
     {
@@ -829,8 +829,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_api_filters_ratelimitkeytype",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "ratelimitkeytype.cs"
     },
     {
@@ -846,8 +846,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_api_filters_ratelimitkeytype_bookingsystem_api_filters_ratelimitkeytype",
-      "community": 13,
-      "community_name": ".IsAllowedAsync",
+      "community": 15,
+      "community_name": "RateLimitAttribute",
       "norm_label": "ratelimitkeytype"
     },
     {
@@ -1220,8 +1220,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_common_bookingaccessresult",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 7,
+      "community_name": "Booking API Endpoints",
       "norm_label": "bookingaccessresult.cs"
     },
     {
@@ -1253,8 +1253,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_application_common_bookingaccessresult_bookingsystem_application_common_bookingaccessresult",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
+      "community": 7,
+      "community_name": "Booking API Endpoints",
       "norm_label": "bookingaccessresult"
     },
     {
@@ -1331,8 +1331,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_dtos_authresponse",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 3,
+      "community_name": "Auth Login/Register Flow",
       "norm_label": "authresponse.cs"
     },
     {
@@ -1492,8 +1492,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_dtos_refreshtokenrequest",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 9,
+      "community_name": "Identity & JWT Infrastructure",
       "norm_label": "refreshtokenrequest.cs"
     },
     {
@@ -1570,86 +1570,14 @@
       "norm_label": "updateroomrequest"
     },
     {
-      "label": "BookingCancelledEvent.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Events/BookingCancelledEvent.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_application_events_bookingcancelledevent",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingcancelledevent.cs"
-    },
-    {
-      "label": "BookingSystem.Application.Events",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Events/BookingCancelledEvent.cs",
-      "source_location": "L1",
-      "type": "namespace",
-      "metadata": {
-        "kind": "csharp_namespace",
-        "namespace": "BookingSystem.Application.Events"
-      },
-      "_origin": "ast",
-      "id": "csharp_namespace:861d57cc17445efb",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingsystem.application.events"
-    },
-    {
-      "label": "BookingCancelledEvent",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Events/BookingCancelledEvent.cs",
-      "source_location": "L3",
-      "metadata": {
-        "namespace": "BookingSystem.Application.Events",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_application_events_bookingcancelledevent_bookingsystem_application_events_bookingcancelledevent",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingcancelledevent"
-    },
-    {
-      "label": "BookingCreatedEvent.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Events/BookingCreatedEvent.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_application_events_bookingcreatedevent",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingcreatedevent.cs"
-    },
-    {
-      "label": "BookingCreatedEvent",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Events/BookingCreatedEvent.cs",
-      "source_location": "L3",
-      "metadata": {
-        "namespace": "BookingSystem.Application.Events",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_application_events_bookingcreatedevent_bookingsystem_application_events_bookingcreatedevent",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingcreatedevent"
-    },
-    {
       "label": "IAuthService.cs",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iauthservice",
-      "community": 9,
-      "community_name": "Identity & JWT Infrastructure",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "iauthservice.cs"
     },
     {
@@ -1967,8 +1895,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_ibookingservice",
-      "community": 7,
-      "community_name": "Booking API Endpoints",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "ibookingservice.cs"
     },
     {
@@ -2239,73 +2167,6 @@
       "community": 4,
       "community_name": "Room API Endpoints",
       "norm_label": ".removeasync()"
-    },
-    {
-      "label": "IEventPublisher.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_application_interfaces_ieventpublisher",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
-      "norm_label": "ieventpublisher.cs"
-    },
-    {
-      "label": "IEventPublisher",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L3",
-      "metadata": {
-        "namespace": "BookingSystem.Application.Interfaces",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
-      "norm_label": "ieventpublisher"
-    },
-    {
-      "label": ".PublishAsync()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L5",
-      "metadata": {
-        "namespace": "BookingSystem.Application.Interfaces",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher_publishasync",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
-      "norm_label": ".publishasync()"
-    },
-    {
-      "label": "CancellationToken",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_application_interfaces_ieventpublisher_cs_cancellationtoken",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
-      "norm_label": "cancellationtoken"
-    },
-    {
-      "label": "Task",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_application_interfaces_ieventpublisher_cs_task",
-      "community": 0,
-      "community_name": "Booking Domain & Service",
-      "norm_label": "task"
     },
     {
       "label": "IRateLimiter.cs",
@@ -2634,8 +2495,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_application_interfaces_iroomservice",
-      "community": 4,
-      "community_name": "Room API Endpoints",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "iroomservice.cs"
     },
     {
@@ -2799,7 +2660,7 @@
       "label": "BookingSystem.Application.Services",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L7",
+      "source_location": "L6",
       "type": "namespace",
       "metadata": {
         "kind": "csharp_namespace",
@@ -2815,11 +2676,11 @@
       "label": "BookingService",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L9",
+      "source_location": "L8",
       "metadata": {
         "namespace": "BookingSystem.Application.Services",
         "scope_chain": [
-          "s200"
+          "s160"
         ]
       },
       "_origin": "ast",
@@ -2832,11 +2693,11 @@
       "label": ".CreateBookingAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L22",
+      "source_location": "L19",
       "metadata": {
         "namespace": "BookingSystem.Application.Services",
         "scope_chain": [
-          "s200"
+          "s160"
         ]
       },
       "_origin": "ast",
@@ -2882,11 +2743,11 @@
       "label": ".IsRoomAvailableAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L60",
+      "source_location": "L53",
       "metadata": {
         "namespace": "BookingSystem.Application.Services",
         "scope_chain": [
-          "s200"
+          "s160"
         ]
       },
       "_origin": "ast",
@@ -2910,11 +2771,11 @@
       "label": ".GetBookingAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L66",
+      "source_location": "L59",
       "metadata": {
         "namespace": "BookingSystem.Application.Services",
         "scope_chain": [
-          "s200"
+          "s160"
         ]
       },
       "_origin": "ast",
@@ -2938,11 +2799,11 @@
       "label": ".GetBookingsByUserAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L76",
+      "source_location": "L69",
       "metadata": {
         "namespace": "BookingSystem.Application.Services",
         "scope_chain": [
-          "s200"
+          "s160"
         ]
       },
       "_origin": "ast",
@@ -2966,11 +2827,11 @@
       "label": ".CancelBookingAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L81",
+      "source_location": "L74",
       "metadata": {
         "namespace": "BookingSystem.Application.Services",
         "scope_chain": [
-          "s200"
+          "s160"
         ]
       },
       "_origin": "ast",
@@ -3165,8 +3026,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_domain_entities_booking",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 0,
+      "community_name": "Booking Domain & Service",
       "norm_label": "booking.cs"
     },
     {
@@ -3220,8 +3081,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_domain_entities_room",
-      "community": 8,
-      "community_name": "DI Wiring & Namespaces",
+      "community": 1,
+      "community_name": "Room Domain & Service",
       "norm_label": "room.cs"
     },
     {
@@ -3295,28 +3156,6 @@
       "community": 5,
       "community_name": "Project Files & NuGet Deps",
       "norm_label": "microsoft.extensions.caching.stackexchangeredis (8.0.11)"
-    },
-    {
-      "label": "Microsoft.Extensions.Hosting.Abstractions (8.0.1)",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "id": "nuget_microsoft_extensions_hosting_abstractions",
-      "community": 5,
-      "community_name": "Project Files & NuGet Deps",
-      "norm_label": "microsoft.extensions.hosting.abstractions (8.0.1)"
-    },
-    {
-      "label": "RabbitMQ.Client (7.2.2)",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj",
-      "source_location": null,
-      "_origin": "ast",
-      "id": "nuget_rabbitmq_client",
-      "community": 5,
-      "community_name": "Project Files & NuGet Deps",
-      "norm_label": "rabbitmq.client (7.2.2)"
     },
     {
       "label": "StackExchange.Redis (2.7.27)",
@@ -3592,8 +3431,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "rediscacheservice.cs"
     },
     {
@@ -3609,8 +3448,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "rediscacheservice"
     },
     {
@@ -3620,8 +3459,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "idistributedcache",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "idistributedcache"
     },
     {
@@ -3637,8 +3476,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice_getasync",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": ".getasync()"
     },
     {
@@ -3648,8 +3487,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_cs_task",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "task"
     },
     {
@@ -3665,8 +3504,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice_setasync",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": ".setasync()"
     },
     {
@@ -3676,8 +3515,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_cs_timespan",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": "timespan"
     },
     {
@@ -3693,8 +3532,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_caching_rediscacheservice_bookingsystem_infrastructure_caching_rediscacheservice_removeasync",
-      "community": 18,
-      "community_name": "RedisCacheService",
+      "community": 4,
+      "community_name": "Room API Endpoints",
       "norm_label": ".removeasync()"
     },
     {
@@ -4177,8 +4016,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_jwtsettings",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "jwtsettings.cs"
     },
     {
@@ -4194,8 +4033,8 @@
       },
       "_origin": "ast",
       "id": "bookingsystem_infrastructure_identity_jwtsettings_bookingsystem_infrastructure_identity_jwtsettings",
-      "community": 3,
-      "community_name": "Auth Login/Register Flow",
+      "community": 8,
+      "community_name": "DI Wiring & Namespaces",
       "norm_label": "jwtsettings"
     },
     {
@@ -4437,396 +4276,6 @@
       "community": 11,
       "community_name": "Project Overview & DB Migration Rationale",
       "norm_label": ".removeasync()"
-    },
-    {
-      "label": "BookingNotificationConsumer.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingnotificationconsumer.cs"
-    },
-    {
-      "label": "BookingSystem.Infrastructure.Messaging",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L10",
-      "type": "namespace",
-      "metadata": {
-        "kind": "csharp_namespace",
-        "namespace": "BookingSystem.Infrastructure.Messaging"
-      },
-      "_origin": "ast",
-      "id": "csharp_namespace:089dbd4fc3b679b9",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingsystem.infrastructure.messaging"
-    },
-    {
-      "label": "BookingNotificationConsumer",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L12",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s245"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingnotificationconsumer"
-    },
-    {
-      "label": "BackgroundService",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "backgroundservice",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "backgroundservice"
-    },
-    {
-      "label": "IConnection",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_iconnection",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "iconnection"
-    },
-    {
-      "label": "ILogger",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_ilogger",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "ilogger"
-    },
-    {
-      "label": "IChannel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "ichannel",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "ichannel"
-    },
-    {
-      "label": ".ExecuteAsync()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L32",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s245"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_executeasync",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".executeasync()"
-    },
-    {
-      "label": "CancellationToken",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_cancellationtoken",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "cancellationtoken"
-    },
-    {
-      "label": "Task",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_task",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "task"
-    },
-    {
-      "label": ".OnMessageReceivedAsync()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L48",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s245"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_onmessagereceivedasync",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".onmessagereceivedasync()"
-    },
-    {
-      "label": "BasicDeliverEventArgs",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "basicdelivereventargs",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "basicdelivereventargs"
-    },
-    {
-      "label": ".StopAsync()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L82",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s245"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_stopasync",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".stopasync()"
-    },
-    {
-      "label": "BookingNotificationHandler.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingnotificationhandler.cs"
-    },
-    {
-      "label": "BookingNotificationHandler",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L6",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s77"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingnotificationhandler"
-    },
-    {
-      "label": "ILogger",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_cs_ilogger",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "ilogger"
-    },
-    {
-      "label": ".HandleBookingCreatedAsync()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L15",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s77"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcreatedasync",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".handlebookingcreatedasync()"
-    },
-    {
-      "label": "Task",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_cs_task",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "task"
-    },
-    {
-      "label": ".HandleBookingCancelledAsync()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L24",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s77"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcancelledasync",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".handlebookingcancelledasync()"
-    },
-    {
-      "label": "RabbitMqEventPublisher.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "rabbitmqeventpublisher.cs"
-    },
-    {
-      "label": "RabbitMqEventPublisher",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L10",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s204"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "rabbitmqeventpublisher"
-    },
-    {
-      "label": "IConnection",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_iconnection",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "iconnection"
-    },
-    {
-      "label": "ILogger",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_ilogger",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "ilogger"
-    },
-    {
-      "label": ".PublishAsync()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L23",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s204"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_publishasync",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".publishasync()"
-    },
-    {
-      "label": "CancellationToken",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_cancellationtoken",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "cancellationtoken"
-    },
-    {
-      "label": "Task",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_task",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "task"
-    },
-    {
-      "label": ".GetRoutingKey()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L48",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s204"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_getroutingkey",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".getroutingkey()"
-    },
-    {
-      "label": "RabbitMqSettings.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqSettings.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqsettings",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "rabbitmqsettings.cs"
-    },
-    {
-      "label": "RabbitMqSettings",
-      "file_type": "code",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqSettings.cs",
-      "source_location": "L3",
-      "metadata": {
-        "namespace": "BookingSystem.Infrastructure.Messaging",
-        "scope_chain": [
-          "s0"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_infrastructure_messaging_rabbitmqsettings_bookingsystem_infrastructure_messaging_rabbitmqsettings",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "rabbitmqsettings"
     },
     {
       "label": "20260721122717_InitialCreate.Designer.cs",
@@ -6103,117 +5552,6 @@
       "norm_label": ".removeasync_callskeydeletewithkeyprefix()"
     },
     {
-      "label": "BookingNotificationHandlerTests.cs",
-      "file_type": "code",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingnotificationhandlertests.cs"
-    },
-    {
-      "label": "BookingSystem.Tests.Messaging",
-      "file_type": "code",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L6",
-      "type": "namespace",
-      "metadata": {
-        "kind": "csharp_namespace",
-        "namespace": "BookingSystem.Tests.Messaging"
-      },
-      "_origin": "ast",
-      "id": "csharp_namespace:f8d4feb8f639d275",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingsystem.tests.messaging"
-    },
-    {
-      "label": "BookingNotificationHandlerTests",
-      "file_type": "code",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L8",
-      "metadata": {
-        "namespace": "BookingSystem.Tests.Messaging",
-        "scope_chain": [
-          "s134"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "bookingnotificationhandlertests"
-    },
-    {
-      "label": "Mock",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_mock",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "mock"
-    },
-    {
-      "label": ".HandleBookingCreatedAsync_ValidEvent_LogsGuestName()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L19",
-      "metadata": {
-        "namespace": "BookingSystem.Tests.Messaging",
-        "scope_chain": [
-          "s134"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcreatedasync_validevent_logsguestname",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".handlebookingcreatedasync_validevent_logsguestname()"
-    },
-    {
-      "label": "Task",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_task",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "task"
-    },
-    {
-      "label": "Fact",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_fact",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": "fact"
-    },
-    {
-      "label": ".HandleBookingCancelledAsync_ValidEvent_LogsGuestName()",
-      "file_type": "code",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L39",
-      "metadata": {
-        "namespace": "BookingSystem.Tests.Messaging",
-        "scope_chain": [
-          "s134"
-        ]
-      },
-      "_origin": "ast",
-      "id": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcancelledasync_validevent_logsguestname",
-      "community": 15,
-      "community_name": "RateLimitAttribute",
-      "norm_label": ".handlebookingcancelledasync_validevent_logsguestname()"
-    },
-    {
       "label": "RedisRateLimiterTests.cs",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/RateLimiting/RedisRateLimiterTests.cs",
@@ -6373,7 +5711,7 @@
       "label": "BookingSystem.Tests.Services",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L9",
+      "source_location": "L8",
       "type": "namespace",
       "metadata": {
         "kind": "csharp_namespace",
@@ -6389,11 +5727,11 @@
       "label": "BookingServiceTests",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L11",
+      "source_location": "L10",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6417,11 +5755,11 @@
       "label": ".CreateBookingAsync_CheckInEqualsCheckOut_ReturnsError()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L26",
+      "source_location": "L23",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6456,11 +5794,11 @@
       "label": ".CreateBookingAsync_CheckInAfterCheckOut_ReturnsError()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L50",
+      "source_location": "L46",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6473,11 +5811,11 @@
       "label": ".CreateBookingAsync_RoomDoesNotExist_ReturnsError()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L73",
+      "source_location": "L68",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6490,11 +5828,11 @@
       "label": ".CreateBookingAsync_OverlappingDates_ReturnsError()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L98",
+      "source_location": "L92",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6507,11 +5845,11 @@
       "label": ".CreateBookingAsync_ValidRequest_ReturnsSuccessAndCallsAddAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L126",
+      "source_location": "L119",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6524,11 +5862,11 @@
       "label": ".IsRoomAvailableAsync_NoOverlap_ReturnsTrue()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L167",
+      "source_location": "L157",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6541,11 +5879,11 @@
       "label": ".IsRoomAvailableAsync_HasOverlap_ReturnsFalse()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L182",
+      "source_location": "L172",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6558,11 +5896,11 @@
       "label": ".IsRoomAvailableAsync_RoomDoesNotExist_StillOnlyChecksOverlap()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L197",
+      "source_location": "L187",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6575,11 +5913,11 @@
       "label": ".GetBookingAsync_OwnerRequestsOwnBooking_ReturnsSuccessAndBooking()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L216",
+      "source_location": "L206",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6592,11 +5930,11 @@
       "label": ".GetBookingAsync_AdminRequestsAnyBooking_ReturnsSuccessAndBooking()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L241",
+      "source_location": "L231",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6609,11 +5947,11 @@
       "label": ".GetBookingAsync_NonOwnerNonAdminRequestsBooking_ReturnsForbidden()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L265",
+      "source_location": "L255",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6626,11 +5964,11 @@
       "label": ".GetBookingAsync_NonExistingId_ReturnsNotFound()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L289",
+      "source_location": "L279",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6643,11 +5981,11 @@
       "label": ".CancelBookingAsync_NonExistingBooking_ReturnsNotFound()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L303",
+      "source_location": "L293",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6660,11 +5998,11 @@
       "label": ".CancelBookingAsync_OwnerCancelsOwnBooking_ReturnsSuccessAndCallsRemoveAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L318",
+      "source_location": "L307",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6677,11 +6015,11 @@
       "label": ".CancelBookingAsync_AdminCancelsAnyBooking_ReturnsSuccessAndCallsRemoveAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L344",
+      "source_location": "L330",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -6694,11 +6032,11 @@
       "label": ".CancelBookingAsync_NonOwnerNonAdminCancelsBooking_ReturnsForbiddenAndDoesNotCallRemoveAsync()",
       "file_type": "code",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L368",
+      "source_location": "L353",
       "metadata": {
         "namespace": "BookingSystem.Tests.Services",
         "scope_chain": [
-          "s253"
+          "s213"
         ]
       },
       "_origin": "ast",
@@ -7466,215 +6804,6 @@
       "community": 14,
       "community_name": "Redis come cache per le stanze \u2014 spiegazione",
       "norm_label": "nota aperta"
-    },
-    {
-      "label": "refresh-token-redis-spiegazione.md",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "refresh-token-redis-spiegazione.md"
-    },
-    {
-      "label": "Refresh Token + Redis \u2014 spiegazione dettagliata",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_refresh_token_redis_spiegazione_dettagliata",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "refresh token + redis \u2014 spiegazione dettagliata"
-    },
-    {
-      "label": "Concetti di base (per chi legge senza contesto)",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_concetti_di_base_per_chi_legge_senza_contesto",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "concetti di base (per chi legge senza contesto)"
-    },
-    {
-      "label": "File nuovi",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_file_nuovi",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "file nuovi"
-    },
-    {
-      "label": "1. `BookingSystem.Application/Interfaces/IRefreshTokenStore.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L47",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_1_bookingsystem_application_interfaces_irefreshtokenstore_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "1. `bookingsystem.application/interfaces/irefreshtokenstore.cs`"
-    },
-    {
-      "label": "2. `BookingSystem.Infrastructure/Identity/RedisRefreshTokenStore.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L78",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_2_bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "2. `bookingsystem.infrastructure/identity/redisrefreshtokenstore.cs`"
-    },
-    {
-      "label": "3. `BookingSystem.Application/DTOs/RefreshTokenRequest.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L145",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_3_bookingsystem_application_dtos_refreshtokenrequest_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "3. `bookingsystem.application/dtos/refreshtokenrequest.cs`"
-    },
-    {
-      "label": "4. `BookingSystem.Tests/Identity/RedisRefreshTokenStoreTests.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L161",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_4_bookingsystem_tests_identity_redisrefreshtokenstoretests_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "4. `bookingsystem.tests/identity/redisrefreshtokenstoretests.cs`"
-    },
-    {
-      "label": "5. `BookingSystem.Tests/Identity/AuthServiceTests.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L177",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_5_bookingsystem_tests_identity_authservicetests_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "5. `bookingsystem.tests/identity/authservicetests.cs`"
-    },
-    {
-      "label": "File modificati",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L208",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_file_modificati",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "file modificati"
-    },
-    {
-      "label": "6. `BookingSystem.Infrastructure/Identity/JwtSettings.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L210",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_6_bookingsystem_infrastructure_identity_jwtsettings_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "6. `bookingsystem.infrastructure/identity/jwtsettings.cs`"
-    },
-    {
-      "label": "7. `BookingSystem.Infrastructure/Identity/JwtTokenGenerator.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L229",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_7_bookingsystem_infrastructure_identity_jwttokengenerator_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "7. `bookingsystem.infrastructure/identity/jwttokengenerator.cs`"
-    },
-    {
-      "label": "8. `BookingSystem.Application/DTOs/AuthResponse.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L265",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_8_bookingsystem_application_dtos_authresponse_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "8. `bookingsystem.application/dtos/authresponse.cs`"
-    },
-    {
-      "label": "9. `BookingSystem.Application/Interfaces/IAuthService.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L284",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_9_bookingsystem_application_interfaces_iauthservice_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "9. `bookingsystem.application/interfaces/iauthservice.cs`"
-    },
-    {
-      "label": "10. `BookingSystem.Infrastructure/Identity/AuthService.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L309",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_10_bookingsystem_infrastructure_identity_authservice_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "10. `bookingsystem.infrastructure/identity/authservice.cs`"
-    },
-    {
-      "label": "11. `BookingSystem.API/Controllers/AuthController.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L483",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_11_bookingsystem_api_controllers_authcontroller_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "11. `bookingsystem.api/controllers/authcontroller.cs`"
-    },
-    {
-      "label": "12. `BookingSystem.API/Program.cs`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L530",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_12_bookingsystem_api_program_cs",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "12. `bookingsystem.api/program.cs`"
-    },
-    {
-      "label": "13. `BookingSystem.API/appsettings.json`",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L556",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_13_bookingsystem_api_appsettings_json",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "13. `bookingsystem.api/appsettings.json`"
-    },
-    {
-      "label": "Riassunto del flusso end-to-end",
-      "file_type": "document",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L580",
-      "_origin": "ast",
-      "id": "context_refresh_token_redis_spiegazione_riassunto_del_flusso_end_to_end",
-      "community": 17,
-      "community_name": "File modificati",
-      "norm_label": "riassunto del flusso end-to-end"
     },
     {
       "label": "BookingSystem \u2014 ASP.NET Core 8 REST API for Room/Booking management",
@@ -8620,26 +7749,6 @@
       "_origin": "ast",
       "source": "bookingsystem_infrastructure_bookingsystem_infrastructure",
       "target": "nuget_microsoft_extensions_caching_stackexchangeredis",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_bookingsystem_infrastructure",
-      "target": "nuget_microsoft_extensions_hosting_abstractions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_bookingsystem_infrastructure",
-      "target": "nuget_rabbitmq_client",
       "confidence_score": 1.0
     },
     {
@@ -10369,23 +9478,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.API/Program.cs",
-      "source_location": "L13",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Infrastructure.Messaging",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_api_program",
-      "target": "csharp_namespace:089dbd4fc3b679b9",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.API/Program.cs",
       "source_location": "L10",
       "weight": 1.0,
       "metadata": {
@@ -10420,7 +9512,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.API/Program.cs",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "metadata": {
         "using_kind": "namespace",
@@ -10437,7 +9529,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.API/Program.cs",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0,
       "metadata": {
         "using_kind": "namespace",
@@ -11108,7 +10200,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L81",
+      "source_location": "L74",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -11123,7 +10215,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L66",
+      "source_location": "L59",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -11701,7 +10793,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -11920,182 +11012,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Events/BookingCancelledEvent.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_events_bookingcancelledevent",
-      "target": "bookingsystem_application_events_bookingcancelledevent_bookingsystem_application_events_bookingcancelledevent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Events/BookingCancelledEvent.cs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_events_bookingcancelledevent",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Events/BookingCreatedEvent.cs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_events_bookingcreatedevent",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Application.Events",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_application_services_bookingservice",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Application.Events",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Application.Events",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L2",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Application.Events",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Application.Events",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Application.Events",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_services_bookingservicetests",
-      "target": "csharp_namespace:861d57cc17445efb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L24",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "BookingCancelledEvent"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcancelledasync",
-      "target": "bookingsystem_application_events_bookingcancelledevent_bookingsystem_application_events_bookingcancelledevent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Events/BookingCreatedEvent.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_events_bookingcreatedevent",
-      "target": "bookingsystem_application_events_bookingcreatedevent_bookingsystem_application_events_bookingcreatedevent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L15",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "BookingCreatedEvent"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcreatedasync",
-      "target": "bookingsystem_application_events_bookingcreatedevent_bookingsystem_application_events_bookingcreatedevent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Interfaces/IAuthService.cs",
       "source_location": "L5",
       "weight": 1.0,
@@ -12151,17 +11067,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_interfaces_ieventpublisher",
-      "target": "csharp_namespace:eadba0a450a3757d",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Interfaces/IRateLimiter.cs",
       "source_location": "L1",
       "weight": 1.0,
@@ -12208,7 +11113,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0,
       "metadata": {
         "using_kind": "namespace",
@@ -12309,23 +11214,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Application.Interfaces",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "csharp_namespace:eadba0a450a3757d",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/RateLimiting/RedisRateLimiter.cs",
       "source_location": "L1",
       "weight": 1.0,
@@ -12395,7 +11283,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0,
       "metadata": {
         "using_kind": "namespace",
@@ -12792,7 +11680,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -12853,7 +11741,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L35",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_createbookingasync",
@@ -12865,7 +11753,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L62",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_isroomavailableasync",
@@ -12967,7 +11855,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L51",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_createbookingasync",
@@ -12994,7 +11882,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L83",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_cancelbookingasync",
@@ -13021,7 +11909,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L68",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_getbookingasync",
@@ -13063,7 +11951,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L78",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_getbookingsbyuserasync",
@@ -13090,7 +11978,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L88",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_cancelbookingasync",
@@ -13183,7 +12071,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "metadata": {
         "ref_token": "IBookingService"
@@ -13572,111 +12460,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_interfaces_ieventpublisher",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher_publishasync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L13",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "IEventPublisher"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L10",
-      "weight": 1.0,
-      "metadata": {
-        "ref_token": "IEventPublisher"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L5",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "CancellationToken"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher_publishasync",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_cs_cancellationtoken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Application/Interfaces/IEventPublisher.cs",
-      "source_location": "L5",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher_publishasync",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L90",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_cancelbookingasync",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher_publishasync"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L53",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_createbookingasync",
-      "target": "bookingsystem_application_interfaces_ieventpublisher_bookingsystem_application_interfaces_ieventpublisher_publishasync"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Interfaces/IRateLimiter.cs",
       "source_location": "L3",
       "weight": 1.0,
@@ -14019,7 +12802,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -14095,7 +12878,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L29",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice_createbookingasync",
@@ -14691,7 +13474,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice",
@@ -14703,7 +13486,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "metadata": {
         "using_kind": "namespace",
@@ -14719,7 +13502,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice",
@@ -14742,7 +13525,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "metadata": {
         "using_kind": "namespace",
@@ -14775,7 +13558,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L81",
+      "source_location": "L74",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice",
@@ -14786,7 +13569,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice",
@@ -14797,7 +13580,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L66",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice",
@@ -14808,7 +13591,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L76",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice",
@@ -14819,7 +13602,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L60",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_application_services_bookingservice_bookingsystem_application_services_bookingservice",
@@ -14830,7 +13613,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -14845,7 +13628,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14860,7 +13643,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14875,7 +13658,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14890,7 +13673,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L22",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -14907,7 +13690,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L63",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_createbookingasync_checkinaftercheckout_returnserror",
@@ -14919,7 +13702,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L40",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_createbookingasync_checkinequalscheckout_returnserror",
@@ -14931,7 +13714,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L116",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_createbookingasync_overlappingdates_returnserror",
@@ -14943,7 +13726,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L87",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_createbookingasync_roomdoesnotexist_returnserror",
@@ -14955,7 +13738,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L149",
+      "source_location": "L142",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_createbookingasync_validrequest_returnssuccessandcallsaddasync",
@@ -14965,7 +13748,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L81",
+      "source_location": "L74",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14980,7 +13763,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L66",
+      "source_location": "L59",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -14995,7 +13778,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L76",
+      "source_location": "L69",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -15010,7 +13793,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L60",
+      "source_location": "L53",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -15025,7 +13808,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L60",
+      "source_location": "L53",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -15042,7 +13825,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L191",
+      "source_location": "L181",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_isroomavailableasync_hasoverlap_returnsfalse",
@@ -15054,7 +13837,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L176",
+      "source_location": "L166",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_isroomavailableasync_nooverlap_returnstrue",
@@ -15066,7 +13849,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L209",
+      "source_location": "L199",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_isroomavailableasync_roomdoesnotexist_stillonlychecksoverlap",
@@ -15076,7 +13859,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L66",
+      "source_location": "L59",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -15091,7 +13874,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L66",
+      "source_location": "L59",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -15108,7 +13891,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L258",
+      "source_location": "L248",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_getbookingasync_adminrequestsanybooking_returnssuccessandbooking",
@@ -15120,7 +13903,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L296",
+      "source_location": "L286",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_getbookingasync_nonexistingid_returnsnotfound",
@@ -15132,7 +13915,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L282",
+      "source_location": "L272",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_getbookingasync_nonownernonadminrequestsbooking_returnsforbidden",
@@ -15144,7 +13927,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L233",
+      "source_location": "L223",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_getbookingasync_ownerrequestsownbooking_returnssuccessandbooking",
@@ -15154,7 +13937,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L76",
+      "source_location": "L69",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -15169,7 +13952,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Application/Services/BookingService.cs",
-      "source_location": "L76",
+      "source_location": "L69",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -15186,7 +13969,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L360",
+      "source_location": "L346",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_cancelbookingasync_admincancelsanybooking_returnssuccessandcallsremoveasync",
@@ -15198,7 +13981,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L310",
+      "source_location": "L300",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_cancelbookingasync_nonexistingbooking_returnsnotfound",
@@ -15210,7 +13993,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L384",
+      "source_location": "L369",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_cancelbookingasync_nonownernonadmincancelsbooking_returnsforbiddenanddoesnotcallremoveasync",
@@ -15222,7 +14005,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L334",
+      "source_location": "L323",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests_cancelbookingasync_ownercancelsownbooking_returnssuccessandcallsremoveasync",
@@ -15768,7 +14551,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "metadata": {
         "using_kind": "namespace",
@@ -18036,550 +16819,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "csharp_namespace:089dbd4fc3b679b9",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "target": "csharp_namespace:089dbd4fc3b679b9",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "csharp_namespace:089dbd4fc3b679b9",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqSettings.cs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqsettings",
-      "target": "csharp_namespace:089dbd4fc3b679b9",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L2",
-      "weight": 1.0,
-      "metadata": {
-        "using_kind": "namespace",
-        "target_fqn": "BookingSystem.Infrastructure.Messaging",
-        "scope_kind": "file"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "csharp_namespace:089dbd4fc3b679b9",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L12",
-      "weight": 1.0,
-      "metadata": {
-        "ref_token": "BackgroundService"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "backgroundservice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L32",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_executeasync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L48",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_onmessagereceivedasync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L82",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_stopasync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L14",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "IConnection"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_iconnection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L17",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "ILogger"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_ilogger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L16",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "BookingNotificationHandler"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L15",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "RabbitMqSettings"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqsettings_bookingsystem_infrastructure_messaging_rabbitmqsettings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L18",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "IChannel"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer",
-      "target": "ichannel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L32",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "CancellationToken"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_executeasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_cancellationtoken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L32",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_executeasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L82",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "CancellationToken"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_stopasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_cancellationtoken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L48",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_onmessagereceivedasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L82",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_stopasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L48",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "BasicDeliverEventArgs"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_onmessagereceivedasync",
-      "target": "basicdelivereventargs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L65",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_onmessagereceivedasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcancelledasync"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationConsumer.cs",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationconsumer_bookingsystem_infrastructure_messaging_bookingnotificationconsumer_onmessagereceivedasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcreatedasync"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcancelledasync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcreatedasync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L8",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "ILogger"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_cs_ilogger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L11",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "BookingNotificationHandler"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L15",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcreatedasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcreatedasync_validevent_logsguestname",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcreatedasync"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/BookingNotificationHandler.cs",
-      "source_location": "L24",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcancelledasync",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L47",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcancelledasync_validevent_logsguestname",
-      "target": "bookingsystem_infrastructure_messaging_bookingnotificationhandler_bookingsystem_infrastructure_messaging_bookingnotificationhandler_handlebookingcancelledasync"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L48",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_getroutingkey",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_publishasync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "IConnection"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_iconnection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L14",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "ILogger"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_ilogger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L13",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "RabbitMqSettings"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqsettings_bookingsystem_infrastructure_messaging_rabbitmqsettings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L23",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "CancellationToken"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_publishasync",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_cancellationtoken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqEventPublisher.cs",
-      "source_location": "L23",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_publishasync",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqeventpublisher_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Infrastructure/Messaging/RabbitMqSettings.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_infrastructure_messaging_rabbitmqsettings",
-      "target": "bookingsystem_infrastructure_messaging_rabbitmqsettings_bookingsystem_infrastructure_messaging_rabbitmqsettings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Infrastructure/Migrations/20260721122717_InitialCreate.Designer.cs",
       "source_location": "L14",
       "weight": 1.0,
@@ -20197,125 +18436,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "csharp_namespace:f8d4feb8f639d275",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L39",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcancelledasync_validevent_logsguestname",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcreatedasync_validevent_logsguestname",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L10",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "Mock"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_mock",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L19",
-      "weight": 1.0,
-      "context": "attribute",
-      "metadata": {
-        "ref_token": "Fact"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcreatedasync_validevent_logsguestname",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_fact",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L19",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcreatedasync_validevent_logsguestname",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L39",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "Task"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcancelledasync_validevent_logsguestname",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_task",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "BookingSystem.Tests/Messaging/BookingNotificationHandlerTests.cs",
-      "source_location": "L39",
-      "weight": 1.0,
-      "context": "attribute",
-      "metadata": {
-        "ref_token": "Fact"
-      },
-      "_origin": "ast",
-      "source": "bookingsystem_tests_messaging_bookingnotificationhandlertests_bookingsystem_tests_messaging_bookingnotificationhandlertests_handlebookingcancelledasync_validevent_logsguestname",
-      "target": "bookingsystem_tests_messaging_bookingnotificationhandlertests_cs_fact",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/RateLimiting/RedisRateLimiterTests.cs",
       "source_location": "L7",
       "weight": 1.0,
@@ -20518,7 +18638,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests",
@@ -20529,7 +18649,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests",
@@ -20562,7 +18682,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L344",
+      "source_location": "L330",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20573,7 +18693,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L303",
+      "source_location": "L293",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20584,7 +18704,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L368",
+      "source_location": "L353",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20595,7 +18715,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L318",
+      "source_location": "L307",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20606,7 +18726,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L50",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20617,7 +18737,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L26",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20628,7 +18748,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L98",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20639,7 +18759,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L73",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20650,7 +18770,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L126",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20661,7 +18781,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L241",
+      "source_location": "L231",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20672,7 +18792,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L289",
+      "source_location": "L279",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20683,7 +18803,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L265",
+      "source_location": "L255",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20694,7 +18814,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L216",
+      "source_location": "L206",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20705,7 +18825,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L182",
+      "source_location": "L172",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20716,7 +18836,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L167",
+      "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20727,7 +18847,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L197",
+      "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
       "source": "bookingsystem_tests_services_bookingservicetests_bookingsystem_tests_services_bookingservicetests",
@@ -20738,7 +18858,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -20753,7 +18873,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L26",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -20768,7 +18888,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L26",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20783,7 +18903,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L344",
+      "source_location": "L330",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20798,7 +18918,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L303",
+      "source_location": "L293",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20813,7 +18933,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L368",
+      "source_location": "L353",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20828,7 +18948,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L318",
+      "source_location": "L307",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20843,7 +18963,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L50",
+      "source_location": "L46",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20858,7 +18978,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L98",
+      "source_location": "L92",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20873,7 +18993,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L73",
+      "source_location": "L68",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20888,7 +19008,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L126",
+      "source_location": "L119",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20903,7 +19023,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L241",
+      "source_location": "L231",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20918,7 +19038,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L289",
+      "source_location": "L279",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20933,7 +19053,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L265",
+      "source_location": "L255",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20948,7 +19068,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L216",
+      "source_location": "L206",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20963,7 +19083,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L182",
+      "source_location": "L172",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20978,7 +19098,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L167",
+      "source_location": "L157",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -20993,7 +19113,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L197",
+      "source_location": "L187",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -21008,7 +19128,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L344",
+      "source_location": "L330",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21023,7 +19143,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L303",
+      "source_location": "L293",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21038,7 +19158,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L368",
+      "source_location": "L353",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21053,7 +19173,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L318",
+      "source_location": "L307",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21068,7 +19188,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L50",
+      "source_location": "L46",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21083,7 +19203,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L98",
+      "source_location": "L92",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21098,7 +19218,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L73",
+      "source_location": "L68",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21113,7 +19233,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L126",
+      "source_location": "L119",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21128,7 +19248,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L241",
+      "source_location": "L231",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21143,7 +19263,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L289",
+      "source_location": "L279",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21158,7 +19278,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L265",
+      "source_location": "L255",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21173,7 +19293,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L216",
+      "source_location": "L206",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21188,7 +19308,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L182",
+      "source_location": "L172",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21203,7 +19323,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L167",
+      "source_location": "L157",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -21218,7 +19338,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "BookingSystem.Tests/Services/BookingServiceTests.cs",
-      "source_location": "L197",
+      "source_location": "L187",
       "weight": 1.0,
       "context": "attribute",
       "metadata": {
@@ -22401,204 +20521,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione",
-      "target": "context_refresh_token_redis_spiegazione_refresh_token_redis_spiegazione_dettagliata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_refresh_token_redis_spiegazione_dettagliata",
-      "target": "context_refresh_token_redis_spiegazione_concetti_di_base_per_chi_legge_senza_contesto",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L208",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_refresh_token_redis_spiegazione_dettagliata",
-      "target": "context_refresh_token_redis_spiegazione_file_modificati",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L45",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_refresh_token_redis_spiegazione_dettagliata",
-      "target": "context_refresh_token_redis_spiegazione_file_nuovi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L580",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_refresh_token_redis_spiegazione_dettagliata",
-      "target": "context_refresh_token_redis_spiegazione_riassunto_del_flusso_end_to_end",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L47",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_nuovi",
-      "target": "context_refresh_token_redis_spiegazione_1_bookingsystem_application_interfaces_irefreshtokenstore_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L78",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_nuovi",
-      "target": "context_refresh_token_redis_spiegazione_2_bookingsystem_infrastructure_identity_redisrefreshtokenstore_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L145",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_nuovi",
-      "target": "context_refresh_token_redis_spiegazione_3_bookingsystem_application_dtos_refreshtokenrequest_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L161",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_nuovi",
-      "target": "context_refresh_token_redis_spiegazione_4_bookingsystem_tests_identity_redisrefreshtokenstoretests_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L177",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_nuovi",
-      "target": "context_refresh_token_redis_spiegazione_5_bookingsystem_tests_identity_authservicetests_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L309",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_10_bookingsystem_infrastructure_identity_authservice_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L483",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_11_bookingsystem_api_controllers_authcontroller_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L530",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_12_bookingsystem_api_program_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L556",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_13_bookingsystem_api_appsettings_json",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L210",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_6_bookingsystem_infrastructure_identity_jwtsettings_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L229",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_7_bookingsystem_infrastructure_identity_jwttokengenerator_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L265",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_8_bookingsystem_application_dtos_authresponse_cs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "context/refresh-token-redis-spiegazione.md",
-      "source_location": "L284",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_refresh_token_redis_spiegazione_file_modificati",
-      "target": "context_refresh_token_redis_spiegazione_9_bookingsystem_application_interfaces_iauthservice_cs",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -23454,5 +21376,5 @@
       "source_file": "context/sessions.md"
     }
   ],
-  "built_at_commit": "003c2dd1bfddf1950e517d5f10a03b5a506a7c34"
+  "built_at_commit": "6cbab0692f4c7caec5293b145dbeec64a53781ce"
 }

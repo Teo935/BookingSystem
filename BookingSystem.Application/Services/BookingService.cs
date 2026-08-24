@@ -1,5 +1,6 @@
 using BookingSystem.Application.Common;
 using BookingSystem.Application.DTOs;
+using BookingSystem.Application.Events;
 using BookingSystem.Application.Interfaces;
 using BookingSystem.Domain.Entities;
 
@@ -9,11 +10,13 @@ public class BookingService : IBookingService
 {
     private readonly IBookingRepository _bookingRepository;
     private readonly IRoomRepository _roomRepository;
+    private readonly IEventPublisher _eventPublisher;
 
-    public BookingService(IBookingRepository bookingRepository, IRoomRepository roomRepository)
+    public BookingService(IBookingRepository bookingRepository, IRoomRepository roomRepository, IEventPublisher eventPublisher)
     {
         _bookingRepository = bookingRepository;
         _roomRepository = roomRepository;
+        _eventPublisher = eventPublisher;
     }
 
     public async Task<(bool Success, string? Error, Booking? Booking)> CreateBookingAsync(CreateBookingRequest request, string userId)
@@ -47,6 +50,10 @@ public class BookingService : IBookingService
 
         var created = await _bookingRepository.AddAsync(booking);
 
+        await _eventPublisher.PublishAsync(new BookingCreatedEvent(
+            created.Id, created.RoomId, room.Name, created.UserId, created.GuestName,
+            created.CheckIn, created.CheckOut, DateTime.UtcNow));
+
         return (true, null, created);
     }
 
@@ -79,6 +86,11 @@ public class BookingService : IBookingService
         if (booking.UserId != userId && !isAdmin) return BookingAccessResult.Forbidden;
 
         await _bookingRepository.RemoveAsync(booking);
+
+        await _eventPublisher.PublishAsync(new BookingCancelledEvent(
+            booking.Id, booking.RoomId, booking.UserId, booking.GuestName,
+            booking.CheckIn, booking.CheckOut, DateTime.UtcNow));
+
         return BookingAccessResult.Success;
     }
 }

@@ -340,6 +340,36 @@ Punto di partenza: il login restituiva solo un Access Token JWT (scadenza 60 min
 ### Vincoli rispettati
 Nessuna logica Redis nei Controller (solo `AuthController` che chiama `IAuthService`), Redis resta un dettaglio infrastrutturale dietro `IRefreshTokenStore`, nessun valore hardcoded (TTL da `IConfiguration`/`appsettings.json`, stesso pattern di `ExpirationMinutes`), claims/ruoli del JWT esistente invariati, comportamento di `Login` sui casi già esistenti (credenziali valide/invalide) invariato.
 
+## 2026-08-24 — RabbitMQ ed Event-Driven Architecture (EDA) su creazione/cancellazione prenotazioni
+
+Punto di partenza: richiesta di aggiungere RabbitMQ con un pattern Event-Driven, con un'implementazione semplice ma con un caso d'uso realistico. L'utente ha chiesto un'analisi preventiva di dove convenisse inserirlo nel progetto.
+
+### Analisi (Explore + Plan agent dedicati, nessuna modifica al codice in questa fase)
+- `BookingService.CreateBookingAsync`/`CancelBookingAsync` sono risultati gli unici due punti del dominio con un evento di business genuino e un motivo reale per disaccoppiare un'azione conseguente (notifica) dalla richiesta HTTP sincrona.
+- Scartato un evento `RoomDeleted`: la cancellazione di una stanza è già bloccata se ha prenotazioni attive (`RoomDeleteResult.Conflict`), quindi non ci sono mai prenotazioni da invalidare.
+- Scartato un evento `UserRegistered`: nessuna infrastruttura email/notifiche preesistente nel progetto (grep confermato), sarebbe un evento orfano senza consumer sensato.
+
+### Architettura scelta
+- **Topologia**: un solo exchange `topic` (`booking.events`) con due routing key (`booking.created`, `booking.cancelled`) legate a una sola coda (`booking.notifications`).
+- **Application** (`Events/BookingCreatedEvent.cs`, `Events/BookingCancelledEvent.cs`, `Interfaces/IEventPublisher.cs`): record puri + interfaccia astratta `PublishAsync<TEvent>`, zero riferimenti a RabbitMQ.
+- **Infrastructure** (`Messaging/`): `RabbitMqSettings` (POCO Options, stesso pattern di `CacheSettings`), `RabbitMqEventPublisher` (implementa `IEventPublisher`, **cattura ogni eccezione di pubblicazione e logga un warning senza mai rilanciare** — la creazione/cancellazione di una prenotazione non deve mai dipendere dalla disponibilità del broker), `BookingNotificationHandler` (logica pura del consumer, isolata da RabbitMQ.Client per essere testabile — simula l'invio di un'email di conferma/cancellazione via log), `BookingNotificationConsumer` (`BackgroundService` ospitato nello stesso processo API — non un progetto worker separato, per restare semplici; dichiara exchange/coda/binding, `BasicQos(prefetchCount:1)`, ack su successo/nack senza requeue su errore di deserializzazione).
+- `BookingService`: nuova terza dipendenza `IEventPublisher`, pubblica l'evento dopo il successo di `AddAsync`/`RemoveAsync`.
+- `Program.cs`: registrazione `IConnection` (RabbitMQ.Client) come singleton, `IEventPublisher`, `BookingNotificationHandler`, `AddHostedService<BookingNotificationConsumer>()` — stesso pattern già usato per Redis (`Configure<T>` + connection string da `IConfiguration`).
+- `docker-compose.yml`: nuovo servizio `rabbitmq` (immagine `rabbitmq:3-management`, porte 5672/15672 per la Management UI), variabili `RABBITMQ_USER`/`RABBITMQ_PASSWORD` in `.env`/`.env.example`, connection string `ConnectionStrings__RabbitMq` passata all'`api`.
+- Pacchetto **RabbitMQ.Client 7.2.2** (API asincrona: `IChannel`, `CreateChannelAsync`, `BasicPublishAsync`, `AsyncEventingBasicConsumer`) — unico progetto con questa dipendenza (Infrastructure). Aggiunto anche `Microsoft.Extensions.Hosting.Abstractions` (pinnato a `8.0.1` per coerenza con le altre dipendenze Microsoft.Extensions del progetto, nonostante `dotnet add package` avesse risolto di default la `10.0.11`) per `BackgroundService`.
+
+### Test
+`BookingServiceTests.cs` aggiornato (nuova dipendenza `Mock<IEventPublisher>` nel costruttore, verifica `PublishAsync` chiamato una volta sui percorsi di successo e mai su quelli di errore per entrambi Create/Cancel). Nuovo `Messaging/BookingNotificationHandlerTests.cs` (2 test, verifica sul contenuto del log tramite mock di `ILogger<T>`). Nessun unit test dedicato per `RabbitMqEventPublisher`/`BookingNotificationConsumer` (mockare `IConnection`/`IChannel` di una libreria terza ha basso valore) — la loro verifica è affidata al test end-to-end.
+
+### Verifica end-to-end (`docker compose up --build`)
+Confermati via Management UI: exchange `booking.events` (topic), coda `booking.notifications` con 1 consumer attivo. Creazione prenotazione → risposta HTTP immediata + log `[Notifica] Simulazione invio email di conferma...`, contatori Redis Publish/Deliver/Ack = 1. Cancellazione → log di cancellazione simmetrico. **Test di resilienza**: `rabbitmq` fermato → creazione prenotazione riuscita comunque (business logic invariata), solo un warning nei log (`Failed to publish event BookingCreatedEvent to RabbitMQ`), nessun errore 500; `rabbitmq` riavviato → `AutorecoveringConnection` di RabbitMQ.Client ha ripristinato automaticamente sia il publisher sia il consumer senza intervento, prossima prenotazione elaborata normalmente. `dotnet test`: **57/57** (55 preesistenti + 2 nuovi).
+
+### Nota tecnica
+Durante l'avvio dei container è comparso un errore preesistente e non collegato a questa sessione: race condition tra `EnableRetryOnFailure()` di EF Core e la `CREATE DATABASE` non idempotente eseguita da `MigrateAsync()` al primo avvio contro un volume SQL Server già popolato da sessioni precedenti (`Database 'BookingSystemDb' already exists`). Risolto con un semplice riavvio del container `api` (il database esisteva già, la migration successiva l'ha trovato aggiornato). Non è stata applicata alcuna modifica a `Program.cs` per questo, essendo un problema di ambiente locale (volume Docker con stato pregresso) e non del codice.
+
+### Vincoli rispettati
+Nessuna dipendenza da RabbitMQ in Domain o Controller, nessun valore hardcoded (tutto via `IConfiguration`/`.env`), nessun CQRS/MediatR/Saga, nessun cambiamento di comportamento delle API pubbliche esistenti (stessi endpoint, stesse risposte, solo un side-effect asincrono in più dopo il successo).
+
 ## TODO — prossimi passi
 
 - [ ] **Rotazione dei segreti**: JWT `SecretKey` e password admin di seed restano gli stessi valori già presenti nella cronologia Git da prima della sessione del 2026-08-06 (scelta esplicita dell'utente di non ruotarli). Da rivalutare se il progetto dovesse mai uscire dall'uso puramente locale/didattico.
