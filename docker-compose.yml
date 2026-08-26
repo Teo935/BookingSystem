@@ -14,6 +14,18 @@ services:
     volumes:
       - sqlserver-data:/var/opt/mssql
 
+    # Verifica che SQL Server accetti davvero connessioni (non solo che il processo sia
+    # partito) eseguendo una query di prova con sqlcmd dentro al container stesso.
+    # "depends_on: condition: service_healthy" sul servizio "api" aspetta questo esito
+    # positivo prima di avviare l'API, riducendo gli errori di connessione transitori
+    # nei primi secondi di vita del container SQL Server.
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$SA_PASSWORD\" -C -Q 'SELECT 1' -b -o /dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
   redis:
     image: redis:latest
     container_name: bookingsystem-redis
@@ -43,10 +55,18 @@ services:
     ports:
       - "5068:8080"
 
+    # Forma estesa di depends_on: a differenza della semplice lista di nomi (che
+    # garantisce solo l'ORDINE di avvio dei container), "condition: service_healthy"
+    # aspetta che l'healthcheck di sqlserver dia esito positivo prima di far partire
+    # l'api. redis/rabbitmq non hanno un healthcheck definito, quindi per loro vale
+    # ancora solo l'ordine di avvio (condition: service_started, il default).
     depends_on:
-      - sqlserver
-      - redis
-      - rabbitmq
+      sqlserver:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
 
     environment:
       ASPNETCORE_ENVIRONMENT: Development

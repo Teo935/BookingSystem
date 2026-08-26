@@ -1,6 +1,7 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -151,7 +152,24 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    await dbContext.Database.MigrateAsync();
+
+    try
+    {
+        await dbContext.Database.MigrateAsync();
+    }
+    catch (SqlException ex) when (ex.Number == 1801)
+    {
+        // Errore SQL 1801 = "database already exists". Può capitare al primissimo
+        // avvio contro un container SQL Server appena creato: EnableRetryOnFailure
+        // ritenta l'intera operazione di migration se incontra un errore di
+        // connessione transitorio (es. SQL Server non ancora del tutto pronto), ma la
+        // CREATE DATABASE eseguita da MigrateAsync() non è idempotente — se il primo
+        // tentativo era in realtà già riuscito sul server prima che la connessione
+        // cadesse, il retry la ripete e fallisce perché il database esiste già.
+        // A questo punto il database c'è per davvero: basta rilanciare MigrateAsync,
+        // che stavolta lo troverà presente e applicherà solo le migration mancanti.
+        await dbContext.Database.MigrateAsync();
+    }
 
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
