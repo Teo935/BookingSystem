@@ -5,6 +5,9 @@ using BookingSystem.Infrastructure.Data;
 
 namespace BookingSystem.Infrastructure.Repositories;
 
+// Repository Pattern: unico punto del progetto (insieme a BookingRepository) che parla
+// con Entity Framework Core. Implementa IRoomRepository (definita in Application) —
+// nessuna business logic qui dentro, solo query ed operazioni CRUD dirette.
 public class RoomRepository : IRoomRepository
 {
     private readonly AppDbContext _db;
@@ -44,6 +47,8 @@ public class RoomRepository : IRoomRepository
         return room;
     }
 
+    // Query pura: risponde solo "sì/no", senza interpretare cosa significhi per la
+    // cancellazione — quella decisione (bloccare con 409 Conflict) vive in RoomService.
     public async Task<bool> HasBookingsAsync(int roomId)
     {
         return await _db.Bookings.AnyAsync(b => b.RoomId == roomId);

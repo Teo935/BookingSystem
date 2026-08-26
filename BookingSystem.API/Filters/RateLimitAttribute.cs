@@ -7,6 +7,11 @@ using Microsoft.Extensions.Options;
 
 namespace BookingSystem.API.Filters;
 
+// Action Filter applicato come attributo dichiarativo (es. [RateLimit("Login",
+// RateLimitKeyType.IpAddress)]) sopra l'action del Controller: nessuna logica Redis
+// dentro ai Controller stessi. IAsyncActionFilter intercetta la richiesta PRIMA che
+// l'azione venga eseguita — se il limite è superato, imposta context.Result e non
+// chiama mai next(), quindi l'azione del Controller non viene eseguita affatto.
 [AttributeUsage(AttributeTargets.Method)]
 public class RateLimitAttribute : Attribute, IAsyncActionFilter
 {

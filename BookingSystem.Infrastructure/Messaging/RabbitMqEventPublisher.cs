@@ -7,6 +7,10 @@ using RabbitMQ.Client;
 
 namespace BookingSystem.Infrastructure.Messaging;
 
+// Producer dell'architettura Event-Driven: implementa IEventPublisher pubblicando su
+// RabbitMQ. Adapter Pattern, in un certo senso — traduce il contratto generico
+// "PublishAsync<TEvent>" nelle chiamate specifiche della libreria RabbitMQ.Client
+// (creazione canale, dichiarazione exchange, publish).
 public class RabbitMqEventPublisher : IEventPublisher
 {
     private readonly IConnection _connection;
@@ -41,6 +45,11 @@ public class RabbitMqEventPublisher : IEventPublisher
         }
         catch (Exception ex)
         {
+            // Punto chiave del design: un errore di pubblicazione viene solo loggato,
+            // mai rilanciato. Creare/cancellare una prenotazione (chi chiama questo
+            // metodo) non deve MAI fallire solo perché il broker RabbitMQ è
+            // temporaneamente irraggiungibile — nel peggiore dei casi si perde solo la
+            // notifica simulata, non l'operazione di business.
             _logger.LogWarning(ex, "Failed to publish event {EventType} to RabbitMQ.", typeof(TEvent).Name);
         }
     }

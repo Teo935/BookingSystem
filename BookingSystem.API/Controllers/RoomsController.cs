@@ -6,6 +6,12 @@ using BookingSystem.Application.Interfaces;
 
 namespace BookingSystem.API.Controllers;
 
+// Livello API della Clean Architecture: il Controller riceve la richiesta HTTP,
+// chiama il Service e traduce l'esito in una risposta HTTP. Nessuna business logic
+// qui dentro — nota che IRoomService viene iniettato per interfaccia (Dependency
+// Injection): a runtime, grazie alla registrazione in Program.cs, l'istanza reale
+// ricevuta è CachedRoomService (il decorator con cache Redis), ma il Controller non
+// lo sa e non deve saperlo.
 [ApiController]
 public class RoomsController : ControllerBase
 {
@@ -16,6 +22,8 @@ public class RoomsController : ControllerBase
         _roomService = roomService;
     }
 
+    // Authorization basata su ruoli: solo un utente con il ruolo "Admin" nel JWT può
+    // creare/modificare/cancellare stanze. Le GET restano pubbliche (nessun [Authorize]).
     [HttpPost("api/rooms")]
     [Authorize(Roles = Roles.Admin)]
     public async Task<IActionResult> CreateRoom([FromBody] CreateRoomRequest request)

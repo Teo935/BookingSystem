@@ -1,0 +1,21 @@
+{
+  "0": "Booking Domain & Service",
+  "1": "Room Domain & Service",
+  "2": "Architecture Docs & Session Log",
+  "3": "Auth Login/Register Flow",
+  "4": "Room API Endpoints",
+  "5": "Project Files & NuGet Deps",
+  "6": "Launch Settings Config",
+  "7": "Booking API Endpoints",
+  "8": "DI Wiring & Namespaces",
+  "9": "Identity & JWT Infrastructure",
+  "10": "EF Core Migrations",
+  "11": "Project Overview & DB Migration Rationale",
+  "12": "JWT e ASP.NET Core Identity nel progetto — spiegazione",
+  "13": ".IsAllowedAsync",
+  "14": "Redis come cache per le stanze — spiegazione",
+  "15": "RateLimitAttribute",
+  "16": "rate-limiter-spiegazione.md",
+  "17": "File modificati",
+  "18": "RedisCacheService"
+}

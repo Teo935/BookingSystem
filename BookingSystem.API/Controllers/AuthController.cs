@@ -6,6 +6,10 @@ using BookingSystem.Application.Interfaces;
 
 namespace BookingSystem.API.Controllers;
 
+// Endpoint pubblici (nessun token richiesto per usarli, ovviamente — [AllowAnonymous]
+// a livello di classe). Register/Login/Refresh hanno un rate limit dedicato per
+// mitigare tentativi di forza bruta e registrazioni massive automatizzate; Logout no,
+// dato che opera solo su un token già noto al chiamante.
 [ApiController]
 [Route("api/auth")]
 [AllowAnonymous]

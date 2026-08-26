@@ -3,6 +3,9 @@ using BookingSystem.Application.Common;
 
 namespace BookingSystem.Infrastructure.Identity;
 
+// Eseguito all'avvio dell'applicazione (chiamato da Program.cs): crea i ruoli Admin/User
+// se non esistono ancora e, se configurato, un utente Admin iniziale — così il sistema
+// ha sempre almeno un account con privilegi elevati senza doverlo creare a mano.
 public static class IdentitySeeder
 {
     public static async Task SeedAsync(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, AdminSeedOptions adminSeed)
@@ -15,6 +18,8 @@ public static class IdentitySeeder
             }
         }
 
+        // Se email/password non sono configurate (es. ambiente senza AdminSeed nei
+        // secrets), si salta la creazione: meglio nessun admin che uno con credenziali vuote.
         if (string.IsNullOrWhiteSpace(adminSeed.Email) || string.IsNullOrWhiteSpace(adminSeed.Password))
         {
             return;

@@ -5,6 +5,9 @@ using BookingSystem.Domain.Entities;
 
 namespace BookingSystem.Application.Services;
 
+// Service Layer: qui vive la business logic su Room. Il Controller non parla mai
+// direttamente con il database — passa sempre da qui, che a sua volta dipende solo
+// dall'interfaccia IRoomRepository (Dependency Injection tramite costruttore).
 public class RoomService : IRoomService
 {
     private readonly IRoomRepository _roomRepository;
@@ -54,6 +57,9 @@ public class RoomService : IRoomService
         return _roomRepository.UpdateAsync(id, updatedRoom);
     }
 
+    // Regola di business: una Room con prenotazioni attive non può essere cancellata
+    // (evita di lasciare Booking orfani che puntano a una stanza inesistente). Il
+    // controllo è esplicito qui, non delegato a un'eccezione del database.
     public async Task<RoomDeleteResult> DeleteRoomAsync(int id)
     {
         var room = await _roomRepository.GetByIdAsync(id);

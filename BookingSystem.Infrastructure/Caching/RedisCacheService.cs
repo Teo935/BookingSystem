@@ -4,6 +4,11 @@ using Microsoft.Extensions.Caching.Distributed;
 
 namespace BookingSystem.Infrastructure.Caching;
 
+// Implementa ICacheService sopra IDistributedCache, l'astrazione standard di ASP.NET
+// Core per cache distribuite (Program.cs la configura con AddStackExchangeRedisCache,
+// quindi qui gira su Redis, ma il codice di questa classe non lo sa esplicitamente).
+// I valori sono serializzati in JSON perché IDistributedCache lavora solo con
+// stringhe/byte[], non con oggetti .NET.
 public class RedisCacheService : ICacheService
 {
     private readonly IDistributedCache _cache;

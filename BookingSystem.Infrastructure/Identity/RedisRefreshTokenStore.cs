@@ -3,6 +3,12 @@ using StackExchange.Redis;
 
 namespace BookingSystem.Infrastructure.Identity;
 
+// Implementazione di IRefreshTokenStore su Redis: chiave "refreshtoken:{token}" con
+// valore l'userId, e scadenza (TTL) affidata direttamente a Redis invece di un campo
+// "ExpiresAt" da controllare a mano — quando il TTL scade, la entry sparisce da sola.
+// Usa IConnectionMultiplexer/IDatabase direttamente (non ICacheService, la stessa
+// astrazione usata per la cache delle Room) perché qui serve un delete esplicito e
+// atomico per la rotazione del token, non un semplice get/set generico.
 public class RedisRefreshTokenStore : IRefreshTokenStore
 {
     private const string KeyPrefix = "refreshtoken:";

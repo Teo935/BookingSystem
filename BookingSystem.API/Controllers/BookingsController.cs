@@ -8,6 +8,9 @@ using BookingSystem.Application.Interfaces;
 
 namespace BookingSystem.API.Controllers;
 
+// [Authorize] a livello di classe protegge tutte le action per default; i singoli
+// endpoint che devono restare pubblici usano [AllowAnonymous] esplicito (vedi
+// CheckAvailability sotto) — scelta "secure by default" invece del contrario.
 [ApiController]
 [Authorize]
 public class BookingsController : ControllerBase
@@ -28,6 +31,10 @@ public class BookingsController : ControllerBase
         return Ok(new { available });
     }
 
+    // Rate Limiting per userId (non per IP: qui l'utente è già autenticato, e l'IP non
+    // sarebbe affidabile come chiave dietro NAT/proxy condivisi). userId viene letto
+    // dal claim NameIdentifier del JWT già validato dal middleware di autenticazione —
+    // il "!" è sicuro perché [Authorize] garantisce che la richiesta sia autenticata.
     [HttpPost("api/bookings")]
     [RateLimit("CreateBooking", RateLimitKeyType.UserId)]
     public async Task<IActionResult> CreateBooking([FromBody] CreateBookingRequest request)
@@ -52,6 +59,11 @@ public class BookingsController : ControllerBase
         return Ok(bookings);
     }
 
+    // Estrae userId/isAdmin dal token JWT e lascia che sia il Service a decidere
+    // l'esito dell'autorizzazione (BookingAccessResult) — il Controller si limita a
+    // tradurlo in HTTP (404/403/200). StatusCode(403) esplicito invece di Forbid():
+    // Forbid() dipenderebbe implicitamente da quale authentication scheme risulta di
+    // default, e questo progetto ne registra due (Identity/cookie e JWT Bearer).
     [HttpGet("api/bookings/{id}")]
     public async Task<IActionResult> GetBooking(int id)
     {

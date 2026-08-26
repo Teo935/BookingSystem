@@ -3,6 +3,10 @@ using Microsoft.Extensions.Logging;
 
 namespace BookingSystem.Infrastructure.Messaging;
 
+// Logica pura del consumer, deliberatamente isolata da RabbitMQ.Client (nessun
+// riferimento alla libreria qui dentro) così da restare facilmente testabile: riceve
+// già l'evento deserializzato e decide solo "cosa fare" con esso. In un sistema reale
+// qui partirebbe l'invio di un'email vera; qui si limita a loggare, a scopo didattico.
 public class BookingNotificationHandler
 {
     private readonly ILogger<BookingNotificationHandler> _logger;

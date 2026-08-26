@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace BookingSystem.Infrastructure.Identity;
 
+// Implementazione concreta di IAuthService: unico punto del progetto che usa
+// UserManager/RoleManager di ASP.NET Identity (gestiscono hashing password,
+// validazione, storage utenti) combinandoli con JwtTokenGenerator (Access Token) e
+// IRefreshTokenStore (persistenza del refresh token su Redis).
 public class AuthService : IAuthService
 {
     private const string DefaultRole = Roles.User;
@@ -49,6 +53,9 @@ public class AuthService : IAuthService
             return (false, "Invalid email or password.", null);
         }
 
+        // Messaggio di errore identico sia per "utente inesistente" che per "password
+        // sbagliata" (sopra e qui sotto): evita di rivelare a un attaccante se una email
+        // è registrata nel sistema (user enumeration).
         var passwordValid = await _userManager.CheckPasswordAsync(user, request.Password);
         if (!passwordValid)
         {
@@ -83,6 +90,9 @@ public class AuthService : IAuthService
         return (true, null, response);
     }
 
+    // Rimuove solo il refresh token passato (una sessione/dispositivo), non tutti quelli
+    // dell'utente — ogni login/refresh crea una entry Redis indipendente. Idempotente:
+    // rimuovere una chiave Redis inesistente non genera errori.
     public Task LogoutAsync(string refreshToken)
     {
         return _refreshTokenStore.RemoveAsync(refreshToken);

@@ -5,6 +5,9 @@ using BookingSystem.Infrastructure.Data;
 
 namespace BookingSystem.Infrastructure.Repositories;
 
+// Repository Pattern per Booking: implementa IBookingRepository (Application) sopra
+// Entity Framework Core. Nessuna business logic (ownership, validazione date) qui —
+// resta tutta in BookingService.
 public class BookingRepository : IBookingRepository
 {
     private readonly AppDbContext _db;
@@ -14,6 +17,11 @@ public class BookingRepository : IBookingRepository
         _db = db;
     }
 
+    // Query più importante del progetto: due intervalli [checkIn, checkOut) si
+    // sovrappongono se e solo se "l'inizio del nuovo è prima della fine dell'esistente"
+    // E "la fine del nuovo è dopo l'inizio dell'esistente" — questa è la condizione
+    // standard per il confronto di intervalli di date, e ogni nuova query sulle
+    // prenotazioni deve restare coerente con questa stessa logica.
     public async Task<bool> HasOverlapAsync(int roomId, DateTime checkIn, DateTime checkOut)
     {
         return await _db.Bookings.AnyAsync(b =>
@@ -34,6 +42,9 @@ public class BookingRepository : IBookingRepository
         return await _db.Bookings.FindAsync(id);
     }
 
+    // Include(b => b.Room) forza un eager load della Room collegata (JOIN in una sola
+    // query invece di una query separata dopo): serve perché il dettaglio prenotazione
+    // esposto dal Controller include i dati della stanza.
     public async Task<Booking?> GetByIdWithRoomAsync(int id)
     {
         return await _db.Bookings.Include(b => b.Room).FirstOrDefaultAsync(b => b.Id == id);
