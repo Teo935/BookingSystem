@@ -148,13 +148,33 @@ Responsabile di:
 POST /api/auth/register
 ```
 
+```json
+{
+  "email": "utente@example.com",
+  "password": "Password123!"
+}
+```
+
+Il nuovo utente viene creato con il ruolo `User`.
+
 ## Login
 
 ```http
 POST /api/auth/login
 ```
 
-Il login restituisce un JWT utilizzabile per accedere agli endpoint protetti.
+```json
+{
+  "email": "utente@example.com",
+  "password": "Password123!"
+}
+```
+
+Il login restituisce un JWT (`token`) e un refresh token (`refreshToken`) utilizzabili per accedere agli endpoint protetti.
+
+Per provare gli endpoint riservati all'Admin (creazione/modifica/eliminazione camere), effettuare il login con le credenziali configurate in `.env` (`ADMIN_SEED_EMAIL` / `ADMIN_SEED_PASSWORD`): l'utente Admin viene creato automaticamente all'avvio dell'applicazione.
+
+Per usare il token in Swagger: copiare il valore di `token` dalla risposta di login, cliccare sul pulsante **Authorize** in alto e inserirlo nel formato `Bearer <token>`.
 
 ---
 
@@ -255,16 +275,23 @@ Le migrazioni vengono utilizzate per la gestione dello schema del database.
 
 L'applicazione può essere eseguita tramite Docker e Docker Compose.
 
+Prerequisito: creare un file `.env` nella root del repository (partendo da `.env.example`) con valori per `SA_PASSWORD`, `JWT_SECRET_KEY`, `ADMIN_SEED_EMAIL`, `ADMIN_SEED_PASSWORD`, `RABBITMQ_USER`, `RABBITMQ_PASSWORD`.
+
 ```bash
 docker compose up --build
 ```
 
+Ad avvio completato (i log mostrano `Now listening on: http://[::]:8080` senza errori):
+
+* **Swagger UI**: [http://localhost:5068/swagger](http://localhost:5068/swagger)
+* **RabbitMQ Management UI**: [http://localhost:15672](http://localhost:15672) (credenziali da `RABBITMQ_USER`/`RABBITMQ_PASSWORD` in `.env`)
+
 Container utilizzati:
 
-* BookingSystem API
-* SQL Server
-* Redis
-* RabbitMQ (con Management UI su `:15672`)
+* BookingSystem API — porta host `5068` (mappata sulla `8080` interna al container)
+* SQL Server — porta `1433`
+* Redis — porta `6379`
+* RabbitMQ — porta `5672` (AMQP) e `15672` (Management UI)
 
 ---
 
